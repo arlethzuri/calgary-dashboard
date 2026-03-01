@@ -1,6 +1,7 @@
 import os
 import json
 import requests
+import logging
 from esridump.dumper import EsriDumper
 
 # specify the directories to ArcGIS services for ENMAX
@@ -9,19 +10,30 @@ response = requests.get(f'{SERVICES_DIRECTORY}?f=pjson')
 feature_servers = response.json()['services']
 FEATURE_SERVERS = [fs['name'] for fs in feature_servers]
 
-# log which downloads fail
-success_log = os.path.join('../../data/enmax', 'successful_downloads.log')
-failed_log = os.path.join('../../data/enmax', 'failed_downloads.log')
+# Set up logging
+# ref: https://realpython.com/python-logging/
+logger = logging.getLogger(__name__)
+
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s [%(levelname)s] %(message)s',
+    handlers=[
+        logging.FileHandler("/sci-it/hosts/olympus/calgary/data/enmax/scrape_enmax_data.log"),
+        logging.StreamHandler()
+    ]
+)
+
 
 # download FeatureServer metadata, FeatureServer features at each layer, and features' metadata
 for feature_server in FEATURE_SERVERS:
     # create subdirectory for this feature server
-    server_dir = os.path.join('../../data/enmax', feature_server)
+    server_dir = os.path.join('/sci-it/hosts/olympus/calgary/data/enmax', feature_server)
     os.makedirs(server_dir, exist_ok=True)
 
     # specify the URL of the FeatureServer
     server_url = f'{SERVICES_DIRECTORY}/{feature_server}/FeatureServer'
 
+    logger.info(f"Downloading metadata and features from {server_url}")
     try:
         # save metadata of FeatureServer
         describe_resp = requests.get(f'{server_url}?f=pjson')
@@ -52,15 +64,9 @@ for feature_server in FEATURE_SERVERS:
                         json.dump(features, f)
                 with open(metadata_path, 'w') as f:
                     json.dump(layer, f)
-                with open(success_log, "a") as slog:
-                    slog.write(f"{feature_server} : {layer_name} : SUCCESS\n")
-                print(f"SUCCESS: {feature_server}/{layer_name}")
+                logger.info(f"SUCCESS: {feature_server}/{layer_name}")
                 layer_success = True
             except Exception as e:
-                with open(failed_log, "a") as flog:
-                    flog.write(f"{feature_server} : {layer_name} : FAILED - {e}\n")
-                print(f"FAILED: {feature_server}/{layer_name} ({e})")
+                logger.error(f"FAILED: {feature_server}/{layer_name} ({e})")
     except Exception as e:
-        with open(failed_log, "a") as flog:
-            flog.write(f"{feature_server} : FAILED to get server metadata or layers - {e}\n")
-        print(f"FAILED to process feature server {feature_server} ({e})")
+        logger.error(f"FAILED to process feature server {feature_server} ({e})")

@@ -3,9 +3,22 @@ import json
 import os
 import logging
 
+# Set up logging
+# ref: https://realpython.com/python-logging/
+logger = logging.getLogger(__name__)
+
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s [%(levelname)s] %(message)s',
+    handlers=[
+        logging.FileHandler("/sci-it/hosts/olympus/calgary/data/open_calgary/manual_get_data.log"),
+        logging.StreamHandler()
+    ]
+)
+
 # token can be created with account at data.calgary.ca
 APP_TOKEN = "g8EtMlEOBGi7qHws7qqJ5GCVM"
-DOWNLOAD_DIR = "../../data/open_calgary"
+DOWNLOAD_DIR = "/sci-it/hosts/olympus/calgary/data/open_calgary"
 
 # Load URLs of datasets we manually identified on Open Calgary portal (data.calgary.ca)
 with open('./manually_selected_datasets.txt', 'r') as f:
@@ -38,14 +51,6 @@ def get_record_count(id):
 
 DATASET_IDS = [extract_dataset_id(url) for url in DATASET_URLS]
 
-logger = logging.getLogger(__name__)
-
-logger.setLevel(logging.INFO)
-formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-handler = logging.StreamHandler()
-handler.setFormatter(formatter)
-logger.addHandler(handler)
-
 # # Download data for each dataset and log failures
 download_log = "download_log.log"
 for ds_id in DATASET_IDS:
@@ -64,8 +69,8 @@ for ds_id in DATASET_IDS:
         os.makedirs(dataset_dir, exist_ok=True)
         with open(os.path.join(dataset_dir, f"{ds_id}.json"), "w") as f:
             json.dump(data, f)
-        logging.info(f"Downloaded {api_url}")
+        logger.info(f"Downloaded {api_url}")
         
     except Exception as e:
-        logging.error(f"Failed to download {api_url}: {e}, record count is: {record_count}")
+        logger.error(f"Failed to download {api_url}: {e}, record count is: {record_count}")
         continue
