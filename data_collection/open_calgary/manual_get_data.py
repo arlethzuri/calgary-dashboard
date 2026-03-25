@@ -11,14 +11,14 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s [%(levelname)s] %(message)s',
     handlers=[
-        logging.FileHandler("/sci-it/hosts/olympus/calgary/data/open_calgary/manual_get_data.log"),
+        logging.FileHandler("/sci-it/hosts/olympus/calgary/data/0_raw/open_calgary/manual_get_data.log"),
         logging.StreamHandler()
     ]
 )
 
 # token can be created with account at data.calgary.ca
 APP_TOKEN = "g8EtMlEOBGi7qHws7qqJ5GCVM"
-DOWNLOAD_DIR = "/sci-it/hosts/olympus/calgary/data/open_calgary"
+DOWNLOAD_DIR = "/sci-it/hosts/olympus/calgary/data/0_raw/open_calgary"
 
 # Load URLs of datasets we manually identified on Open Calgary portal (data.calgary.ca)
 with open('./manually_selected_datasets.txt', 'r') as f:

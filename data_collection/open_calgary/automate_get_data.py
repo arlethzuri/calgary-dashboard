@@ -2,11 +2,12 @@ import requests
 import os
 from concurrent.futures import ThreadPoolExecutor
 
+from data_collection.enmax.scrape_enmax_data import DATA_DIR
+
 # app token can be created at data.calgary.ca
 DOMAIN = "data.calgary.ca"
-DOWNLOAD_DIR = "data/open_calgary"
+DATA_DIR = "data/0_raw/open_calgary"
 APP_TOKEN = "g8EtMlEOBGi7qHws7qqJ5GCVM"
-os.makedirs(DOWNLOAD_DIR, exist_ok=True)
 
 def get_all_datasets():
     # Discovery API returns the full catalog for a domain
@@ -23,11 +24,11 @@ def download_dataset(dataset):
     # Try to download the dataset in .csv, .json, and .geojson formats, skipping any that fail.
     # Log successful and failed downloads for review.
     formats = ["csv", "json", "geojson"]
-    dataset_dir = os.path.join(DOWNLOAD_DIR, name)
+    dataset_dir = os.path.join(DATA_DIR, name)
     os.makedirs(dataset_dir, exist_ok=True)
 
-    success_log = os.path.join(DOWNLOAD_DIR, "success.log")
-    failed_log = os.path.join(DOWNLOAD_DIR, "failed.log")
+    success_log = os.path.join(DATA_DIR, "success.log")
+    failed_log = os.path.join(DATA_DIR, "failed.log")
 
     for ext in formats:
         download_url = f"https://data.calgary.ca/api/v3/views/{ds_id}/query.{ext}"

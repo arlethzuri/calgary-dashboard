@@ -5,6 +5,7 @@ import logging
 from esridump.dumper import EsriDumper
 
 # specify the directories to ArcGIS services for ENMAX
+DATA_DIR = "/sci-it/hosts/olympus/calgary/data/0_raw/enmax"
 SERVICES_DIRECTORY = 'https://services1.arcgis.com/NKgP4VcXUzEyOnmg/ArcGIS/rest/services'
 response = requests.get(f'{SERVICES_DIRECTORY}?f=pjson')
 feature_servers = response.json()['services']
@@ -18,7 +19,7 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s [%(levelname)s] %(message)s',
     handlers=[
-        logging.FileHandler("/sci-it/hosts/olympus/calgary/data/enmax/scrape_enmax_data.log"),
+        logging.FileHandler(os.path.join(DATA_DIR, "scrape_enmax_data.log")),
         logging.StreamHandler()
     ]
 )
@@ -27,7 +28,7 @@ logging.basicConfig(
 # download FeatureServer metadata, FeatureServer features at each layer, and features' metadata
 for feature_server in FEATURE_SERVERS:
     # create subdirectory for this feature server
-    server_dir = os.path.join('/sci-it/hosts/olympus/calgary/data/enmax', feature_server)
+    server_dir = os.path.join(DATA_DIR, feature_server)
     os.makedirs(server_dir, exist_ok=True)
 
     # specify the URL of the FeatureServer
