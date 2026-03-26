@@ -2,10 +2,12 @@ import os
 import json
 import requests
 import logging
+# to get geodata from ESRI endpoint: https://github.com/openaddresses/pyesridump
 from esridump.dumper import EsriDumper
+import datetime as dt
 
 # specify the directories to ArcGIS services for ENMAX
-DATA_DIR = "/sci-it/hosts/olympus/calgary/data/0_raw/enmax"
+DATA_DIR = "/sci-it/hosts/olympus/calgary/data/0_raw/enmax/march_download"
 SERVICES_DIRECTORY = 'https://services1.arcgis.com/NKgP4VcXUzEyOnmg/ArcGIS/rest/services'
 response = requests.get(f'{SERVICES_DIRECTORY}?f=pjson')
 feature_servers = response.json()['services']
@@ -13,13 +15,13 @@ FEATURE_SERVERS = [fs['name'] for fs in feature_servers]
 
 # Set up logging
 # ref: https://realpython.com/python-logging/
+curr_date = dt.datetime.now().strftime("%Y%m%d")
 logger = logging.getLogger(__name__)
-
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s [%(levelname)s] %(message)s',
     handlers=[
-        logging.FileHandler(os.path.join(DATA_DIR, "scrape_enmax_data.log")),
+        logging.FileHandler(os.path.join(DATA_DIR, f"scrape_enmax_data_{curr_date}.log")),
         logging.StreamHandler()
     ]
 )
@@ -50,23 +52,29 @@ for feature_server in FEATURE_SERVERS:
         layers_json = layers_resp.json()
         layer_infos = layers_json.get('layers', [])
 
-        # download features at each layer
+        # download features and metadata at each layer
         for layer in layer_infos:
             layer_id = layer['id']
             layer_name = layer['name']
-            layer_success = False
+            
             features_path = os.path.join(server_dir, f'{layer_name}_features.json')
             metadata_path = os.path.join(server_dir, f'{layer_name}_metadata.json')
             try:
+                # download metadata at current featureserver layer
+                metadata_resp = requests.get(f'{server_url}/{layer_id}?f=pjson')
+                metadata_resp.raise_for_status()
+                metadata_json = metadata_resp.json()
+                
+                with open(metadata_path, 'w') as f:
+                    json.dump(metadata_json, f)
+
+                # download current feature layer
                 d = EsriDumper(f'{server_url}/{layer_id}')
                 features = list(d)
                 if features:
                     with open(features_path, 'w') as f:
                         json.dump(features, f)
-                with open(metadata_path, 'w') as f:
-                    json.dump(layer, f)
                 logger.info(f"SUCCESS: {feature_server}/{layer_name}")
-                layer_success = True
             except Exception as e:
                 logger.error(f"FAILED: {feature_server}/{layer_name} ({e})")
     except Exception as e:
