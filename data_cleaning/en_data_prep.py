@@ -76,4 +76,4 @@ if __name__ == "__main__":
                 obj = json.load(f)
 
             # append describe.json fields
-            obj.update(describe_obj)
+            
