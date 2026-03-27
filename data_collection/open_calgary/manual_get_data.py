@@ -76,7 +76,7 @@ for ds_id in DATASET_IDS:
         data = response.json()
         dataset_dir = os.path.join(DOWNLOAD_DIR, ds_id)
         os.makedirs(dataset_dir, exist_ok=True)
-        with open(os.path.join(dataset_dir, f"{ds_id}.json"), "w") as f:
+        with open(os.path.join(dataset_dir, f"{ds_id}_data.json"), "w") as f:
             json.dump(data, f)
         logger.info(f"Downloaded data from {api_data_url}")
     except Exception as e:
