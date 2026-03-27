@@ -6,8 +6,12 @@ import logging
 from esridump.dumper import EsriDumper
 import datetime as dt
 
+# get current date to label download dir
+curr_date = dt.datetime.now().strftime("%Y%m%d")
+
 # specify the directories to ArcGIS services for ENMAX
-DATA_DIR = "/sci-it/hosts/olympus/calgary/data/0_raw/enmax/march_download"
+DATA_DIR = f"/sci-it/hosts/olympus/calgary/data/enmax/{curr_date}"
+os.makedirs(DATA_DIR, exist_ok=True)
 SERVICES_DIRECTORY = 'https://services1.arcgis.com/NKgP4VcXUzEyOnmg/ArcGIS/rest/services'
 response = requests.get(f'{SERVICES_DIRECTORY}?f=pjson')
 feature_servers = response.json()['services']
@@ -15,7 +19,6 @@ FEATURE_SERVERS = [fs['name'] for fs in feature_servers]
 
 # Set up logging
 # ref: https://realpython.com/python-logging/
-curr_date = dt.datetime.now().strftime("%Y%m%d")
 logger = logging.getLogger(__name__)
 logging.basicConfig(
     level=logging.INFO,

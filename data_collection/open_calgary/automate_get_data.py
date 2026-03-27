@@ -1,12 +1,15 @@
 import requests
 import os
 from concurrent.futures import ThreadPoolExecutor
+import datetime as dt
 
-from data_collection.enmax.scrape_enmax_data import DATA_DIR
+# get current date to label download dir
+curr_date = dt.datetime.now().strftime("%Y%m%d")
 
 # app token can be created at data.calgary.ca
 DOMAIN = "data.calgary.ca"
-DATA_DIR = "data/0_raw/open_calgary"
+DATA_DIR = f"/sci-it/hosts/olympus/calgary/data/open_calgary/{curr_date}"
+os.makedirs(DATA_DIR, exist_ok=True)
 APP_TOKEN = "g8EtMlEOBGi7qHws7qqJ5GCVM"
 
 def get_all_datasets():
