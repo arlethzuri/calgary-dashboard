@@ -1,8 +1,8 @@
 ### For ENMAX data downloaded with Esri API:
 ### Create geoparquet file per feature and json file with corresponding metadata
-from utilities import *
 import os
 import json
+import geopandas as gpd
 
 def create_standardized_file_name(file_name, append_str):
     """
@@ -24,10 +24,14 @@ def create_standardized_file_name(file_name, append_str):
     camel_case_file_name = f"{camel_case_file_name}_{append_str}"
     return camel_case_file_name
 
-# directory to raw ENMAX data
-DATA_DIR = "../data/0_raw/enmax"
+# directory to raw ENMAX data, use latest download
+date = "20260327"
+DATA_DIR = f"/sci-it/hosts/olympus/calgary/data/enmax/{date}"
 # directory to save the cleaned data
-SAVE_DIR = "../data/1_processed/enmax"
+SAVE_DIR = f"/sci-it/hosts/olympus/calgary/processed_data/enmax/{date}"
+os.makedirs(SAVE_DIR, exist_ok=True)
+os.makedirs(f"{SAVE_DIR}/features", exist_ok=True)
+os.makedirs(f"{SAVE_DIR}/metadata", exist_ok=True)
 
 if __name__ == "__main__":
     # list all subdirectories in DATA_DIR, i.e. feature servers
@@ -56,24 +60,27 @@ if __name__ == "__main__":
             # create geopandas dataframe
             gdf = gpd.GeoDataFrame.from_features(obj)
 
-            # save to geoparquet file
-            gdf.to_parquet(f"{SAVE_DIR}/{file_name}.parquet")
+            # save to geoparquet file in directory corresponding to geojson geometric type
+            # create dir with geom_type
+            geom_type = gdf.geom_type[0]
+            save_dir = f"{SAVE_DIR}/features/{geom_type}"
+            os.makedirs(save_dir, exist_ok=True)
+            gdf.to_parquet(f"{save_dir}/{file_name}.parquet")
 
-        # load describe.json for use in creating updated metadata files
-        describe_file = f"{DATA_DIR}/{subdir}/describe.json"
-        with open(describe_file, 'r') as f:
-            describe_obj = json.load(f)
-
-        # update metadata files:
-        # 1. add original file name of metadata file and features file
-        # 2. append all fields from describe.json, even if some are unneeded for visualization or analysis, they may be useful later for data versioning, data governance, etc
+        # update metadata:
+        # 1. add layer name
         for metadata_file in metadata_files:
             # standardize name
             file_name = create_standardized_file_name(metadata_file, 'metadata')
 
             # load metadata file
+            file_path = f"{DATA_DIR}/{subdir}/{metadata_file}"
             with open(file_path, 'r') as f:
                 obj = json.load(f)
 
-            # append describe.json fields
-            
+            # add layer name
+            obj['layer_name'] = subdir
+
+            # save to json file
+            with open(f"{SAVE_DIR}/metadata/{file_name}.json", 'w') as f:
+                json.dump(obj, f)
