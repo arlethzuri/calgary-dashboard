@@ -1,9 +1,12 @@
-### For ENMAX data downloaded with Esri API:
+### For Open Calgary data downloaded with Esri API:
 ### Create geoparquet file per feature and json file with corresponding metadata
 import os
 import json
 import geopandas as gpd
+import pandas as pd
+from shapely.geometry import shape
 import logging
+import re
 
 # directory to raw ENMAX data, use latest download
 date = "20260327"
@@ -27,25 +30,45 @@ logging.basicConfig(
     ]
 )
 
-# def create_standardized_file_name(file_name, append_str):
+def create_standardized_file_name(dataset_id, dataset_name, append_str):
+    """
+    Creates a standardized file name for a given file name.
+
+    Args:
+        file_name (str): The file name to create a standardized file name for.
+        append_str (str): The string to append to the end of the file name. (e.g. 'features', 'metadata')
+
+    Returns:
+        str: The standardized file name.
+    """
+    dataset_name = dataset_name.replace(' ', '_') # replace spaces with underscores
+    dataset_name = re.sub(r'[^A-Za-z0-9_]', '', dataset_name)
+    dataset_name_parts = dataset_name.split('_') # split by underscores
+
+    # create camel case file name
+    camel_case_dataset_name = ''.join([p.title() for p in dataset_name_parts[:-1]])
+    camel_case_file_name = f"{dataset_id}_{camel_case_dataset_name}_{append_str}"
+    return camel_case_file_name
+
+def get_geometry_type(data_json_obj):
+    """
+    Get the geometry type from the Open Calgary dataset JSON.
+    """
+    geometry_types = ['point', 'linestring', 'polygon', 'multipoint', 'multilinestring', 'multipolygon']
+    data_json_obj_keys = [k.lower() for k in data_json_obj.keys()]
+    for geometry_type in geometry_types:
+        if geometry_type in data_json_obj_keys:
+            return geometry_type
+    return None
+
+# def get_projection(metadata_json_obj):
 #     """
-#     Creates a standardized file name for a given file name.
-
-#     Args:
-#         file_name (str): The file name to create a standardized file name for.
-#         append_str (str): The string to append to the end of the file name.
-
-#     Returns:
-#         str: The standardized file name.
+#     Get the first listed projection from the Open Calgary dataset JSON.
 #     """
-#     file_name = file_name.split('.')[0] # remove .json
-#     file_name = file_name.replace(' ', '_') # replace spaces with underscores
-#     file_parts = file_name.split('_') # split by underscores
+#     projection_str = metadata_json_obj
 
-#     # create camel case file name, remove dashes
-#     camel_case_file_name = ''.join([p.title().replace('-', '') for p in file_parts[:-1]])
-#     camel_case_file_name = f"{camel_case_file_name}_{append_str}"
-#     return camel_case_file_name
+#     projection = projection_str.split(' ')[0]
+#     return projection
 
 if __name__ == "__main__":
     # list all subdirectories in DATA_DIR, i.e. data sets
@@ -54,51 +77,61 @@ if __name__ == "__main__":
     # for each dataset find feature and metadata files and create geoparquet and json metadata files
     for subdir in subdirs:
         # get list of files in subdir
-        files = os.listdir(os.path.join(DATA_DIR, subdir))
+        files = sorted(os.listdir(os.path.join(DATA_DIR, subdir)))
         # find data and metadata files
-        feature_files = [f for f in files if f.endswith('_data.json')]
-        metadata_files = [f for f in files if f.endswith('_metadata.json')]
+        feature_file = [f for f in files if f.endswith('_data.json')][0]
+        metadata_file = [f for f in files if f.endswith('_metadata.json')][0]
 
-        # save feature file as geoparquet
-        for feature_file in feature_files:
-            # # standardize name
-            # file_name = create_standardized_file_name(feature_file, 'features')
+        # try:
+        # load metadata file
+        metadata_file_path = f"{DATA_DIR}/{subdir}/{metadata_file}"
+        with open(metadata_file_path, 'r') as f:
+            metadata_obj = json.load(f)
 
-            try:
-                # create geopandas dataframe
-                file_path = f"{DATA_DIR}/{subdir}/{feature_file}"
+        # retrieve information from metadata
+        name = metadata_obj['name']
+        id = metadata_obj['id']
 
-                # load json file, an iterable object of GeoJSON feature(s)
-                with open(file_path, 'r') as f:
-                    obj = json.load(f)
+        # create file name
+        metadata_file_name = create_standardized_file_name(id, name, 'metadata')
 
-                # create geopandas dataframe
-                gdf = gpd.GeoDataFrame.from_features(obj)
-            except Exception as e:
-                logger.error(f"Failed to create geopandas dataframe from {feature_file}: {e}")
-                continue
+        # save to json file 
+        with open(f"{SAVE_DIR}/metadata/{metadata_file_name}.json", 'w') as f:
+            json.dump(metadata_obj, f)
 
-            # # save to geoparquet file in directory corresponding to geojson geometric type
-            # # create dir with geom_type
-            # geom_type = gdf.geom_type[0]
-            # save_dir = f"{SAVE_DIR}/features/{geom_type}"
-            # os.makedirs(save_dir, exist_ok=True)
-            # gdf.to_parquet(f"{save_dir}/{file_name}.parquet")
+        # save feature file as geoparquet, using ID as name
+        # create geopandas dataframe
+        feature_file_path = f"{DATA_DIR}/{subdir}/{feature_file}"
 
-        # update metadata:
-        # 1. add layer name
-        for metadata_file in metadata_files:
-            # # standardize name
-            # file_name = create_standardized_file_name(metadata_file, 'metadata')
+        # load json file, an iterable object of GeoJSON feature(s)
+        with open(feature_file_path, 'r') as f:
+            feature_obj = json.load(f)
 
-            # # load metadata file
-            # file_path = f"{DATA_DIR}/{subdir}/{metadata_file}"
-            # with open(file_path, 'r') as f:
-            #     obj = json.load(f)
+        # unwrap feature_obj 
+        feature_obj = feature_obj[0]
 
-            # # add layer name
-            # obj['layer_name'] = subdir
+        # get GeoJSON geometry type from data file
+        geometry_type = get_geometry_type(feature_obj)
 
-            # # save to json file
-            # with open(f"{SAVE_DIR}/metadata/{file_name}.json", 'w') as f:
-            #     json.dump(obj, f)
+        if geometry_type is not None:
+            # convert to shapely object for loading into geodataframe
+            geoms = [shape(feature_obj[geometry_type])]
+
+            # create geodataframe
+            gdf = gpd.GeoDataFrame(geometry=geoms)
+
+            # create file name
+            feature_file_name = create_standardized_file_name(id, name, 'feature')
+
+            # save to geoparquet file in directory corresponding to geojson geometric type
+            # create dir with geom_type
+            geom_type = gdf.geom_type[0]
+            save_dir = f"{SAVE_DIR}/features/{geom_type}"
+            os.makedirs(save_dir, exist_ok=True)
+            gdf.to_parquet(f"{save_dir}/{feature_file_name}.parquet")
+        else:
+            logger.error(f"Failed to create geoparquet file for {feature_file}: No geometry type found\nName: {name}\nKeys:{feature_obj.keys()}\nDescription: {metadata_obj['description']}")
+            continue
+        # except Exception as e:
+        #     logger.error(f"Failed to process id {id} ({name}): {e}")
+        #     continue

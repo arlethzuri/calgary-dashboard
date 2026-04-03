@@ -1,3 +1,4 @@
 tmp_data/
 data/
 __pycache__/
+*.code-workspace
