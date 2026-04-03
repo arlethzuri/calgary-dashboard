@@ -80,12 +80,9 @@ if __name__ == "__main__":
         with open(metadata_file_path, 'r') as f:
             metadata_obj = json.load(f)
 
-        # load data file, an iterable object of feature(s)
+        # load data file
         with open(feature_file_path, 'r') as f:
             feature_obj = json.load(f)
-
-        # unwrap feature_obj 
-        feature_obj = feature_obj[0]
 
         # flag to create parquet file
         created_parquet_file = False
@@ -106,10 +103,13 @@ if __name__ == "__main__":
         feature_file_name = create_standardized_file_name(id, name, 'feature')
 
         # Try to create geojson object if geometry type exists
-        geometry_type = get_geometry_type(feature_obj)
+        geometry_type = get_geometry_type(feature_obj[0])
 
         # if geometry type exists, create parquet file
         if geometry_type is not None:
+            # unwrap feature_obj 
+            feature_obj = feature_obj[0]
+
             # convert to shapely object for loading into geodataframe
             geoms = [shape(feature_obj[geometry_type])]
 
