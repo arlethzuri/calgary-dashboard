@@ -61,15 +61,6 @@ def get_geometry_type(data_json_obj):
             return geometry_type
     return None
 
-# def get_projection(metadata_json_obj):
-#     """
-#     Get the first listed projection from the Open Calgary dataset JSON.
-#     """
-#     projection_str = metadata_json_obj
-
-#     projection = projection_str.split(' ')[0]
-#     return projection
-
 if __name__ == "__main__":
     # list all subdirectories in DATA_DIR, i.e. data sets
     subdirs = [d for d in os.listdir(DATA_DIR) if os.path.isdir(os.path.join(DATA_DIR, d))]
@@ -81,38 +72,43 @@ if __name__ == "__main__":
         # find data and metadata files
         feature_file = [f for f in files if f.endswith('_data.json')][0]
         metadata_file = [f for f in files if f.endswith('_metadata.json')][0]
-
-        # try:
-        # load metadata file
+        # define data and metadata file paths
         metadata_file_path = f"{DATA_DIR}/{subdir}/{metadata_file}"
+        feature_file_path = f"{DATA_DIR}/{subdir}/{feature_file}"
+
+        # load metadata file
         with open(metadata_file_path, 'r') as f:
             metadata_obj = json.load(f)
 
-        # retrieve information from metadata
-        name = metadata_obj['name']
-        id = metadata_obj['id']
-
-        # create file name
-        metadata_file_name = create_standardized_file_name(id, name, 'metadata')
-
-        # save to json file 
-        with open(f"{SAVE_DIR}/metadata/{metadata_file_name}.json", 'w') as f:
-            json.dump(metadata_obj, f)
-
-        # save feature file as geoparquet, using ID as name
-        # create geopandas dataframe
-        feature_file_path = f"{DATA_DIR}/{subdir}/{feature_file}"
-
-        # load json file, an iterable object of GeoJSON feature(s)
+        # load data file, an iterable object of feature(s)
         with open(feature_file_path, 'r') as f:
             feature_obj = json.load(f)
 
         # unwrap feature_obj 
         feature_obj = feature_obj[0]
 
-        # get GeoJSON geometry type from data file
+        # flag to create parquet file
+        created_parquet_file = False
+
+        # retrieve information from metadata
+        name = metadata_obj['name']
+        id = metadata_obj['id']
+
+        # create metadata file name
+        metadata_file_name = create_standardized_file_name(id, name, 'metadata')
+
+        # save to json file 
+        with open(f"{SAVE_DIR}/metadata/{metadata_file_name}.json", 'w') as f:
+            json.dump(metadata_obj, f)
+        logger.info(f"Saved {metadata_file_name} as json file")
+
+        # create file name
+        feature_file_name = create_standardized_file_name(id, name, 'feature')
+
+        # Try to create geojson object if geometry type exists
         geometry_type = get_geometry_type(feature_obj)
 
+        # if geometry type exists, create parquet file
         if geometry_type is not None:
             # convert to shapely object for loading into geodataframe
             geoms = [shape(feature_obj[geometry_type])]
@@ -120,18 +116,21 @@ if __name__ == "__main__":
             # create geodataframe
             gdf = gpd.GeoDataFrame(geometry=geoms)
 
-            # create file name
-            feature_file_name = create_standardized_file_name(id, name, 'feature')
-
             # save to geoparquet file in directory corresponding to geojson geometric type
             # create dir with geom_type
             geom_type = gdf.geom_type[0]
             save_dir = f"{SAVE_DIR}/features/{geom_type}"
             os.makedirs(save_dir, exist_ok=True)
             gdf.to_parquet(f"{save_dir}/{feature_file_name}.parquet")
+            created_parquet_file = True
+            logger.info(f"Saved {feature_file_name} as parquet file")
         else:
-            logger.error(f"Failed to create geoparquet file for {feature_file}: No geometry type found\nName: {name}\nKeys:{feature_obj.keys()}\nDescription: {metadata_obj['description']}")
-            continue
-        # except Exception as e:
-        #     logger.error(f"Failed to process id {id} ({name}): {e}")
-        #     continue
+            logger.info(f"No geometry type found for {feature_file}.")
+            created_parquet_file = False
+
+        # save as json if failed to create parquet file
+        if not created_parquet_file:
+            # save to json file
+            with open(f"{SAVE_DIR}/features/{feature_file_name}.json", 'w') as f:
+                json.dump(feature_obj, f)
+            logger.info(f"Saved {feature_file_name} as json file")
