@@ -13,7 +13,6 @@ https://data.calgary.ca/Environment/Natural-Areas/icxc-6yk3
 https://data.calgary.ca/Recreation-and-Culture/Parks-Water-Features/ispg-b7uq
 https://data.calgary.ca/Services-and-Amenities/Parks-Cemeteries/cf5t-fjzu
 https://data.calgary.ca/Environment/Hydrology/a2cn-dxht
-https://data.calgary.ca/Environment/Tree-Canopy-2015/ainq-wn9v/about_data
 https://data.calgary.ca/Environment/Climate-and-Environment-Dashboard-Data-Table/syit-k9nu/about_data
 https://data.calgary.ca/Environment/Calgarian-Perspectives-on-Climate-Change-Survey-Da/2hjg-ur5x/about_data
 https://data.calgary.ca/Environment/Calgary-Existing-Buildings-Environmental-Performan/ixvd-v9b3/about_data
