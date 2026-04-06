@@ -3,7 +3,6 @@
 import os
 import json
 import geopandas as gpd
-import pandas as pd
 from shapely.geometry import shape
 import logging
 import re
@@ -50,16 +49,53 @@ def create_standardized_file_name(dataset_id, dataset_name, append_str):
     camel_case_file_name = f"{dataset_id}_{camel_case_dataset_name}_{append_str}"
     return camel_case_file_name
 
-def get_geometry_type(data_json_obj):
+# identified these by reviewing files directly, the_geom is an outdated schema
+GEOMETRY_FIELD_NAMES = frozenset(
+    ("point", "linestring", "polygon", "multipoint", "multilinestring", "multipolygon", "the_geom", "geometry", "geom")
+)
+
+def get_geometry_type(data_json_obj: dict) -> str | None:
     """
-    Get the geometry type from the Open Calgary dataset JSON.
+    Returns the first lowercase geometry kind (e.g. 'multipolygon') found in the data,
+    or None if not found. Searches for any column key in each row matching a known geometry field name.
     """
-    geometry_types = ['point', 'linestring', 'polygon', 'multipoint', 'multilinestring', 'multipolygon']
-    data_json_obj_keys = [k.lower() for k in data_json_obj.keys()]
-    for geometry_type in geometry_types:
-        if geometry_type in data_json_obj_keys:
-            return geometry_type
+    for row in data_json_obj:
+        for k in row:
+            if k.lower() in GEOMETRY_FIELD_NAMES:
+                return k.lower()
     return None
+
+def open_calgary_list_to_gdf(records: list) -> gpd.GeoDataFrame:
+    """
+    Build a GeoDataFrame from Open Calgary *_data.json: a JSON array of flat dicts
+    with one geometry field (multipolygon, point, etc.) containing a GeoJSON geometry dict.
+
+    This is not the same as GeoJSON Feature objects; GeoDataFrame.from_features() does not apply.
+    """
+    if not records:
+        return gpd.GeoDataFrame(geometry=[])
+
+    # find the geometry key
+    geom_key = get_geometry_type(records)
+
+    if geom_key is None:
+        raise ValueError("No geometry column in any record")
+
+    rows = []
+    for row in records:
+        props = dict(row)
+        raw = props.pop(geom_key, None)
+        if raw is None:
+            geom = None
+        elif isinstance(raw, dict):
+            geom = shape(raw)
+        else:
+            geom = None
+        props["geometry"] = geom
+        rows.append(props)
+
+    gdf = gpd.GeoDataFrame(rows, geometry="geometry")
+    return gdf
 
 if __name__ == "__main__":
     # list all subdirectories in DATA_DIR, i.e. data sets
@@ -102,30 +138,41 @@ if __name__ == "__main__":
         # create file name
         feature_file_name = create_standardized_file_name(id, name, 'feature')
 
-        # Try to create geojson object if geometry type exists
-        geometry_type = get_geometry_type(feature_obj[0])
+        # Build GeoDataFrame: Open Calgary uses a JSON array of flat records with a geometry
+        # field (e.g. multipolygon), not GeoJSON Feature objects — from_features() is wrong here.
+        gdf = None
 
-        # if geometry type exists, create parquet file
-        if geometry_type is not None:
-            # unwrap feature_obj 
-            feature_obj = feature_obj[0]
+        # get geometry type
+        geom_type = get_geometry_type(feature_obj)
 
-            # convert to shapely object for loading into geodataframe
-            geoms = [shape(feature_obj[geometry_type])]
+        # build GeoDataFrame
+        try:
+            if isinstance(feature_obj, dict) and "features" in feature_obj:
+                gdf = gpd.GeoDataFrame.from_features(feature_obj)
+            elif isinstance(feature_obj, list) and feature_obj and geom_type is not None:
+                gdf = open_calgary_list_to_gdf(feature_obj)
+        except Exception:
+            logger.exception(
+                "Failed to build GeoDataFrame for %s/%s", subdir, feature_file
+            )
+            gdf = None
 
-            # create geodataframe
-            gdf = gpd.GeoDataFrame(geometry=geoms)
+        if gdf is not None and not gdf.empty and gdf.geometry.notna().any():
+            # find what the geom type, NOT using nan or geom_type which can potentailly be 'the_geom' or 'geometry'
+            true_geom_type = gdf.geom_type.unique()[-1].lower()
 
-            # save to geoparquet file in directory corresponding to geojson geometric type
-            # create dir with geom_type
-            geom_type = gdf.geom_type[0]
-            save_dir = f"{SAVE_DIR}/features/{geom_type}"
+            save_dir = f"{SAVE_DIR}/features/{true_geom_type}"
             os.makedirs(save_dir, exist_ok=True)
             gdf.to_parquet(f"{save_dir}/{feature_file_name}.parquet")
             created_parquet_file = True
-            logger.info(f"Saved {feature_file_name} as parquet file")
+            logger.info(
+                "Saved %s as parquet (%d rows, %s)", feature_file_name, len(gdf), geom_type
+            )
         else:
-            logger.info(f"No geometry type found for {feature_file}.")
+            if gdf is not None and gdf.empty: 
+                logger.info("Empty geometry for %s; skipping parquet.", feature_file)
+            else:
+                logger.info("Could not build valid geometries for %s.", feature_file)
             created_parquet_file = False
 
         # save as json if failed to create parquet file

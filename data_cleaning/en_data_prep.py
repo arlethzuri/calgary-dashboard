@@ -2,6 +2,7 @@
 ### Create geoparquet file per feature and json file with corresponding metadata
 import os
 import json
+import logging
 import geopandas as gpd
 
 def create_standardized_file_name(file_name, append_str):
@@ -33,6 +34,19 @@ os.makedirs(SAVE_DIR, exist_ok=True)
 os.makedirs(f"{SAVE_DIR}/features", exist_ok=True)
 os.makedirs(f"{SAVE_DIR}/metadata", exist_ok=True)
 
+# Set up logging
+# ref: https://realpython.com/python-logging/
+logger = logging.getLogger(__name__)
+
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s [%(levelname)s] %(message)s',
+    handlers=[
+        logging.FileHandler(f"{SAVE_DIR}/en_data_prep_{date}.log"),
+        logging.StreamHandler()
+    ]
+)
+
 if __name__ == "__main__":
     # list all subdirectories in DATA_DIR, i.e. feature servers
     subdirs = [d for d in os.listdir(DATA_DIR) if os.path.isdir(os.path.join(DATA_DIR, d))]
@@ -62,10 +76,13 @@ if __name__ == "__main__":
 
             # save to geoparquet file in directory corresponding to geojson geometric type
             # create dir with geom_type
-            geom_type = gdf.geom_type[0]
+            geom_type = gdf.geom_type.iloc[0].lower()
             save_dir = f"{SAVE_DIR}/features/{geom_type}"
             os.makedirs(save_dir, exist_ok=True)
             gdf.to_parquet(f"{save_dir}/{file_name}.parquet")
+            logger.info(
+                "Saved %s as parquet (%d rows, %s)", file_name, len(gdf), geom_type
+            )
 
         # update metadata:
         # 1. add layer name
@@ -84,3 +101,4 @@ if __name__ == "__main__":
             # save to json file
             with open(f"{SAVE_DIR}/metadata/{file_name}.json", 'w') as f:
                 json.dump(obj, f)
+            logger.info(f"Saved {file_name} as json file")
