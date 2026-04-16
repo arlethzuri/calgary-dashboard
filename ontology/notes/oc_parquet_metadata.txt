@@ -1,0 +1,176 @@
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+--- uqkc-h9wi_SolarProductionSites_metadata.json ---
+Metadata keys: ['id', 'name', 'assetType', 'averageRating', 'createdAt', 'description', 'diciBackend', 'displayType', 'downloadCount', 'hideFromCatalog', 'hideFromDataJson', 'locked', 'modifyingViewUid', 'newBackend', 'numberOfComments', 'oid', 'provenance', 'publicationAppendEnabled', 'publicationDate', 'publicationGroup', 'publicationStage', 'rowsUpdatedAt', 'rowsUpdatedBy', 'tableId', 'totalTimesRated', 'viewCount', 'viewLastModified', 'viewType', 'approvals', 'clientContext', 'columns', 'displayFormat', 'grants', 'metadata', 'owner', 'query', 'rights', 'tableAuthor', 'flags']
+
+--- uqkc-h9wi_SolarProductionSites_feature.parquet ---
+Feature columns: Index([':id', ':version', ':created_at', ':updated_at',
+       ':@computed_region_4a3i_ccfj', ':@computed_region_dspr_7vyd',
+       ':@computed_region_4b54_tmc4', 'facility_name', 'facility_address',
+       'rated_capacity', 'geometry'],
+      dtype='str')
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+--- g9s5-qhu5_AirQualityDataNear_metadata.json ---
+Metadata keys: ['id', 'name', 'assetType', 'attribution', 'attributionLink', 'averageRating', 'category', 'createdAt', 'description', 'diciBackend', 'displayType', 'downloadCount', 'hideFromCatalog', 'hideFromDataJson', 'licenseId', 'locked', 'newBackend', 'numberOfComments', 'oid', 'provenance', 'publicationAppendEnabled', 'publicationDate', 'publicationGroup', 'publicationStage', 'rowsUpdatedAt', 'rowsUpdatedBy', 'tableId', 'totalTimesRated', 'viewCount', 'viewLastModified', 'viewType', 'approvals', 'clientContext', 'columns', 'grants', 'license', 'metadata', 'owner', 'query', 'rights', 'tableAuthor', 'flags']
+
+--- g9s5-qhu5_AirQualityDataNear_feature.parquet ---
+Feature columns: Index([':id', ':version', ':created_at', ':updated_at',
+       ':@computed_region_4a3i_ccfj', ':@computed_region_dspr_7vyd',
+       ':@computed_region_4b54_tmc4', 'facility_name', 'facility_address',
+       'rated_capacity', 'geometry'],
+      dtype='str')
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+--- xmep-aasr_SchoolsIn_metadata.json ---
+Metadata keys: ['id', 'name', 'assetType', 'attribution', 'averageRating', 'category', 'createdAt', 'description', 'diciBackend', 'displayType', 'downloadCount', 'hideFromCatalog', 'hideFromDataJson', 'licenseId', 'locked', 'modifyingViewUid', 'newBackend', 'numberOfComments', 'oid', 'provenance', 'publicationAppendEnabled', 'publicationDate', 'publicationGroup', 'publicationStage', 'rowsUpdatedAt', 'rowsUpdatedBy', 'tableId', 'totalTimesRated', 'viewCount', 'viewLastModified', 'viewType', 'approvals', 'clientContext', 'columns', 'displayFormat', 'grants', 'license', 'metadata', 'owner', 'query', 'rights', 'tableAuthor', 'flags']
+
+--- xmep-aasr_SchoolsIn_feature.parquet ---
+Feature columns: Index([':id', ':version', ':created_at', ':updated_at',
+       ':@computed_region_4a3i_ccfj', ':@computed_region_dspr_7vyd',
+       ':@computed_region_4b54_tmc4', 'facility_name', 'facility_address',
+       'rated_capacity', 'geometry'],
+      dtype='str')
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+--- a2cn-dxht__metadata.json ---
+Metadata keys: ['id', 'name', 'assetType', 'averageRating', 'category', 'createdAt', 'description', 'diciBackend', 'displayType', 'downloadCount', 'hideFromCatalog', 'hideFromDataJson', 'licenseId', 'locked', 'modifyingViewUid', 'newBackend', 'numberOfComments', 'oid', 'provenance', 'publicationAppendEnabled', 'publicationDate', 'publicationGroup', 'publicationStage', 'rowsUpdatedAt', 'rowsUpdatedBy', 'tableId', 'totalTimesRated', 'viewCount', 'viewLastModified', 'viewType', 'approvals', 'clientContext', 'columns', 'displayFormat', 'grants', 'license', 'metadata', 'owner', 'query', 'rights', 'tableAuthor', 'tags', 'flags']
+
+--- a2cn-dxht__feature.parquet ---
+Feature columns: Index([':id', ':version', ':created_at', ':updated_at',
+       ':@computed_region_4a3i_ccfj', ':@computed_region_dspr_7vyd',
+       ':@computed_region_4b54_tmc4', 'facility_name', 'facility_address',
+       'rated_capacity', 'geometry'],
+      dtype='str')
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+--- 8gpx-dyin_CalgaryEquityIndex_metadata.json ---
+Metadata keys: ['id', 'name', 'assetType', 'attribution', 'averageRating', 'category', 'createdAt', 'description', 'diciBackend', 'displayType', 'downloadCount', 'hideFromCatalog', 'hideFromDataJson', 'licenseId', 'locked', 'modifyingViewUid', 'newBackend', 'numberOfComments', 'oid', 'provenance', 'publicationAppendEnabled', 'publicationDate', 'publicationGroup', 'publicationStage', 'rowClass', 'rowsUpdatedAt', 'tableId', 'totalTimesRated', 'viewCount', 'viewLastModified', 'viewType', 'approvals', 'clientContext', 'columns', 'displayFormat', 'grants', 'license', 'metadata', 'owner', 'query', 'rights', 'tableAuthor', 'tags', 'flags']
+
+--- 8gpx-dyin_CalgaryEquityIndex_feature.parquet ---
+Feature columns: Index([':id', ':version', ':created_at', ':updated_at',
+       ':@computed_region_4a3i_ccfj', ':@computed_region_dspr_7vyd',
+       ':@computed_region_4b54_tmc4', 'facility_name', 'facility_address',
+       'rated_capacity', 'geometry'],
+      dtype='str')
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+--- g8ma-sywr_City_metadata.json ---
+Metadata keys: ['id', 'name', 'assetType', 'attribution', 'averageRating', 'category', 'createdAt', 'description', 'diciBackend', 'displayType', 'downloadCount', 'hideFromCatalog', 'hideFromDataJson', 'licenseId', 'locked', 'modifyingViewUid', 'newBackend', 'numberOfComments', 'oid', 'provenance', 'publicationAppendEnabled', 'publicationDate', 'publicationGroup', 'publicationStage', 'rowsUpdatedAt', 'tableId', 'totalTimesRated', 'viewCount', 'viewLastModified', 'viewType', 'approvals', 'clientContext', 'columns', 'displayFormat', 'grants', 'license', 'metadata', 'owner', 'query', 'rights', 'tableAuthor', 'flags']
+
+--- g8ma-sywr_City_feature.parquet ---
+Feature columns: Index([':id', ':version', ':created_at', ':updated_at',
+       ':@computed_region_4a3i_ccfj', ':@computed_region_dspr_7vyd',
+       ':@computed_region_4b54_tmc4', 'facility_name', 'facility_address',
+       'rated_capacity', 'geometry'],
+      dtype='str')
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+--- cf5t-fjzu_Parks_metadata.json ---
+Metadata keys: ['id', 'name', 'assetType', 'attribution', 'averageRating', 'category', 'createdAt', 'description', 'diciBackend', 'displayType', 'downloadCount', 'hideFromCatalog', 'hideFromDataJson', 'indexUpdatedAt', 'licenseId', 'locked', 'modifyingViewUid', 'newBackend', 'numberOfComments', 'oid', 'previewImageId', 'provenance', 'publicationAppendEnabled', 'publicationDate', 'publicationGroup', 'publicationStage', 'rowsUpdatedAt', 'tableId', 'totalTimesRated', 'viewCount', 'viewLastModified', 'viewType', 'approvals', 'clientContext', 'columns', 'displayFormat', 'grants', 'license', 'metadata', 'owner', 'query', 'rights', 'tableAuthor', 'tags', 'flags']
+
+--- cf5t-fjzu_Parks_feature.parquet ---
+Feature columns: Index([':id', ':version', ':created_at', ':updated_at',
+       ':@computed_region_4a3i_ccfj', ':@computed_region_dspr_7vyd',
+       ':@computed_region_4b54_tmc4', 'facility_name', 'facility_address',
+       'rated_capacity', 'geometry'],
+      dtype='str')
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+--- ab7m-fwn6_Community_metadata.json ---
+Metadata keys: ['id', 'name', 'assetType', 'attribution', 'averageRating', 'category', 'createdAt', 'description', 'diciBackend', 'displayType', 'downloadCount', 'hideFromCatalog', 'hideFromDataJson', 'licenseId', 'locked', 'modifyingViewUid', 'newBackend', 'numberOfComments', 'oid', 'provenance', 'publicationAppendEnabled', 'publicationDate', 'publicationGroup', 'publicationStage', 'rowsUpdatedAt', 'rowsUpdatedBy', 'tableId', 'totalTimesRated', 'viewCount', 'viewLastModified', 'viewType', 'approvals', 'clientContext', 'columns', 'displayFormat', 'grants', 'license', 'metadata', 'owner', 'query', 'rights', 'tableAuthor', 'tags', 'flags']
+
+--- ab7m-fwn6_Community_feature.parquet ---
+Feature columns: Index([':id', ':version', ':created_at', ':updated_at',
+       ':@computed_region_4a3i_ccfj', ':@computed_region_dspr_7vyd',
+       ':@computed_region_4b54_tmc4', 'facility_name', 'facility_address',
+       'rated_capacity', 'geometry'],
+      dtype='str')
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+--- duxj-44dv_CityPlanningSectors_metadata.json ---
+Metadata keys: ['id', 'name', 'assetType', 'attribution', 'averageRating', 'category', 'createdAt', 'description', 'diciBackend', 'displayType', 'downloadCount', 'hideFromCatalog', 'hideFromDataJson', 'licenseId', 'locked', 'modifyingViewUid', 'newBackend', 'numberOfComments', 'oid', 'provenance', 'publicationAppendEnabled', 'publicationDate', 'publicationGroup', 'publicationStage', 'rowsUpdatedAt', 'tableId', 'totalTimesRated', 'viewCount', 'viewLastModified', 'viewType', 'approvals', 'clientContext', 'columns', 'displayFormat', 'grants', 'license', 'metadata', 'owner', 'query', 'rights', 'tableAuthor', 'flags']
+
+--- duxj-44dv_CityPlanningSectors_feature.parquet ---
+Feature columns: Index([':id', ':version', ':created_at', ':updated_at',
+       ':@computed_region_4a3i_ccfj', ':@computed_region_dspr_7vyd',
+       ':@computed_region_4b54_tmc4', 'facility_name', 'facility_address',
+       'rated_capacity', 'geometry'],
+      dtype='str')
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+--- icxc-6yk3_Natural_metadata.json ---
+Metadata keys: ['id', 'name', 'assetType', 'attribution', 'averageRating', 'category', 'createdAt', 'description', 'diciBackend', 'displayType', 'downloadCount', 'hideFromCatalog', 'hideFromDataJson', 'licenseId', 'locked', 'modifyingViewUid', 'newBackend', 'numberOfComments', 'oid', 'provenance', 'publicationAppendEnabled', 'publicationDate', 'publicationGroup', 'publicationStage', 'rowClass', 'rowsUpdatedAt', 'rowsUpdatedBy', 'tableId', 'totalTimesRated', 'viewCount', 'viewLastModified', 'viewType', 'approvals', 'clientContext', 'columns', 'displayFormat', 'grants', 'license', 'metadata', 'owner', 'query', 'rights', 'tableAuthor', 'tags', 'flags']
+
+--- icxc-6yk3_Natural_feature.parquet ---
+Feature columns: Index([':id', ':version', ':created_at', ':updated_at',
+       ':@computed_region_4a3i_ccfj', ':@computed_region_dspr_7vyd',
+       ':@computed_region_4b54_tmc4', 'facility_name', 'facility_address',
+       'rated_capacity', 'geometry'],
+      dtype='str')
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+--- 299k-kwmq_AirportVicinityProtection_metadata.json ---
+Metadata keys: ['id', 'name', 'assetType', 'attribution', 'averageRating', 'createdAt', 'description', 'diciBackend', 'displayType', 'downloadCount', 'hideFromCatalog', 'hideFromDataJson', 'licenseId', 'locked', 'modifyingViewUid', 'newBackend', 'numberOfComments', 'oid', 'provenance', 'publicationAppendEnabled', 'publicationDate', 'publicationGroup', 'publicationStage', 'rowsUpdatedAt', 'tableId', 'totalTimesRated', 'viewCount', 'viewLastModified', 'viewType', 'approvals', 'clientContext', 'columns', 'displayFormat', 'grants', 'license', 'metadata', 'owner', 'query', 'rights', 'tableAuthor', 'flags']
+
+--- 299k-kwmq_AirportVicinityProtection_feature.parquet ---
+Feature columns: Index([':id', ':version', ':created_at', ':updated_at',
+       ':@computed_region_4a3i_ccfj', ':@computed_region_dspr_7vyd',
+       ':@computed_region_4b54_tmc4', 'facility_name', 'facility_address',
+       'rated_capacity', 'geometry'],
+      dtype='str')
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+--- n4vp-3exq_SuburbanResidentialGrowthSrgForecast_metadata.json ---
+Metadata keys: ['id', 'name', 'assetType', 'attribution', 'averageRating', 'category', 'createdAt', 'description', 'diciBackend', 'displayType', 'downloadCount', 'hideFromCatalog', 'hideFromDataJson', 'licenseId', 'locked', 'modifyingViewUid', 'newBackend', 'numberOfComments', 'oid', 'provenance', 'publicationAppendEnabled', 'publicationDate', 'publicationGroup', 'publicationStage', 'rowClass', 'rowsUpdatedAt', 'rowsUpdatedBy', 'tableId', 'totalTimesRated', 'viewCount', 'viewLastModified', 'viewType', 'approvals', 'clientContext', 'columns', 'displayFormat', 'grants', 'license', 'metadata', 'owner', 'query', 'rights', 'tableAuthor', 'flags']
+
+--- n4vp-3exq_SuburbanResidentialGrowthSrgForecast_feature.parquet ---
+Feature columns: Index([':id', ':version', ':created_at', ':updated_at',
+       ':@computed_region_4a3i_ccfj', ':@computed_region_dspr_7vyd',
+       ':@computed_region_4b54_tmc4', 'facility_name', 'facility_address',
+       'rated_capacity', 'geometry'],
+      dtype='str')
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+--- ainq-wn9v_TreeCanopy_metadata.json ---
+Metadata keys: ['id', 'name', 'assetType', 'averageRating', 'category', 'createdAt', 'description', 'diciBackend', 'displayType', 'downloadCount', 'hideFromCatalog', 'hideFromDataJson', 'licenseId', 'locked', 'newBackend', 'numberOfComments', 'oid', 'provenance', 'publicationAppendEnabled', 'publicationDate', 'publicationGroup', 'publicationStage', 'rowsUpdatedAt', 'tableId', 'totalTimesRated', 'viewCount', 'viewLastModified', 'viewType', 'approvals', 'clientContext', 'columns', 'grants', 'license', 'metadata', 'owner', 'query', 'rights', 'tableAuthor', 'tags', 'flags']
+
+--- ainq-wn9v_TreeCanopy_feature.parquet ---
+Feature columns: Index([':id', ':version', ':created_at', ':updated_at',
+       ':@computed_region_4a3i_ccfj', ':@computed_region_dspr_7vyd',
+       ':@computed_region_4b54_tmc4', 'facility_name', 'facility_address',
+       'rated_capacity', 'geometry'],
+      dtype='str')
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+--- mw9j-jik5_LandUse_metadata.json ---
+Metadata keys: ['id', 'name', 'assetType', 'attribution', 'averageRating', 'category', 'createdAt', 'description', 'diciBackend', 'displayType', 'downloadCount', 'hideFromCatalog', 'hideFromDataJson', 'licenseId', 'locked', 'newBackend', 'numberOfComments', 'oid', 'provenance', 'publicationAppendEnabled', 'publicationDate', 'publicationGroup', 'publicationStage', 'rowsUpdatedAt', 'rowsUpdatedBy', 'tableId', 'totalTimesRated', 'viewCount', 'viewLastModified', 'viewType', 'approvals', 'clientContext', 'columns', 'displayFormat', 'grants', 'license', 'metadata', 'owner', 'query', 'rights', 'tableAuthor', 'flags']
+
+--- mw9j-jik5_LandUse_feature.parquet ---
+Feature columns: Index([':id', ':version', ':created_at', ':updated_at',
+       ':@computed_region_4a3i_ccfj', ':@computed_region_dspr_7vyd',
+       ':@computed_region_4b54_tmc4', 'facility_name', 'facility_address',
+       'rated_capacity', 'geometry'],
+      dtype='str')
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+--- 7t9h-2z9s_City_metadata.json ---
+Metadata keys: ['id', 'name', 'assetType', 'attribution', 'averageRating', 'category', 'createdAt', 'description', 'diciBackend', 'displayType', 'downloadCount', 'hideFromCatalog', 'hideFromDataJson', 'licenseId', 'locked', 'modifyingViewUid', 'newBackend', 'numberOfComments', 'oid', 'provenance', 'publicationAppendEnabled', 'publicationDate', 'publicationGroup', 'publicationStage', 'rowClass', 'rowsUpdatedAt', 'rowsUpdatedBy', 'tableId', 'totalTimesRated', 'viewCount', 'viewLastModified', 'viewType', 'approvals', 'clientContext', 'columns', 'displayFormat', 'grants', 'license', 'metadata', 'owner', 'query', 'rights', 'tableAuthor', 'tags', 'flags']
+
+--- 7t9h-2z9s_City_feature.parquet ---
+Feature columns: Index([':id', ':version', ':created_at', ':updated_at',
+       ':@computed_region_4a3i_ccfj', ':@computed_region_dspr_7vyd',
+       ':@computed_region_4b54_tmc4', 'facility_name', 'facility_address',
+       'rated_capacity', 'geometry'],
+      dtype='str')
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+--- ispg-b7uq_ParksWater_metadata.json ---
+Metadata keys: ['id', 'name', 'assetType', 'attribution', 'averageRating', 'category', 'createdAt', 'description', 'diciBackend', 'displayType', 'downloadCount', 'hideFromCatalog', 'hideFromDataJson', 'indexUpdatedAt', 'licenseId', 'locked', 'modifyingViewUid', 'newBackend', 'numberOfComments', 'oid', 'previewImageId', 'provenance', 'publicationAppendEnabled', 'publicationDate', 'publicationGroup', 'publicationStage', 'rowsUpdatedAt', 'rowsUpdatedBy', 'tableId', 'totalTimesRated', 'viewCount', 'viewLastModified', 'viewType', 'approvals', 'clientContext', 'columns', 'displayFormat', 'grants', 'license', 'metadata', 'owner', 'query', 'rights', 'tableAuthor', 'tags', 'flags']
+
+--- ispg-b7uq_ParksWater_feature.parquet ---
+Feature columns: Index([':id', ':version', ':created_at', ':updated_at',
+       ':@computed_region_4a3i_ccfj', ':@computed_region_dspr_7vyd',
+       ':@computed_region_4b54_tmc4', 'facility_name', 'facility_address',
+       'rated_capacity', 'geometry'],
+      dtype='str')
