@@ -1,0 +1,63 @@
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+--- k85e-i265_ResidentialSolarPhotovoltaicPvSystem_metadata.json ---
+Metadata keys: ['id', 'name', 'assetType', 'attribution', 'averageRating', 'category', 'createdAt', 'description', 'diciBackend', 'displayType', 'downloadCount', 'hideFromCatalog', 'hideFromDataJson', 'licenseId', 'locked', 'newBackend', 'numberOfComments', 'oid', 'provenance', 'publicationAppendEnabled', 'publicationDate', 'publicationGroup', 'publicationStage', 'rowsUpdatedAt', 'tableId', 'totalTimesRated', 'viewCount', 'viewLastModified', 'viewType', 'approvals', 'clientContext', 'columns', 'grants', 'license', 'metadata', 'owner', 'query', 'rights', 'tableAuthor', 'tags', 'flags']
+
+--- k85e-i265_ResidentialSolarPhotovoltaicPvSystem_feature.json ---
+Feature keys: [':id', ':version', ':created_at', ':updated_at', 'address', 'number_of_panels', 'ac_annually_per_panel', 'area']
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+--- bz9b-77jf_SolarPowerEnergy_metadata.json ---
+Metadata keys: ['id', 'name', 'assetType', 'averageRating', 'category', 'createdAt', 'description', 'diciBackend', 'displayType', 'downloadCount', 'hideFromCatalog', 'hideFromDataJson', 'indexUpdatedAt', 'licenseId', 'locked', 'newBackend', 'numberOfComments', 'oid', 'provenance', 'publicationAppendEnabled', 'publicationDate', 'publicationGroup', 'publicationStage', 'rowsUpdatedAt', 'rowsUpdatedBy', 'tableId', 'totalTimesRated', 'viewCount', 'viewLastModified', 'viewType', 'approvals', 'clientContext', 'columns', 'displayFormat', 'grants', 'license', 'metadata', 'owner', 'query', 'rights', 'tableAuthor', 'flags']
+
+--- bz9b-77jf_SolarPowerEnergy_feature.json ---
+Feature keys: [':id', ':version', ':created_at', ':updated_at', 'business_unit_desc', 'facilityname', 'site_id', 'facilityaddress', 'energy_description', 'year', 'month', 'total_consumption', 'unit', 'unique_id']
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+--- a3uu-975p_CalgaryNewBuildingsEnvironmentalPerformance_metadata.json ---
+Metadata keys: ['id', 'name', 'assetType', 'averageRating', 'category', 'createdAt', 'description', 'diciBackend', 'displayType', 'downloadCount', 'hideFromCatalog', 'hideFromDataJson', 'locked', 'newBackend', 'numberOfComments', 'oid', 'provenance', 'publicationAppendEnabled', 'publicationDate', 'publicationGroup', 'publicationStage', 'rowsUpdatedAt', 'rowsUpdatedBy', 'tableId', 'totalTimesRated', 'viewCount', 'viewLastModified', 'viewType', 'approvals', 'clientContext', 'columns', 'grants', 'metadata', 'owner', 'query', 'rights', 'tableAuthor', 'flags']
+
+--- a3uu-975p_CalgaryNewBuildingsEnvironmentalPerformance_feature.json ---
+Feature keys: [':id', ':version', ':created_at', ':updated_at', 'year_ending', 'property_type', 'min_of_building_height_storeys', 'count_of_property_type', 'min_of_modelled_floor_area', 'average_of_modelled_floor', 'max_of_modelled_floor_area', 'average_of_building_height', 'min_of_fdwr', 'average_of_fdwr', 'max_of_fdwr', 'min_of_better_than_reference', 'average_of_better_than', 'max_of_better_than_reference', 'min_of_proposed_total_annual', 'max_of_building_height_storeys', 'average_of_proposed_total', 'max_of_proposed_total_annual', 'min_of_proposed_total_annual_1', 'average_of_proposed_total_1', 'max_of_proposed_total_annual_1', 'min_of_proposed_total_energy', 'average_of_proposed_total_2', 'max_of_proposed_total_energy', 'min_of_proposed_electricity', 'average_of_proposed', 'max_of_proposed_electricity', 'min_of_proposed_natural_gas', 'average_of_proposed_natural', 'max_of_proposed_natural_gas', 'min_of_proposed_total_energy_1', 'average_of_proposed_total_3', 'max_of_proposed_total_energy_1', 'min_of_electricity_greenhouse', 'average_of_electricity', 'max_of_electricity_greenhouse', 'min_of_natural_gas_greenhouse', 'average_of_natural_gas', 'max_of_natural_gas_greenhouse', 'min_of_total_greenhouse_gas', 'average_of_total_greenhouse', 'max_of_total_greenhouse_gas', 'average_of_electricity_1', 'min_of_electricity_greenhouse_1', 'max_of_electricity_greenhouse_1', 'min_of_natural_gas_greenhouse_1', 'average_of_natural_gas_1', 'max_of_natural_gas_greenhouse_1', 'min_of_total_greenhouse_gas_1', 'average_of_total_greenhouse_1', 'max_of_total_greenhouse_gas_1', 'min_of_estimated_project', 'average_of_estimated_project', 'max_of_estimated_project', 'min_of_estimated_project_1', 'average_of_estimated_project_1', 'max_of_estimated_project_1']
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+--- iric-4rrc_MonthlySolarEnergyProduction_metadata.json ---
+Metadata keys: ['id', 'name', 'assetType', 'attribution', 'averageRating', 'category', 'createdAt', 'description', 'diciBackend', 'displayType', 'downloadCount', 'hideFromCatalog', 'hideFromDataJson', 'licenseId', 'locked', 'newBackend', 'numberOfComments', 'oid', 'provenance', 'publicationAppendEnabled', 'publicationDate', 'publicationGroup', 'publicationStage', 'rowsUpdatedAt', 'rowsUpdatedBy', 'tableId', 'totalTimesRated', 'viewCount', 'viewLastModified', 'viewType', 'approvals', 'clientContext', 'columns', 'grants', 'license', 'metadata', 'owner', 'query', 'rights', 'tableAuthor', 'flags']
+
+--- iric-4rrc_MonthlySolarEnergyProduction_feature.json ---
+Feature keys: [':id', ':version', ':created_at', ':updated_at', 'facility_name', 'id', 'facility_address', 'period', 'solar_pv_production_kwh']
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+--- msye-bzwu_AnnualCorporateEnergyUseByBus_metadata.json ---
+Metadata keys: ['id', 'name', 'assetType', 'averageRating', 'category', 'createdAt', 'description', 'diciBackend', 'displayType', 'downloadCount', 'hideFromCatalog', 'hideFromDataJson', 'licenseId', 'locked', 'newBackend', 'numberOfComments', 'oid', 'provenance', 'publicationAppendEnabled', 'publicationDate', 'publicationGroup', 'publicationStage', 'rowsUpdatedAt', 'rowsUpdatedBy', 'tableId', 'totalTimesRated', 'viewCount', 'viewLastModified', 'viewType', 'approvals', 'clientContext', 'columns', 'displayFormat', 'grants', 'license', 'metadata', 'owner', 'query', 'rights', 'tableAuthor', 'flags']
+
+--- msye-bzwu_AnnualCorporateEnergyUseByBus_feature.json ---
+Feature keys: [':id', ':version', ':created_at', ':updated_at', 'business_unit_desc', 'facilityname', 'site_id', 'facilityaddress', 'energy_description', 'year', 'month', 'total_consumption', 'unit', 'unique_id']
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+--- syit-k9nu_ClimateAndEnvironmentDashboardData_metadata.json ---
+Metadata keys: ['id', 'name', 'assetType', 'attribution', 'averageRating', 'category', 'createdAt', 'description', 'diciBackend', 'displayType', 'downloadCount', 'hideFromCatalog', 'hideFromDataJson', 'locked', 'newBackend', 'numberOfComments', 'oid', 'provenance', 'publicationAppendEnabled', 'publicationDate', 'publicationGroup', 'publicationStage', 'rowsUpdatedAt', 'rowsUpdatedBy', 'tableId', 'totalTimesRated', 'viewCount', 'viewLastModified', 'viewType', 'approvals', 'clientContext', 'columns', 'grants', 'metadata', 'owner', 'query', 'rights', 'tableAuthor', 'flags']
+
+--- syit-k9nu_ClimateAndEnvironmentDashboardData_feature.json ---
+Feature keys: [':id', ':version', ':created_at', ':updated_at', 'metric_name', 'unit_of_measurement', 'focus_area', 'links', '_2019', '_2020', '_2021', '_2022', '_2023', '_2024', '_2025']
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+--- aphy-m9us_PrimaryElectricity_metadata.json ---
+Metadata keys: ['id', 'name', 'assetType', 'averageRating', 'category', 'createdAt', 'description', 'diciBackend', 'displayType', 'downloadCount', 'hideFromCatalog', 'hideFromDataJson', 'licenseId', 'locked', 'newBackend', 'numberOfComments', 'oid', 'provenance', 'publicationAppendEnabled', 'publicationDate', 'publicationGroup', 'publicationStage', 'rowsUpdatedAt', 'rowsUpdatedBy', 'tableId', 'totalTimesRated', 'viewCount', 'viewLastModified', 'viewType', 'approvals', 'clientContext', 'columns', 'displayFormat', 'grants', 'license', 'metadata', 'owner', 'query', 'rights', 'tableAuthor', 'flags']
+
+--- aphy-m9us_PrimaryElectricity_feature.json ---
+Feature keys: [':id', ':version', ':created_at', ':updated_at', 'business_unit_desc', 'facilityname', 'site_id', 'facilityaddress', 'energy_description', 'year', 'month', 'total_consumption', 'unit', 'unique_id']
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+--- ixvd-v9b3_CalgaryExistingBuildingsEnvironmentalPerformance_metadata.json ---
+Metadata keys: ['id', 'name', 'assetType', 'averageRating', 'category', 'createdAt', 'description', 'diciBackend', 'displayType', 'downloadCount', 'hideFromCatalog', 'hideFromDataJson', 'locked', 'newBackend', 'numberOfComments', 'oid', 'provenance', 'publicationAppendEnabled', 'publicationDate', 'publicationGroup', 'publicationStage', 'rowsUpdatedAt', 'rowsUpdatedBy', 'tableId', 'totalTimesRated', 'viewCount', 'viewLastModified', 'viewType', 'approvals', 'clientContext', 'columns', 'grants', 'metadata', 'owner', 'query', 'rights', 'tableAuthor', 'flags']
+
+--- ixvd-v9b3_CalgaryExistingBuildingsEnvironmentalPerformance_feature.json ---
+Feature keys: [':id', ':version', ':created_at', ':updated_at', 'year_ending', 'property_type', 'count_of_properties', 'sum_of_number_of_buildings', 'average_of_year_built', 'sum_of_property_gfa_self', 'sum_of_electricity_use_grid', 'sum_of_natural_gas_use_gj', 'sum_of_district_hot_water', 'sum_of_site_energy_use_gj', 'sum_of_weather_normalized', 'average_of_site_eui_gj_m', 'average_of_weather_normalized', 'sum_of_source_energy_use', 'sum_of_weather_normalized_1', 'average_of_source_eui_gj', 'average_of_weather_normalized_1', 'sum_of_direct_ghg_emissions', 'average_of_direct_ghg', 'sum_of_total_location_based', 'average_of_total_location']
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+--- crbp-innf_CorporateEnergy_metadata.json ---
+Metadata keys: ['id', 'name', 'assetType', 'averageRating', 'category', 'createdAt', 'description', 'diciBackend', 'displayType', 'downloadCount', 'hideFromCatalog', 'hideFromDataJson', 'indexUpdatedAt', 'licenseId', 'locked', 'newBackend', 'numberOfComments', 'oid', 'provenance', 'publicationAppendEnabled', 'publicationDate', 'publicationGroup', 'publicationStage', 'rowsUpdatedAt', 'rowsUpdatedBy', 'tableId', 'totalTimesRated', 'viewCount', 'viewLastModified', 'viewType', 'approvals', 'clientContext', 'columns', 'grants', 'license', 'metadata', 'owner', 'query', 'rights', 'tableAuthor', 'tags', 'flags']
+
+--- crbp-innf_CorporateEnergy_feature.json ---
+Feature keys: [':id', ':version', ':created_at', ':updated_at', 'business_unit_desc', 'facilityname', 'site_id', 'facilityaddress', 'energy_description', 'year', 'month', 'total_consumption', 'unit']
