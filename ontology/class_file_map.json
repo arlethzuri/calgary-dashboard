@@ -1,0 +1,68 @@
+{
+    "pairs": [
+      {
+        "class_name": "FeederSegment",
+        "relative_path": "enmax/20260327/features/linestring/ThreePhaseEstimatedRemainingHostingCapacity(February2025)_features.parquet",
+        "mode": "node"
+      },
+      {
+        "class_name": "FeederSegment",
+        "relative_path": "enmax/20260327/features/linestring/SinglePhaseEstimatedRemainingLoadCapacity(July2024)_features.parquet",
+        "mode": "node"
+      },
+      {
+        "class_name": "FeederMeasurement",
+        "relative_path": "enmax/20260327/features/linestring/ThreePhaseEstimatedRemainingHostingCapacity(February2025)_features.parquet",
+        "mode": "measurement"
+      },
+      {
+        "class_name": "FeederMeasurement",
+        "relative_path": "enmax/20260327/features/linestring/SinglePhaseEstimatedRemainingLoadCapacity(July2024)_features.parquet",
+        "mode": "measurement"
+      },
+      {
+        "class_name": "MonitoringStation",
+        "relative_path": "open_calgary/20260327/features/point/g9s5-qhu5_AirQualityDataNear_feature.parquet",
+        "mode": "node"
+      },
+      {
+        "class_name": "AirQualityReading",
+        "relative_path": "open_calgary/20260327/features/point/g9s5-qhu5_AirQualityDataNear_feature.parquet",
+        "mode": "measurement"
+      },
+      {
+        "class_name": "SolarProductionSite",
+        "relative_path": "open_calgary/20260327/features/point/uqkc-h9wi_SolarProductionSites_feature.parquet",
+        "mode": "node"
+      },
+      {
+        "class_name": "CityLimits",
+        "relative_path": "open_calgary/20260327/features/multipolygon/7t9h-2z9s_City_feature.parquet",
+        "mode": "node"
+      },
+      {"class_name": "CityQuadrant",
+        "relative_path": "open_calgary/20260327/features/multipolygon/g8ma-sywr_City_feature.parquet",
+        "mode": "node"
+      },
+      {
+        "class_name": "ENMAXServiceArea",
+        "relative_path": "enmax/20260327/features/polygon/EnmaxServiceArea_features.parquet",
+        "mode": "node"
+      },
+      {
+        "class_name": "AirportVicinity",
+        "relative_path": "open_calgary/20260327/features/multipolygon/299k-kwmq_AirportVicinityProtection_feature.parquet",
+        "mode": "node"
+      },
+      {
+        "class_name": "CityBuilding",
+        "relative_path": "open_calgary/20260327/features/point/crbp-innf_CorporateEnergy_feature.json",
+        "mode": "node"
+      },
+      {
+        "class_name": "EnergyConsumptionRecord",
+        "relative_path": "open_calgary/20260327/features/point/crbp-innf_CorporateEnergy_feature.json",
+        "mode": "measurement"
+      }
+    ]
+  }
