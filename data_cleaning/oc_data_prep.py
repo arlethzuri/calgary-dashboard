@@ -7,11 +7,13 @@ from shapely.geometry import shape
 import logging
 import re
 
-# directory to raw ENMAX data, use latest download
-date = "20260327"
-DATA_DIR = f"/sci-it/hosts/olympus/calgary/data/open_calgary/{date}"
+# directory to raw open calgary data, use latest download
+date = "20260426"
+DATA_DIR = f"/Users/arleth/Desktop/calgary-dashboard/data/calgary/data/open_calgary/{date}"
+# DATA_DIR = f"/sci-it/hosts/olympus/calgary/data/open_calgary/{date}"
 # directory to save the cleaned data
-SAVE_DIR = f"/sci-it/hosts/olympus/calgary/processed_data/open_calgary/{date}"
+SAVE_DIR = f"/Users/arleth/Desktop/calgary-dashboard/data/calgary/processed_data/open_calgary/{date}"
+# SAVE_DIR = f"/sci-it/hosts/olympus/calgary/processed_data/open_calgary/{date}"
 os.makedirs(SAVE_DIR, exist_ok=True)
 os.makedirs(f"{SAVE_DIR}/features", exist_ok=True)
 os.makedirs(f"{SAVE_DIR}/metadata", exist_ok=True)
@@ -54,7 +56,7 @@ GEOMETRY_FIELD_NAMES = frozenset(
     ("point", "linestring", "polygon", "multipoint", "multilinestring", "multipolygon", "the_geom", "geometry", "geom")
 )
 
-def get_geometry_type(data_json_obj: dict) -> str | None:
+def get_geometry_type(data_json_obj: dict) -> str:
     """
     Returns the first lowercase geometry kind (e.g. 'multipolygon') found in the data,
     or None if not found. Searches for any column key in each row matching a known geometry field name.
@@ -63,7 +65,7 @@ def get_geometry_type(data_json_obj: dict) -> str | None:
         for k in row:
             if k.lower() in GEOMETRY_FIELD_NAMES:
                 return k.lower()
-    return None
+    raise ValueError("No geometry column in any record")
 
 def open_calgary_list_to_gdf(records: list) -> gpd.GeoDataFrame:
     """

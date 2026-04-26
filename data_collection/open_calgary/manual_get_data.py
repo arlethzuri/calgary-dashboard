@@ -9,7 +9,8 @@ curr_date = dt.datetime.now().strftime("%Y%m%d")
 
 # token can be created with account at data.calgary.ca
 APP_TOKEN = "g8EtMlEOBGi7qHws7qqJ5GCVM"
-OPEN_CALGARY_DATA_DIR = f"/sci-it/hosts/olympus/calgary/data/open_calgary/"
+OPEN_CALGARY_DATA_DIR = f"/Users/arleth/Desktop/calgary-dashboard/data/calgary/data/open_calgary"
+# OPEN_CALGARY_DATA_DIR = f"/sci-it/hosts/olympus/calgary/data/open_calgary/"
 DOWNLOAD_DIR = f"{OPEN_CALGARY_DATA_DIR}/{curr_date}"
 os.makedirs(DOWNLOAD_DIR, exist_ok=True)
 
@@ -26,8 +27,9 @@ logging.basicConfig(
     ]
 )
 
+dataset_urls_file = './flood_sets.txt'
 # Load URLs of datasets we manually identified on Open Calgary portal (data.calgary.ca)
-with open('./manually_selected_datasets.txt', 'r') as f:
+with open(dataset_urls_file, 'r') as f:
     DATASET_URLS = [line.strip() for line in f if line.strip()]
 
 # Extract dataset IDs from each URL. If 'about_data' is in the URL, get the string before 'about_data' and split by '/', 
