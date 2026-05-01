@@ -65,7 +65,7 @@ def get_geometry_type(data_json_obj: dict) -> str:
         for k in row:
             if k.lower() in GEOMETRY_FIELD_NAMES:
                 return k.lower()
-    raise ValueError("No geometry column in any record")
+    return None
 
 def open_calgary_list_to_gdf(records: list) -> gpd.GeoDataFrame:
     """
@@ -138,7 +138,7 @@ if __name__ == "__main__":
         logger.info(f"Saved {metadata_file_name} as json file")
 
         # create file name
-        feature_file_name = create_standardized_file_name(id, name, 'feature')
+        feature_file_name = create_standardized_file_name(id, name, 'features')
 
         # Build GeoDataFrame: Open Calgary uses a JSON array of flat records with a geometry
         # field (e.g. multipolygon), not GeoJSON Feature objects — from_features() is wrong here.
