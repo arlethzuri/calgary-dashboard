@@ -1,0 +1,1 @@
+This directory contains text files of manually collected URLs of datasets of interest for plotting on the Calgary dashboard.

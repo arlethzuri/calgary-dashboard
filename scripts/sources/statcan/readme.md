@@ -1,0 +1,1 @@
+The download sources here must follow the URL patten format as specified by [statcan WDS user-guide "getFullTableDownloadCSV"](https://www.statcan.gc.ca/en/developers/wds/user-guide).

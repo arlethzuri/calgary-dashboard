@@ -1,0 +1,127 @@
+{
+  "ontology": {
+    "name": "Calgary ENMAX Ontology",
+    "sources": ["ENMAX public map data", "Open Calgary open data"],
+    "notes": "Unified from iPad sketches. Red annotations from sketch 2 preserved as 'open_questions'."
+  },
+
+  "classes": {
+    "AdministrativeZone": {
+      "type": "abstract_class",
+      "properties": {
+        "required": ["geometry", "maintained_by", "spatial_reference"],
+        "optional": ["name", "created_at", "description"]
+      }
+    },
+    "Infrastructure": {
+      "type": "abstract_class",
+      "properties": {
+        "required": ["name", "description", "geometry", "maintained_by", "spatial_reference"]
+      }
+    },
+    "FeederSegment": {
+      "type": "class",
+      "parent_class": "Infrastructure",
+      "properties": {
+        "required_local": ["feeder_id"]
+      }
+    },
+    "FeederMeasurement": {
+      "type": "class",
+      "properties": {
+        "required_local": ["feeder_id", "phase_designation", "capacity_available", "kva_number", "date_last_updated"],
+        "foreign_keys": ["feeder_id"]
+      }
+    },
+    "MonitoringStation": {
+      "type": "class",
+      "parent_class": "Infrastructure",
+      "properties": {
+        "required_local": ["abbreviation", "url"]
+      }
+    },
+    "AirQualityReading": {
+      "type": "class",
+      "properties": {
+        "required_local": ["parameter", "value", "units", "id", "abbreviation", "readingdate"],
+        "foreign_keys": ["abbreviation"]
+      }
+    },
+    "SolarProductionSite": {
+      "type": "class",
+      "parent_class": "Infrastructure",
+      "properties": {
+        "required_local": ["facility_address", "rated_capacity"]
+      }
+    },
+    "CityLimits": {
+      "type": "class",
+      "parent_class": "AdministrativeZone"
+    },
+    "CityQuadrant": {
+      "type": "class",
+      "parent_class": "AdministrativeZone",
+      "properties": {
+        "required_local": ["quadrant"]
+      }
+    },
+    "ENMAXServiceArea": {
+      "type": "class",
+      "parent_class": "AdministrativeZone",
+      "properties": {
+        "required_local": ["type"],
+        "optional_local": ["link"]
+      }
+    },
+    "AirportVicinity": {
+      "type": "class",
+      "parent_class": "AdministrativeZone"
+    },
+    "CityBuilding": {
+      "type": "class",
+      "parent_class": "Infrastructure",
+      "properties": {
+        "required_local": ["site_id", "address"]
+      }
+    },
+    "EnergyConsumptionRecord": {
+      "type": "class",
+      "properties": {
+        "required_local": ["site_id", "energy_type", "year", "month", "total_consumption", "unit"],
+        "foreign_keys": ["site_id"]
+      }
+    }
+  },
+  "relationships": [
+    { "name": "HAS_READING", 
+    "from": "MonitoringStation", 
+    "to": "AirQualityReading", 
+    "join_on":{
+      "from_property": "abbreviation",
+      "to_property": "abbreviation"
+    } },
+    { "name": "HAS_MEASUREMENT",
+      "from": "FeederSegment",
+      "to": "FeederMeasurement",
+      "join_on": {
+        "from_property": "feeder_id",
+        "to_property": "feeder_id"
+      }
+    },
+    { "name": "SPATIALLY_CONTAINS",
+    "from": "AdministrativeZone",
+    "to": "Infrastructure",
+    "join_on":{
+      "from_property": "geometry",
+      "to_property": "geometry"
+    } },
+    { "name": "USES_ENERGY",
+      "from": "CityBuilding",
+      "to": "EnergyConsumptionRecord",
+      "join_on": {
+        "from_property": "site_id",
+        "to_property": "site_id"
+      }
+    }
+  ]
+}
