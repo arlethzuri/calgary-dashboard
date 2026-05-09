@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-08T04:21:23.571725+00:00",
+  "generated_at": "2026-05-09T18:19:44.951912+00:00",
   "root": "/Users/arleth/Research_Work/calgary-dashboard/data/calgary/processed_data",
   "snapshots": [
     "20260507"
@@ -37,7 +37,7 @@
       "role": "log",
       "geometry_bucket": null,
       "extension": ".log",
-      "filename": "en_data_prep_20260507",
+      "file_name": "en_data_prep_20260507",
       "size_bytes": 3478,
       "schema": null
     },
@@ -48,7 +48,7 @@
       "role": "feature",
       "geometry_bucket": "linestring",
       "extension": ".parquet",
-      "filename": "EnmaxServiceArea_features",
+      "file_name": "EnmaxServiceArea_features",
       "size_bytes": 19812,
       "schema": {
         "columns": [
@@ -74,7 +74,7 @@
       "role": "feature",
       "geometry_bucket": "linestring",
       "extension": ".parquet",
-      "filename": "ServiceArea_features",
+      "file_name": "ServiceArea_features",
       "size_bytes": 19812,
       "schema": {
         "columns": [
@@ -100,7 +100,7 @@
       "role": "feature",
       "geometry_bucket": "linestring",
       "extension": ".parquet",
-      "filename": "SinglePhaseEstimatedRemainingLoadCapacityJuly2024_features",
+      "file_name": "SinglePhaseEstimatedRemainingLoadCapacityJuly2024_features",
       "size_bytes": 32626778,
       "schema": {
         "columns": [
@@ -134,7 +134,7 @@
       "role": "feature",
       "geometry_bucket": "linestring",
       "extension": ".parquet",
-      "filename": "ThreePhaseEstimatedRemainingHostingCapacityFebruary2025_features",
+      "file_name": "ThreePhaseEstimatedRemainingHostingCapacityFebruary2025_features",
       "size_bytes": 34672520,
       "schema": {
         "columns": [
@@ -166,7 +166,7 @@
       "role": "feature",
       "geometry_bucket": "linestring",
       "extension": ".parquet",
-      "filename": "TwoAndThreePhaseEstimatedRemainingLoadCapacityDecember2025_features",
+      "file_name": "TwoAndThreePhaseEstimatedRemainingLoadCapacityDecember2025_features",
       "size_bytes": 33013664,
       "schema": {
         "columns": [
@@ -200,7 +200,7 @@
       "role": "feature",
       "geometry_bucket": "linestring",
       "extension": ".parquet",
-      "filename": "TwoAndThreePhaseEstimatedRemainingLoadCapacityJuly2024_features",
+      "file_name": "TwoAndThreePhaseEstimatedRemainingLoadCapacityJuly2024_features",
       "size_bytes": 9487622,
       "schema": {
         "columns": [
@@ -234,7 +234,7 @@
       "role": "feature",
       "geometry_bucket": "multipolygon",
       "extension": ".parquet",
-      "filename": "AreasWithNoDataPleaseContactEnmax_features",
+      "file_name": "AreasWithNoDataPleaseContactEnmax_features",
       "size_bytes": 230807,
       "schema": {
         "columns": [
@@ -258,7 +258,7 @@
       "role": "feature",
       "geometry_bucket": "point",
       "extension": ".parquet",
-      "filename": "EnmaxDowntownProjects20230324_features",
+      "file_name": "EnmaxDowntownProjects20230324_features",
       "size_bytes": 7202,
       "schema": {
         "columns": [
@@ -288,7 +288,7 @@
       "role": "feature",
       "geometry_bucket": "polygon",
       "extension": ".parquet",
-      "filename": "CalgaryCityLimits_features",
+      "file_name": "CalgaryCityLimits_features",
       "size_bytes": 59955,
       "schema": {
         "columns": [
@@ -324,7 +324,7 @@
       "role": "feature",
       "geometry_bucket": "polygon",
       "extension": ".parquet",
-      "filename": "EnmaxDistributionLimit_features",
+      "file_name": "EnmaxDistributionLimit_features",
       "size_bytes": 18661,
       "schema": {
         "columns": [
@@ -346,7 +346,7 @@
       "role": "feature",
       "geometry_bucket": "polygon",
       "extension": ".parquet",
-      "filename": "EnmaxServiceArea_features",
+      "file_name": "EnmaxServiceArea_features",
       "size_bytes": 356091,
       "schema": {
         "columns": [
@@ -376,7 +376,7 @@
       "role": "metadata",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "AreasWithNoDataPleaseContactEnmax_metadata",
+      "file_name": "AreasWithNoDataPleaseContactEnmax_metadata",
       "size_bytes": 10295,
       "schema": null
     },
@@ -387,7 +387,7 @@
       "role": "metadata",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "CalgaryCityLimits_metadata",
+      "file_name": "CalgaryCityLimits_metadata",
       "size_bytes": 10053,
       "schema": null
     },
@@ -398,7 +398,7 @@
       "role": "metadata",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "EnmaxDistributionLimit_metadata",
+      "file_name": "EnmaxDistributionLimit_metadata",
       "size_bytes": 8016,
       "schema": null
     },
@@ -409,7 +409,7 @@
       "role": "metadata",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "EnmaxDowntownProjects20230324_metadata",
+      "file_name": "EnmaxDowntownProjects20230324_metadata",
       "size_bytes": 13011,
       "schema": null
     },
@@ -420,7 +420,7 @@
       "role": "metadata",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "EnmaxServiceArea_metadata",
+      "file_name": "EnmaxServiceArea_metadata",
       "size_bytes": 10142,
       "schema": null
     },
@@ -431,7 +431,7 @@
       "role": "metadata",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "ServiceArea_metadata",
+      "file_name": "ServiceArea_metadata",
       "size_bytes": 9247,
       "schema": null
     },
@@ -442,7 +442,7 @@
       "role": "metadata",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "SinglePhaseEstimatedRemainingLoadCapacityJuly2024_metadata",
+      "file_name": "SinglePhaseEstimatedRemainingLoadCapacityJuly2024_metadata",
       "size_bytes": 14854,
       "schema": null
     },
@@ -453,7 +453,7 @@
       "role": "metadata",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "ThreePhaseEstimatedRemainingHostingCapacityFebruary2025_metadata",
+      "file_name": "ThreePhaseEstimatedRemainingHostingCapacityFebruary2025_metadata",
       "size_bytes": 14341,
       "schema": null
     },
@@ -464,7 +464,7 @@
       "role": "metadata",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "TwoAndThreePhaseEstimatedRemainingLoadCapacityDecember2025_metadata",
+      "file_name": "TwoAndThreePhaseEstimatedRemainingLoadCapacityDecember2025_metadata",
       "size_bytes": 14655,
       "schema": null
     },
@@ -475,7 +475,7 @@
       "role": "metadata",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "TwoAndThreePhaseEstimatedRemainingLoadCapacityJuly2024_metadata",
+      "file_name": "TwoAndThreePhaseEstimatedRemainingLoadCapacityJuly2024_metadata",
       "size_bytes": 14936,
       "schema": null
     },
@@ -486,7 +486,7 @@
       "role": "feature",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "a3uu-975p_CalgaryNewBuildingsEnvironmentalPerformanceMetrics_features",
+      "file_name": "a3uu-975p_CalgaryNewBuildingsEnvironmentalPerformanceMetrics_features",
       "size_bytes": 27336,
       "schema": null
     },
@@ -497,7 +497,7 @@
       "role": "feature",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "aphy-m9us_PrimaryElectricityUsage_features",
+      "file_name": "aphy-m9us_PrimaryElectricityUsage_features",
       "size_bytes": 233950436,
       "schema": null
     },
@@ -508,7 +508,7 @@
       "role": "feature",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "bz9b-77jf_SolarPowerEnergyUtilization_features",
+      "file_name": "bz9b-77jf_SolarPowerEnergyUtilization_features",
       "size_bytes": 233950436,
       "schema": null
     },
@@ -519,7 +519,7 @@
       "role": "feature",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "crbp-innf_CorporateEnergyConsumption_features",
+      "file_name": "crbp-innf_CorporateEnergyConsumption_features",
       "size_bytes": 200752301,
       "schema": null
     },
@@ -530,7 +530,7 @@
       "role": "feature",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "iric-4rrc_MonthlySolarEnergyProductionKwh_features",
+      "file_name": "iric-4rrc_MonthlySolarEnergyProductionKwh_features",
       "size_bytes": 716896,
       "schema": null
     },
@@ -541,7 +541,7 @@
       "role": "feature",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "ixvd-v9b3_CalgaryExistingBuildingsEnvironmentalPerformanceMetrics_features",
+      "file_name": "ixvd-v9b3_CalgaryExistingBuildingsEnvironmentalPerformanceMetrics_features",
       "size_bytes": 205982,
       "schema": null
     },
@@ -552,7 +552,7 @@
       "role": "feature",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "k85e-i265_ResidentialSolarPhotovoltaicPvSystemPotential_features",
+      "file_name": "k85e-i265_ResidentialSolarPhotovoltaicPvSystemPotential_features",
       "size_bytes": 403931280,
       "schema": null
     },
@@ -563,7 +563,7 @@
       "role": "feature",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "msye-bzwu_AnnualCorporateEnergyUseByBusUnits_features",
+      "file_name": "msye-bzwu_AnnualCorporateEnergyUseByBusUnits_features",
       "size_bytes": 233950436,
       "schema": null
     },
@@ -574,7 +574,7 @@
       "role": "feature",
       "geometry_bucket": "multipolygon",
       "extension": ".parquet",
-      "filename": "299k-kwmq_AirportVicinityProtectionArea_features",
+      "file_name": "299k-kwmq_AirportVicinityProtectionArea_features",
       "size_bytes": 25588,
       "schema": {
         "columns": [
@@ -604,7 +604,7 @@
       "role": "feature",
       "geometry_bucket": "multipolygon",
       "extension": ".parquet",
-      "filename": "7t9h-2z9s_CityBoundary_features",
+      "file_name": "7t9h-2z9s_CityBoundary_features",
       "size_bytes": 65759,
       "schema": {
         "columns": [
@@ -634,7 +634,7 @@
       "role": "feature",
       "geometry_bucket": "multipolygon",
       "extension": ".parquet",
-      "filename": "8gpx-dyin_CalgaryEquityIndexPopulation_features",
+      "file_name": "8gpx-dyin_CalgaryEquityIndexPopulation_features",
       "size_bytes": 798889,
       "schema": {
         "columns": [
@@ -682,7 +682,7 @@
       "role": "feature",
       "geometry_bucket": "multipolygon",
       "extension": ".parquet",
-      "filename": "a2cn-dxht_Hydrology_features",
+      "file_name": "a2cn-dxht_Hydrology_features",
       "size_bytes": 14132445,
       "schema": {
         "columns": [
@@ -714,7 +714,7 @@
       "role": "feature",
       "geometry_bucket": "multipolygon",
       "extension": ".parquet",
-      "filename": "ab7m-fwn6_CommunityBoundaries_features",
+      "file_name": "ab7m-fwn6_CommunityBoundaries_features",
       "size_bytes": 1216903,
       "schema": {
         "columns": [
@@ -758,7 +758,7 @@
       "role": "feature",
       "geometry_bucket": "multipolygon",
       "extension": ".parquet",
-      "filename": "cf5t-fjzu_ParksCemeteries_features",
+      "file_name": "cf5t-fjzu_ParksCemeteries_features",
       "size_bytes": 109977,
       "schema": {
         "columns": [
@@ -800,7 +800,7 @@
       "role": "feature",
       "geometry_bucket": "multipolygon",
       "extension": ".parquet",
-      "filename": "duxj-44dv_CityPlanningSectorsMap_features",
+      "file_name": "duxj-44dv_CityPlanningSectorsMap_features",
       "size_bytes": 407368,
       "schema": {
         "columns": [
@@ -844,7 +844,7 @@
       "role": "feature",
       "geometry_bucket": "multipolygon",
       "extension": ".parquet",
-      "filename": "g8ma-sywr_CityQuadrants_features",
+      "file_name": "g8ma-sywr_CityQuadrants_features",
       "size_bytes": 89544,
       "schema": {
         "columns": [
@@ -874,7 +874,7 @@
       "role": "feature",
       "geometry_bucket": "multipolygon",
       "extension": ".parquet",
-      "filename": "icxc-6yk3_NaturalAreas_features",
+      "file_name": "icxc-6yk3_NaturalAreas_features",
       "size_bytes": 3726655,
       "schema": {
         "columns": [
@@ -922,7 +922,7 @@
       "role": "feature",
       "geometry_bucket": "multipolygon",
       "extension": ".parquet",
-      "filename": "mw9j-jik5_LandUseDistricts_features",
+      "file_name": "mw9j-jik5_LandUseDistricts_features",
       "size_bytes": 10103974,
       "schema": {
         "columns": [
@@ -970,7 +970,7 @@
       "role": "feature",
       "geometry_bucket": "multipolygon",
       "extension": ".parquet",
-      "filename": "n4vp-3exq_SuburbanResidentialGrowthSrgForecastMap_features",
+      "file_name": "n4vp-3exq_SuburbanResidentialGrowthSrgForecastMap_features",
       "size_bytes": 368634,
       "schema": {
         "columns": [
@@ -1026,7 +1026,7 @@
       "role": "feature",
       "geometry_bucket": "multipolygon",
       "extension": ".parquet",
-      "filename": "tp6q-x2v7_RegulatoryFloodMapBylawFloodHazard_features",
+      "file_name": "tp6q-x2v7_RegulatoryFloodMapBylawFloodHazard_features",
       "size_bytes": 13492184,
       "schema": {
         "columns": [
@@ -1058,7 +1058,7 @@
       "role": "feature",
       "geometry_bucket": "point",
       "extension": ".parquet",
-      "filename": "g9s5-qhu5_AirQualityDataNearRealtime_features",
+      "file_name": "g9s5-qhu5_AirQualityDataNearRealtime_features",
       "size_bytes": 147933055,
       "schema": {
         "columns": [
@@ -1114,7 +1114,7 @@
       "role": "feature",
       "geometry_bucket": "point",
       "extension": ".parquet",
-      "filename": "uqkc-h9wi_SolarProductionSitesMap_features",
+      "file_name": "uqkc-h9wi_SolarProductionSitesMap_features",
       "size_bytes": 11043,
       "schema": {
         "columns": [
@@ -1152,7 +1152,7 @@
       "role": "feature",
       "geometry_bucket": "point",
       "extension": ".parquet",
-      "filename": "xmep-aasr_SchoolsInCommunities_features",
+      "file_name": "xmep-aasr_SchoolsInCommunities_features",
       "size_bytes": 97381,
       "schema": {
         "columns": [
@@ -1218,7 +1218,7 @@
       "role": "feature",
       "geometry_bucket": "polygon",
       "extension": ".parquet",
-      "filename": "3wfx-q8xd_12FloodMap50ChanceOfOccurringInAnyYear_features",
+      "file_name": "3wfx-q8xd_12FloodMap50ChanceOfOccurringInAnyYear_features",
       "size_bytes": 7468946,
       "schema": {
         "columns": [
@@ -1252,7 +1252,7 @@
       "role": "feature",
       "geometry_bucket": "polygon",
       "extension": ".parquet",
-      "filename": "7i7v-diin_1750FloodMap013ChanceOfOccurringInAnyYear_features",
+      "file_name": "7i7v-diin_1750FloodMap013ChanceOfOccurringInAnyYear_features",
       "size_bytes": 7773546,
       "schema": {
         "columns": [
@@ -1286,7 +1286,7 @@
       "role": "feature",
       "geometry_bucket": "polygon",
       "extension": ".parquet",
-      "filename": "7mc8-zqjc_RiparianAreasVariableWidth_features",
+      "file_name": "7mc8-zqjc_RiparianAreasVariableWidth_features",
       "size_bytes": 39441169,
       "schema": {
         "columns": [
@@ -1316,7 +1316,7 @@
       "role": "feature",
       "geometry_bucket": "polygon",
       "extension": ".parquet",
-      "filename": "8rfi-nymv_150FloodMap2ChanceOfOccurringInAnyYear_features",
+      "file_name": "8rfi-nymv_150FloodMap2ChanceOfOccurringInAnyYear_features",
       "size_bytes": 16457235,
       "schema": {
         "columns": [
@@ -1350,7 +1350,7 @@
       "role": "feature",
       "geometry_bucket": "polygon",
       "extension": ".parquet",
-      "filename": "fyid-twcw_RiparianManagementZones_features",
+      "file_name": "fyid-twcw_RiparianManagementZones_features",
       "size_bytes": 13477761,
       "schema": {
         "columns": [
@@ -1382,7 +1382,7 @@
       "role": "feature",
       "geometry_bucket": "polygon",
       "extension": ".parquet",
-      "filename": "gc28-8znr_11000FloodMap01ChanceOfOccurringInAnyYear_features",
+      "file_name": "gc28-8znr_11000FloodMap01ChanceOfOccurringInAnyYear_features",
       "size_bytes": 7100129,
       "schema": {
         "columns": [
@@ -1416,7 +1416,7 @@
       "role": "feature",
       "geometry_bucket": "polygon",
       "extension": ".parquet",
-      "filename": "hktr-86wa_120FloodMap5ChanceOfOccurringInAnyYear_features",
+      "file_name": "hktr-86wa_120FloodMap5ChanceOfOccurringInAnyYear_features",
       "size_bytes": 19549298,
       "schema": {
         "columns": [
@@ -1450,7 +1450,7 @@
       "role": "feature",
       "geometry_bucket": "polygon",
       "extension": ".parquet",
-      "filename": "iq6w-y3i7_175FloodMap13ChanceOfOccurringInAnyYear_features",
+      "file_name": "iq6w-y3i7_175FloodMap13ChanceOfOccurringInAnyYear_features",
       "size_bytes": 15042557,
       "schema": {
         "columns": [
@@ -1484,7 +1484,7 @@
       "role": "feature",
       "geometry_bucket": "polygon",
       "extension": ".parquet",
-      "filename": "ispg-b7uq_ParksWaterFeatures_features",
+      "file_name": "ispg-b7uq_ParksWaterFeatures_features",
       "size_bytes": 437743,
       "schema": {
         "columns": [
@@ -1532,7 +1532,7 @@
       "role": "feature",
       "geometry_bucket": "polygon",
       "extension": ".parquet",
-      "filename": "ivif-w2jr_1500FloodMap02ChanceOfOccurringInAnyYear_features",
+      "file_name": "ivif-w2jr_1500FloodMap02ChanceOfOccurringInAnyYear_features",
       "size_bytes": 8279270,
       "schema": {
         "columns": [
@@ -1566,7 +1566,7 @@
       "role": "feature",
       "geometry_bucket": "polygon",
       "extension": ".parquet",
-      "filename": "ntse-tznh_110FloodMap10ChanceOfOccurringInAnyYear_features",
+      "file_name": "ntse-tznh_110FloodMap10ChanceOfOccurringInAnyYear_features",
       "size_bytes": 20075050,
       "schema": {
         "columns": [
@@ -1600,7 +1600,7 @@
       "role": "feature",
       "geometry_bucket": "polygon",
       "extension": ".parquet",
-      "filename": "w8wn-kuii_1100FloodMap1ChanceOfOccurringInAnyYear_features",
+      "file_name": "w8wn-kuii_1100FloodMap1ChanceOfOccurringInAnyYear_features",
       "size_bytes": 13873517,
       "schema": {
         "columns": [
@@ -1634,7 +1634,7 @@
       "role": "feature",
       "geometry_bucket": "polygon",
       "extension": ".parquet",
-      "filename": "xsq7-ipnp_1350FloodMap03ChanceOfOccurringInAnyYear_features",
+      "file_name": "xsq7-ipnp_1350FloodMap03ChanceOfOccurringInAnyYear_features",
       "size_bytes": 8552009,
       "schema": {
         "columns": [
@@ -1668,7 +1668,7 @@
       "role": "feature",
       "geometry_bucket": "polygon",
       "extension": ".parquet",
-      "filename": "yara-8zfv_135FloodMap29ChanceOfOccurringInAnyYear_features",
+      "file_name": "yara-8zfv_135FloodMap29ChanceOfOccurringInAnyYear_features",
       "size_bytes": 17892154,
       "schema": {
         "columns": [
@@ -1702,7 +1702,7 @@
       "role": "feature",
       "geometry_bucket": "polygon",
       "extension": ".parquet",
-      "filename": "ywjd-32pn_1200FloodMap05ChanceOfOccurringInAnyYear_features",
+      "file_name": "ywjd-32pn_1200FloodMap05ChanceOfOccurringInAnyYear_features",
       "size_bytes": 10042100,
       "schema": {
         "columns": [
@@ -1736,7 +1736,7 @@
       "role": "feature",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "syit-k9nu_ClimateAndEnvironmentDashboardDataTable_features",
+      "file_name": "syit-k9nu_ClimateAndEnvironmentDashboardDataTable_features",
       "size_bytes": 11735,
       "schema": null
     },
@@ -1747,7 +1747,7 @@
       "role": "metadata",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "299k-kwmq_AirportVicinityProtectionArea_metadata",
+      "file_name": "299k-kwmq_AirportVicinityProtectionArea_metadata",
       "size_bytes": 5326,
       "schema": null
     },
@@ -1758,7 +1758,7 @@
       "role": "metadata",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "3wfx-q8xd_12FloodMap50ChanceOfOccurringInAnyYear_metadata",
+      "file_name": "3wfx-q8xd_12FloodMap50ChanceOfOccurringInAnyYear_metadata",
       "size_bytes": 6543,
       "schema": null
     },
@@ -1769,7 +1769,7 @@
       "role": "metadata",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "7i7v-diin_1750FloodMap013ChanceOfOccurringInAnyYear_metadata",
+      "file_name": "7i7v-diin_1750FloodMap013ChanceOfOccurringInAnyYear_metadata",
       "size_bytes": 6528,
       "schema": null
     },
@@ -1780,7 +1780,7 @@
       "role": "metadata",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "7mc8-zqjc_RiparianAreasVariableWidth_metadata",
+      "file_name": "7mc8-zqjc_RiparianAreasVariableWidth_metadata",
       "size_bytes": 4701,
       "schema": null
     },
@@ -1791,7 +1791,7 @@
       "role": "metadata",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "7t9h-2z9s_CityBoundary_metadata",
+      "file_name": "7t9h-2z9s_CityBoundary_metadata",
       "size_bytes": 4586,
       "schema": null
     },
@@ -1802,7 +1802,7 @@
       "role": "metadata",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "8gpx-dyin_CalgaryEquityIndexPopulation_metadata",
+      "file_name": "8gpx-dyin_CalgaryEquityIndexPopulation_metadata",
       "size_bytes": 6518,
       "schema": null
     },
@@ -1813,7 +1813,7 @@
       "role": "metadata",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "8rfi-nymv_150FloodMap2ChanceOfOccurringInAnyYear_metadata",
+      "file_name": "8rfi-nymv_150FloodMap2ChanceOfOccurringInAnyYear_metadata",
       "size_bytes": 6796,
       "schema": null
     },
@@ -1824,7 +1824,7 @@
       "role": "metadata",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "a2cn-dxht_Hydrology_metadata",
+      "file_name": "a2cn-dxht_Hydrology_metadata",
       "size_bytes": 4692,
       "schema": null
     },
@@ -1835,7 +1835,7 @@
       "role": "metadata",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "a3uu-975p_CalgaryNewBuildingsEnvironmentalPerformanceMetrics_metadata",
+      "file_name": "a3uu-975p_CalgaryNewBuildingsEnvironmentalPerformanceMetrics_metadata",
       "size_bytes": 54052,
       "schema": null
     },
@@ -1846,7 +1846,7 @@
       "role": "metadata",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "ab7m-fwn6_CommunityBoundaries_metadata",
+      "file_name": "ab7m-fwn6_CommunityBoundaries_metadata",
       "size_bytes": 5582,
       "schema": null
     },
@@ -1857,7 +1857,7 @@
       "role": "metadata",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "aphy-m9us_PrimaryElectricityUsage_metadata",
+      "file_name": "aphy-m9us_PrimaryElectricityUsage_metadata",
       "size_bytes": 4131,
       "schema": null
     },
@@ -1868,7 +1868,7 @@
       "role": "metadata",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "bz9b-77jf_SolarPowerEnergyUtilization_metadata",
+      "file_name": "bz9b-77jf_SolarPowerEnergyUtilization_metadata",
       "size_bytes": 3907,
       "schema": null
     },
@@ -1879,7 +1879,7 @@
       "role": "metadata",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "cf5t-fjzu_ParksCemeteries_metadata",
+      "file_name": "cf5t-fjzu_ParksCemeteries_metadata",
       "size_bytes": 4545,
       "schema": null
     },
@@ -1890,7 +1890,7 @@
       "role": "metadata",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "crbp-innf_CorporateEnergyConsumption_metadata",
+      "file_name": "crbp-innf_CorporateEnergyConsumption_metadata",
       "size_bytes": 12235,
       "schema": null
     },
@@ -1901,7 +1901,7 @@
       "role": "metadata",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "duxj-44dv_CityPlanningSectorsMap_metadata",
+      "file_name": "duxj-44dv_CityPlanningSectorsMap_metadata",
       "size_bytes": 4384,
       "schema": null
     },
@@ -1912,7 +1912,7 @@
       "role": "metadata",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "fyid-twcw_RiparianManagementZones_metadata",
+      "file_name": "fyid-twcw_RiparianManagementZones_metadata",
       "size_bytes": 5162,
       "schema": null
     },
@@ -1923,7 +1923,7 @@
       "role": "metadata",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "g8ma-sywr_CityQuadrants_metadata",
+      "file_name": "g8ma-sywr_CityQuadrants_metadata",
       "size_bytes": 4281,
       "schema": null
     },
@@ -1934,7 +1934,7 @@
       "role": "metadata",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "g9s5-qhu5_AirQualityDataNearRealtime_metadata",
+      "file_name": "g9s5-qhu5_AirQualityDataNearRealtime_metadata",
       "size_bytes": 15940,
       "schema": null
     },
@@ -1945,7 +1945,7 @@
       "role": "metadata",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "gc28-8znr_11000FloodMap01ChanceOfOccurringInAnyYear_metadata",
+      "file_name": "gc28-8znr_11000FloodMap01ChanceOfOccurringInAnyYear_metadata",
       "size_bytes": 7082,
       "schema": null
     },
@@ -1956,7 +1956,7 @@
       "role": "metadata",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "hktr-86wa_120FloodMap5ChanceOfOccurringInAnyYear_metadata",
+      "file_name": "hktr-86wa_120FloodMap5ChanceOfOccurringInAnyYear_metadata",
       "size_bytes": 6838,
       "schema": null
     },
@@ -1967,7 +1967,7 @@
       "role": "metadata",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "icxc-6yk3_NaturalAreas_metadata",
+      "file_name": "icxc-6yk3_NaturalAreas_metadata",
       "size_bytes": 4577,
       "schema": null
     },
@@ -1978,7 +1978,7 @@
       "role": "metadata",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "iq6w-y3i7_175FloodMap13ChanceOfOccurringInAnyYear_metadata",
+      "file_name": "iq6w-y3i7_175FloodMap13ChanceOfOccurringInAnyYear_metadata",
       "size_bytes": 6636,
       "schema": null
     },
@@ -1989,7 +1989,7 @@
       "role": "metadata",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "iric-4rrc_MonthlySolarEnergyProductionKwh_metadata",
+      "file_name": "iric-4rrc_MonthlySolarEnergyProductionKwh_metadata",
       "size_bytes": 8335,
       "schema": null
     },
@@ -2000,7 +2000,7 @@
       "role": "metadata",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "ispg-b7uq_ParksWaterFeatures_metadata",
+      "file_name": "ispg-b7uq_ParksWaterFeatures_metadata",
       "size_bytes": 4636,
       "schema": null
     },
@@ -2011,7 +2011,7 @@
       "role": "metadata",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "ivif-w2jr_1500FloodMap02ChanceOfOccurringInAnyYear_metadata",
+      "file_name": "ivif-w2jr_1500FloodMap02ChanceOfOccurringInAnyYear_metadata",
       "size_bytes": 6721,
       "schema": null
     },
@@ -2022,7 +2022,7 @@
       "role": "metadata",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "ixvd-v9b3_CalgaryExistingBuildingsEnvironmentalPerformanceMetrics_metadata",
+      "file_name": "ixvd-v9b3_CalgaryExistingBuildingsEnvironmentalPerformanceMetrics_metadata",
       "size_bytes": 35937,
       "schema": null
     },
@@ -2033,7 +2033,7 @@
       "role": "metadata",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "k85e-i265_ResidentialSolarPhotovoltaicPvSystemPotential_metadata",
+      "file_name": "k85e-i265_ResidentialSolarPhotovoltaicPvSystemPotential_metadata",
       "size_bytes": 8011,
       "schema": null
     },
@@ -2044,7 +2044,7 @@
       "role": "metadata",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "msye-bzwu_AnnualCorporateEnergyUseByBusUnits_metadata",
+      "file_name": "msye-bzwu_AnnualCorporateEnergyUseByBusUnits_metadata",
       "size_bytes": 4269,
       "schema": null
     },
@@ -2055,7 +2055,7 @@
       "role": "metadata",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "mw9j-jik5_LandUseDistricts_metadata",
+      "file_name": "mw9j-jik5_LandUseDistricts_metadata",
       "size_bytes": 7236,
       "schema": null
     },
@@ -2066,7 +2066,7 @@
       "role": "metadata",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "n4vp-3exq_SuburbanResidentialGrowthSrgForecastMap_metadata",
+      "file_name": "n4vp-3exq_SuburbanResidentialGrowthSrgForecastMap_metadata",
       "size_bytes": 4547,
       "schema": null
     },
@@ -2077,7 +2077,7 @@
       "role": "metadata",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "ntse-tznh_110FloodMap10ChanceOfOccurringInAnyYear_metadata",
+      "file_name": "ntse-tznh_110FloodMap10ChanceOfOccurringInAnyYear_metadata",
       "size_bytes": 6836,
       "schema": null
     },
@@ -2088,7 +2088,7 @@
       "role": "metadata",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "syit-k9nu_ClimateAndEnvironmentDashboardDataTable_metadata",
+      "file_name": "syit-k9nu_ClimateAndEnvironmentDashboardDataTable_metadata",
       "size_bytes": 13408,
       "schema": null
     },
@@ -2099,7 +2099,7 @@
       "role": "metadata",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "tp6q-x2v7_RegulatoryFloodMapBylawFloodHazard_metadata",
+      "file_name": "tp6q-x2v7_RegulatoryFloodMapBylawFloodHazard_metadata",
       "size_bytes": 7223,
       "schema": null
     },
@@ -2110,7 +2110,7 @@
       "role": "metadata",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "uqkc-h9wi_SolarProductionSitesMap_metadata",
+      "file_name": "uqkc-h9wi_SolarProductionSitesMap_metadata",
       "size_bytes": 3747,
       "schema": null
     },
@@ -2121,7 +2121,7 @@
       "role": "metadata",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "w8wn-kuii_1100FloodMap1ChanceOfOccurringInAnyYear_metadata",
+      "file_name": "w8wn-kuii_1100FloodMap1ChanceOfOccurringInAnyYear_metadata",
       "size_bytes": 6802,
       "schema": null
     },
@@ -2132,7 +2132,7 @@
       "role": "metadata",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "xmep-aasr_SchoolsInCommunities_metadata",
+      "file_name": "xmep-aasr_SchoolsInCommunities_metadata",
       "size_bytes": 5559,
       "schema": null
     },
@@ -2143,7 +2143,7 @@
       "role": "metadata",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "xsq7-ipnp_1350FloodMap03ChanceOfOccurringInAnyYear_metadata",
+      "file_name": "xsq7-ipnp_1350FloodMap03ChanceOfOccurringInAnyYear_metadata",
       "size_bytes": 6563,
       "schema": null
     },
@@ -2154,7 +2154,7 @@
       "role": "metadata",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "yara-8zfv_135FloodMap29ChanceOfOccurringInAnyYear_metadata",
+      "file_name": "yara-8zfv_135FloodMap29ChanceOfOccurringInAnyYear_metadata",
       "size_bytes": 6633,
       "schema": null
     },
@@ -2165,7 +2165,7 @@
       "role": "metadata",
       "geometry_bucket": null,
       "extension": ".json",
-      "filename": "ywjd-32pn_1200FloodMap05ChanceOfOccurringInAnyYear_metadata",
+      "file_name": "ywjd-32pn_1200FloodMap05ChanceOfOccurringInAnyYear_metadata",
       "size_bytes": 6744,
       "schema": null
     },
@@ -2176,7 +2176,7 @@
       "role": "log",
       "geometry_bucket": null,
       "extension": ".log",
-      "filename": "oc_data_prep_20260507",
+      "file_name": "oc_data_prep_20260507",
       "size_bytes": 8950,
       "schema": null
     },
@@ -2187,7 +2187,7 @@
       "role": "feature",
       "geometry_bucket": null,
       "extension": ".parquet",
-      "filename": "98100015_PopulationAndDwellingCountsCanada_features",
+      "file_name": "98100015_PopulationAndDwellingCountsCanada_features",
       "size_bytes": 1736590,
       "schema": {
         "columns": [
@@ -2229,7 +2229,7 @@
       "role": "metadata",
       "geometry_bucket": null,
       "extension": ".csv",
-      "filename": "98100015_PopulationAndDwellingCountsCanada_metadata",
+      "file_name": "98100015_PopulationAndDwellingCountsCanada_metadata",
       "size_bytes": 528,
       "schema": null
     },
@@ -2240,7 +2240,7 @@
       "role": "log",
       "geometry_bucket": null,
       "extension": ".log",
-      "filename": "sc_data_prep_20260507",
+      "file_name": "sc_data_prep_20260507",
       "size_bytes": 269,
       "schema": null
     }

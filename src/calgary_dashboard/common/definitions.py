@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-# Geometry field names observed in source payloads, including legacy schema keys.
+# Geometry field names observed in original datasources, including legacy schema keys.
 GEOMETRY_FIELD_NAMES = frozenset(
     {
         "point",
@@ -26,6 +26,30 @@ GEOMETRY_BUCKET_NAMES = frozenset(
         "multipoint",
         "multilinestring",
         "multipolygon",
+    }
+)
+
+# Tokens that we consider either node-like or measurement-like for use in
+# ontology and knowledge graph modules.
+NODE_LIKE_TOKENS = frozenset(
+    {
+        "station",
+        "site",
+        "segment",
+        "building",
+        "zone",
+        "area",
+        "limits",
+        "quadrant",
+    }
+)
+MEASUREMENT_LIKE_TOKENS = frozenset(
+    {
+        "measurement",
+        "reading",
+        "record",
+        "usage",
+        "consumption",
     }
 )
 

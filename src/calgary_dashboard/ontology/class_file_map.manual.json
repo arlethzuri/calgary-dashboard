@@ -1,0 +1,200 @@
+{
+  "pairs": [
+    {
+      "class_name": "ENMAXServiceArea",
+      "file_name": "EnmaxServiceArea_features",
+      "source": "enmax",
+      "geometry_bucket": "linestring",
+      "mode": "node"
+    },
+    {
+      "class_name": "FeederMeasurement",
+      "file_name": "SinglePhaseEstimatedRemainingLoadCapacityJuly2024_features",
+      "source": "enmax",
+      "geometry_bucket": "linestring",
+      "mode": "measurement"
+    },
+    {
+      "class_name": "FeederSegment",
+      "file_name": "SinglePhaseEstimatedRemainingLoadCapacityJuly2024_features",
+      "source": "enmax",
+      "geometry_bucket": "linestring",
+      "mode": "node"
+    },
+    {
+      "class_name": "FeederMeasurement",
+      "file_name": "ThreePhaseEstimatedRemainingHostingCapacityFebruary2025_features",
+      "source": "enmax",
+      "geometry_bucket": "linestring",
+      "mode": "measurement"
+    },
+    {
+      "class_name": "FeederSegment",
+      "file_name": "ThreePhaseEstimatedRemainingHostingCapacityFebruary2025_features",
+      "source": "enmax",
+      "geometry_bucket": "linestring",
+      "mode": "node"
+    },
+    {
+      "class_name": "FeederMeasurement",
+      "file_name": "TwoAndThreePhaseEstimatedRemainingLoadCapacityDecember2025_features",
+      "source": "enmax",
+      "geometry_bucket": "linestring",
+      "mode": "measurement"
+    },
+    {
+      "class_name": "FeederSegment",
+      "file_name": "TwoAndThreePhaseEstimatedRemainingLoadCapacityDecember2025_features",
+      "source": "enmax",
+      "geometry_bucket": "linestring",
+      "mode": "node"
+    },
+    {
+      "class_name": "FeederMeasurement",
+      "file_name": "TwoAndThreePhaseEstimatedRemainingLoadCapacityJuly2024_features",
+      "source": "enmax",
+      "geometry_bucket": "linestring",
+      "mode": "measurement"
+    },
+    {
+      "class_name": "FeederSegment",
+      "file_name": "TwoAndThreePhaseEstimatedRemainingLoadCapacityJuly2024_features",
+      "source": "enmax",
+      "geometry_bucket": "linestring",
+      "mode": "node"
+    },
+    {
+      "class_name": "AirportVicinity",
+      "file_name": "299k-kwmq_AirportVicinityProtectionArea_features",
+      "source": "open_calgary",
+      "geometry_bucket": "multipolygon",
+      "mode": "node"
+    },
+    {
+      "class_name": "CityLimits",
+      "file_name": "7t9h-2z9s_CityBoundary_features",
+      "source": "open_calgary",
+      "geometry_bucket": "multipolygon",
+      "mode": "node"
+    },
+    {
+      "class_name": "CityQuadrant",
+      "file_name": "g8ma-sywr_CityQuadrants_features",
+      "source": "open_calgary",
+      "geometry_bucket": "multipolygon",
+      "mode": "node"
+    },
+    {
+      "class_name": "AirQualityReading",
+      "file_name": "g9s5-qhu5_AirQualityDataNearRealtime_features",
+      "source": "open_calgary",
+      "geometry_bucket": "point",
+      "mode": "measurement"
+    },
+    {
+      "class_name": "MonitoringStation",
+      "file_name": "g9s5-qhu5_AirQualityDataNearRealtime_features",
+      "source": "open_calgary",
+      "geometry_bucket": "point",
+      "mode": "node"
+    },
+    {
+      "class_name": "SolarProductionSite",
+      "file_name": "uqkc-h9wi_SolarProductionSitesMap_features",
+      "source": "open_calgary",
+      "geometry_bucket": "point",
+      "mode": "node"
+    },
+    {
+      "class_name": "FloodScenario",
+      "file_name": "3wfx-q8xd_12FloodMap50ChanceOfOccurringInAnyYear_features",
+      "source": "open_calgary",
+      "geometry_bucket": "polygon",
+      "mode": "node"
+    },
+    {
+      "class_name": "FloodScenario",
+      "file_name": "7i7v-diin_1750FloodMap013ChanceOfOccurringInAnyYear_features",
+      "source": "open_calgary",
+      "geometry_bucket": "polygon",
+      "mode": "node"
+    },
+    {
+      "class_name": "FloodScenario",
+      "file_name": "8rfi-nymv_150FloodMap2ChanceOfOccurringInAnyYear_features",
+      "source": "open_calgary",
+      "geometry_bucket": "polygon",
+      "mode": "node"
+    },
+    {
+      "class_name": "FloodScenario",
+      "file_name": "gc28-8znr_11000FloodMap01ChanceOfOccurringInAnyYear_features",
+      "source": "open_calgary",
+      "geometry_bucket": "polygon",
+      "mode": "node"
+    },
+    {
+      "class_name": "FloodScenario",
+      "file_name": "hktr-86wa_120FloodMap5ChanceOfOccurringInAnyYear_features",
+      "source": "open_calgary",
+      "geometry_bucket": "polygon",
+      "mode": "node"
+    },
+    {
+      "class_name": "FloodScenario",
+      "file_name": "iq6w-y3i7_175FloodMap13ChanceOfOccurringInAnyYear_features",
+      "source": "open_calgary",
+      "geometry_bucket": "polygon",
+      "mode": "node"
+    },
+    {
+      "class_name": "FloodScenario",
+      "file_name": "ivif-w2jr_1500FloodMap02ChanceOfOccurringInAnyYear_features",
+      "source": "open_calgary",
+      "geometry_bucket": "polygon",
+      "mode": "node"
+    },
+    {
+      "class_name": "FloodScenario",
+      "file_name": "ntse-tznh_110FloodMap10ChanceOfOccurringInAnyYear_features",
+      "source": "open_calgary",
+      "geometry_bucket": "polygon",
+      "mode": "node"
+    },
+    {
+      "class_name": "FloodScenario",
+      "file_name": "w8wn-kuii_1100FloodMap1ChanceOfOccurringInAnyYear_features",
+      "source": "open_calgary",
+      "geometry_bucket": "polygon",
+      "mode": "node"
+    },
+    {
+      "class_name": "FloodScenario",
+      "file_name": "xsq7-ipnp_1350FloodMap03ChanceOfOccurringInAnyYear_features",
+      "source": "open_calgary",
+      "geometry_bucket": "polygon",
+      "mode": "node"
+    },
+    {
+      "class_name": "FloodScenario",
+      "file_name": "yara-8zfv_135FloodMap29ChanceOfOccurringInAnyYear_features",
+      "source": "open_calgary",
+      "geometry_bucket": "polygon",
+      "mode": "node"
+    },
+    {
+      "class_name": "FloodScenario",
+      "file_name": "ywjd-32pn_1200FloodMap05ChanceOfOccurringInAnyYear_features",
+      "source": "open_calgary",
+      "geometry_bucket": "polygon",
+      "mode": "node"
+    },
+    {
+      "class_name": "PopulationAndDwellingCounts",
+      "file_name": "98100015_PopulationAndDwellingCountsCanada_features",
+      "source": "statcan",
+      "geometry_bucket": null,
+      "mode": "node"
+    }
+  ]
+}

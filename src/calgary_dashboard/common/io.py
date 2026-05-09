@@ -18,10 +18,10 @@ def read_json(path: Path) -> Any:
         return json.load(file_obj)
 
 
-def write_json(path: Path, payload: Any) -> None:
+def write_json(path: Path, payload: Any, *, indent: int = 2) -> None:
     """Write JSON file content."""
     ensure_dir(path.parent)
     with path.open("w") as file_obj:
-        json.dump(payload, file_obj)
+        json.dump(payload, file_obj, indent=indent)
         file_obj.write("\n")
 

@@ -1,0 +1,5 @@
+additionally cleaning needed:
+- StatCan:
+    - Ensure files are stored under dir named after geometry bucket.
+- Open Calgary:
+    - Files that only have addresses need to have proper GeoJSON geometry generated.

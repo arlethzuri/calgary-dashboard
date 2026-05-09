@@ -64,8 +64,8 @@ class FileEntry:
     geometry_bucket: str | None
     # e.g. .parquet, .json, .log.
     extension: str
-    # e.g. foo_feature, foo_features.
-    filename: str
+    # e.g. foo_feature.parquet, foo_features.parquet.
+    file_name: str
     # size in bytes
     size_bytes: int
     # Optional: {"columns": [...], "dtypes": [...]} for Parquet when libraries succeed.
@@ -176,7 +176,7 @@ def _walk_snapshot(
                     role=role,
                     geometry_bucket=geometry_bucket,
                     extension=ext,
-                    filename=p.stem,
+                    file_name=p.stem,
                     size_bytes=st.st_size,
                     schema=schema,
                 )
@@ -199,11 +199,11 @@ def _pair_metadata_features(entries: list[FileEntry]) -> list[dict[str, Any]]:
         if e.role != "metadata" or not e.relative_path.endswith("_metadata.json"):
             continue
         # e.filename is stem: foo_metadata from foo_metadata.json
-        base = e.filename[: -len("_metadata")] if e.filename.endswith("_metadata") else e.filename
+        base = e.file_name[: -len("_metadata")] if e.file_name.endswith("_metadata") else e.file_name
         candidates = [
             f.relative_path
             for f in features
-            if f.filename in (f"{base}_feature", f"{base}_features")
+            if f.file_name in (f"{base}_feature", f"{base}_features")
         ]
         pairings.append(
             {

@@ -1,8 +1,7 @@
 {
   "ontology": {
     "name": "Calgary ENMAX Ontology",
-    "sources": ["ENMAX public map data", "Open Calgary open data"],
-    "notes": "Unified from iPad sketches. Red annotations from sketch 2 preserved as 'open_questions'."
+    "sources": ["ENMAX public map data", "Open Calgary open data"]
   },
 
   "classes": {
@@ -17,6 +16,13 @@
       "type": "abstract_class",
       "properties": {
         "required": ["name", "description", "geometry", "maintained_by", "spatial_reference"]
+      }
+    },
+    "StatisticalArea": {
+      "type": "abstract_class",
+      "properties": {
+        "required": ["geometry"],
+        "optional": ["name", "created_at", "description", "spatial_reference"]
       }
     },
     "FeederSegment": {
@@ -89,6 +95,22 @@
       "properties": {
         "required_local": ["site_id", "energy_type", "year", "month", "total_consumption", "unit"],
         "foreign_keys": ["site_id"]
+      }
+    },
+    "FloodScenario": {
+      "type": "class",
+      "parent_class": "StatisticalArea",
+      "properties": {
+        "required_local": ["scenario", "type", "reach", "flow_rate"]
+      }
+    },
+    "PopulationAndDwellingCounts": {
+      "type": "class",
+      "parent_class": "StatisticalArea",
+      "properties": {
+        "required_local": ["population", "private_dwelling_counts", 
+        "private_dwelling_occupied_by_usual_residents", "land_area",
+        "population_density"]
       }
     }
   },
