@@ -12,12 +12,14 @@ from pathlib import Path
 
 import geopandas as gpd
 
-from calgary_dashboard.common.cleaning import (
+from calgary_dashboard.common.io import (
+    ensure_dir,
     list_subdirectories,
     prepare_output_dirs,
+    read_json,
     resolve_snapshot,
+    write_json,
 )
-from calgary_dashboard.common.io import ensure_dir, read_json, write_json
 from calgary_dashboard.common.naming import standardized_file_name
 from calgary_dashboard.config.logging import configure_logger
 from calgary_dashboard.config.paths import PROCESSED_DATA_ROOT, RAW_DATA_ROOT
@@ -54,16 +56,21 @@ def clean_snapshot(snapshot_date: str | None = None) -> Path:
     feature_server_dirs = list_subdirectories(raw_snapshot_dir)
     logger.info("Found %d feature server folders in %s", len(feature_server_dirs), raw_snapshot_dir)
 
+    # Loop through each ArcGIS feature server directory
     for server_dir in feature_server_dirs:
         feature_files = sorted(server_dir.glob("*_features.json"))
         metadata_files = sorted(server_dir.glob("*_metadata.json"))
 
+        # Loop through each feature file
         for feature_path in feature_files:
+            # Read the feature file as JSON
             feature_obj = read_json(feature_path)
+            # Extract the base name from the feature file path
             base_name = _base_name_from_layer_file(feature_path)
             file_name = standardized_file_name(None, base_name, "features")
 
             try:
+                # Build a GeoDataFrame from the feature object
                 gdf = gpd.GeoDataFrame.from_features(feature_obj)
             except Exception:
                 logger.exception("Failed to build GeoDataFrame for %s", feature_path)
@@ -72,13 +79,13 @@ def clean_snapshot(snapshot_date: str | None = None) -> Path:
                 logger.info("Saved fallback JSON %s.json", file_name)
                 continue
 
-            # if gdf is empty or has no valid geometry, save as json
+            # If gdf is empty or has no valid geometry, save as json
             if gdf.empty or not gdf.geometry.notna().any():
                 write_json(features_root / f"{file_name}.json", feature_obj)
                 logger.info("Saved fallback JSON %s.json", file_name)
                 continue
 
-            # save as parquet under directory corresponding to the file's
+            # Save as parquet under directory corresponding to the file's
             # geometry type
             geom_type = gdf.geom_type.dropna().iloc[0].lower()
             geom_dir = ensure_dir(features_root / geom_type)
@@ -86,12 +93,16 @@ def clean_snapshot(snapshot_date: str | None = None) -> Path:
             gdf.to_parquet(parquet_path)
             logger.info("Saved features %s (%d rows, geom=%s)", parquet_path.name, len(gdf), geom_type)
 
+        # Loop through each metadata file
         for metadata_path in metadata_files:
+            # Read the metadata file as JSON
             metadata_obj = read_json(metadata_path)
-            # add feature-server provenance to each layer metadata record
+            # Save layer name of current feature
             metadata_obj["layer_name"] = server_dir.name
+            # Extract the base name from the metadata file path
             base_name = _base_name_from_layer_file(metadata_path)
             file_name = standardized_file_name(None, base_name, "metadata")
+            # Write the metadata object to a JSON file
             write_json(metadata_root / f"{file_name}.json", metadata_obj)
             logger.info("Saved metadata %s.json", file_name)
 

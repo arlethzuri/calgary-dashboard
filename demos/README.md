@@ -1,0 +1,1 @@
+This directory has simple demos exploring visualizing and manipulating downloaded data independent of implementing the calgary dashboard system.

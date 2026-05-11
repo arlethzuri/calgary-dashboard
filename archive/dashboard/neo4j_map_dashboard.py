@@ -1,7 +1,4 @@
-"""Palantir-style geospatial command dashboard for Neo4j ontology data.
-
-Run from repo root:
-    panel serve kg/neo4j_palantir_map_dashboard.py --show
+"""Geospatial dashboard using Neo4j database.
 """
 
 from __future__ import annotations

@@ -60,9 +60,9 @@ def download_dataset(ds_id: str, download_dir: Path, app_token: str) -> None:
     api_metadata_url = f"https://data.calgary.ca/api/views/{ds_id}"
 
     try:
-        # get data from Socrata API
+        # Get data from Socrata API
         data = get_json(api_data_url)
-        # create directory named with ds_id to save data to and write to JSON
+        # Create directory named with ds_id to save data under
         dataset_dir = ensure_dir(download_dir / ds_id)
         write_json(dataset_dir / f"{ds_id}_data.json", data)
         logger.info("Downloaded data from %s", api_data_url)
@@ -76,9 +76,9 @@ def download_dataset(ds_id: str, download_dir: Path, app_token: str) -> None:
         return
 
     try:
-        # get metadata from Socrata API
+        # Get metadata from Socrata API
         metadata = get_json(api_metadata_url)
-        # save metadata to ds_id dir and write to JSON
+        # Save metadata to ds_id dir and write to JSON
         write_json(dataset_dir / f"{ds_id}_metadata.json", metadata)
         logger.info("Downloaded metadata from %s", api_metadata_url)
     except Exception as error:
@@ -90,28 +90,28 @@ def collect_from_sources_file(
 ) -> Path:
     """Download all datasets listed in a source file,
     return the directory where data was saved."""
+    # Get app token from settings, set accordingly in .env
     token = settings.open_calgary_app_token
     if not token:
         raise ValueError("OPEN_CALGARY_APP_TOKEN is not set. Add it to your .env.")
 
-    # if sources_file is not Path object raise error
-    if not isinstance(sources_file, Path):
-        raise ValueError("sources_file must be a Path object")
-
-    # get source file path and check if it exists
+    # Resolve for ~ and symlinks before existence check.
     source_path = sources_file.expanduser().resolve()
     if not source_path.is_file():
         raise FileNotFoundError(f"Sources file not found: {source_path}")
 
-    # get snapshot date and create directory to save data to and load dataset URLs
+    # Get snapshot date and create directory to save data to and load dataset URLs
     run_snapshot = snapshot_date()
     download_dir = ensure_dir(OPEN_CALGARY_DATA_DIR / run_snapshot)
+    # Load dataset URLs from source file
     dataset_urls = load_dataset_urls(source_path)
+    # Extract dataset IDs from dataset URLs
     dataset_ids = [extract_dataset_id(url) for url in dataset_urls]
 
     logger.info("Loaded %d source URLs from %s", len(dataset_urls), source_path)
     logger.info("Writing snapshot to %s", download_dir)
 
+    # Loop through each dataset ID and download the data and metadata
     for ds_id in dataset_ids:
         download_dataset(ds_id, download_dir, token)
 
@@ -119,6 +119,7 @@ def collect_from_sources_file(
 
 
 def _prompt_sources_file() -> Path:
+    """Prompt user for sources file path."""
     response = input(
         "Enter path to list of (e.g. ~/path/to/sources.txt): "
     ).strip()

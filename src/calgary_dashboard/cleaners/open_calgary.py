@@ -14,13 +14,15 @@ from pathlib import Path
 import geopandas as gpd
 from shapely.geometry import shape
 
-from calgary_dashboard.common.cleaning import (
+from calgary_dashboard.common.definitions import GEOMETRY_FIELD_NAMES
+from calgary_dashboard.common.io import (
+    ensure_dir,
     list_subdirectories,
     prepare_output_dirs,
+    read_json,
     resolve_snapshot,
+    write_json,
 )
-from calgary_dashboard.common.definitions import GEOMETRY_FIELD_NAMES
-from calgary_dashboard.common.io import ensure_dir, read_json, write_json
 from calgary_dashboard.common.naming import standardized_file_name
 from calgary_dashboard.config.logging import configure_logger
 from calgary_dashboard.config.paths import PROCESSED_DATA_ROOT, RAW_DATA_ROOT
@@ -43,6 +45,7 @@ def _records_to_geodataframe(records: list[dict]) -> gpd.GeoDataFrame:
     if not records:
         return gpd.GeoDataFrame(geometry=[])
 
+    # Extract the geometry field from the records
     geometry_key = _extract_geometry_field(records)
     if geometry_key is None:
         raise ValueError("No geometry column found in records")
@@ -66,7 +69,7 @@ def _build_geodataframe(feature_payload: object) -> gpd.GeoDataFrame | None:
         # Some datasets are standard GeoJSON FeatureCollections.
         if isinstance(feature_payload, dict) and "features" in feature_payload:
             return gpd.GeoDataFrame.from_features(feature_payload)
-        # Others are flat rows with a geometry-ish column.
+        # Others are flat rows with a geometry column.
         if isinstance(feature_payload, list) and feature_payload:
             return _records_to_geodataframe(feature_payload)
     except Exception:
@@ -81,41 +84,52 @@ def clean_snapshot(snapshot_date: str | None = None) -> Path:
     if not raw_snapshot_dir.exists():
         raise FileNotFoundError(f"Raw Open Calgary snapshot not found: {raw_snapshot_dir}")
 
+    # Prepare output directories
     processed_snapshot_dir, features_root, metadata_root = prepare_output_dirs(
         PROCESSED_OPEN_CALGARY_ROOT, resolved_snapshot
     )
 
+    # Configure logger
     logger = configure_logger(
         __name__,
         processed_snapshot_dir / f"oc_data_prep_{resolved_snapshot}.log",
     )
 
+    # List dataset directories
     dataset_dirs = list_subdirectories(raw_snapshot_dir)
     logger.info("Found %d dataset folders in %s", len(dataset_dirs), raw_snapshot_dir)
 
+    # Loop through each dataset directory
     for dataset_dir in dataset_dirs:
+        # Find metadata and feature files
         metadata_matches = sorted(dataset_dir.glob("*_metadata.json"))
         feature_matches = sorted(dataset_dir.glob("*_data.json"))
         if not metadata_matches or not feature_matches:
             logger.warning("Skipping %s: missing *_metadata.json or *_data.json", dataset_dir)
             continue
 
+        # Read metadata and feature files
         metadata_obj = read_json(metadata_matches[0])
         feature_obj = read_json(feature_matches[0])
+        # Get dataset name and id
         dataset_name = metadata_obj.get("name", dataset_dir.name)
         dataset_id = str(metadata_obj.get("id", dataset_dir.name))
 
+        # Create metadata and feature file names
         metadata_file_name = standardized_file_name(dataset_id, dataset_name, "metadata")
         feature_file_name = standardized_file_name(dataset_id, dataset_name, "features")
 
+        # Write metadata file
         write_json(metadata_root / f"{metadata_file_name}.json", metadata_obj)
         logger.info("Saved metadata %s.json", metadata_file_name)
 
+        # Build a GeoDataFrame from the feature object
         gdf = _build_geodataframe(feature_obj)
         has_valid_geometry = (
             gdf is not None and not gdf.empty and gdf.geometry.notna().any()
         )
 
+        # If the GeoDataFrame has valid geometry, save as parquet
         if has_valid_geometry:
             # Use actual geometry values from the parsed GeoDataFrame rather than
             # raw schema keys like "the_geom" or "geometry".
@@ -130,6 +144,7 @@ def clean_snapshot(snapshot_date: str | None = None) -> Path:
                 geometry_type,
             )
         else:
+            # If the GeoDataFrame does not have valid geometry, save as json
             write_json(features_root / f"{feature_file_name}.json", feature_obj)
             logger.info("Saved fallback JSON %s.json", feature_file_name)
 

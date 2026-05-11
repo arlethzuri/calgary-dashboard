@@ -21,7 +21,7 @@ from calgary_dashboard.common.definitions import (
     MEASUREMENT_LIKE_TOKENS,
     NODE_LIKE_TOKENS,
 )
-from calgary_dashboard.common.io import read_json, write_json
+from calgary_dashboard.common.io import read_json, write_json, resolve_latest_catalog
 from calgary_dashboard.config.paths import SRC_ROOT
 from calgary_dashboard.ontology.similarity import combined_similarity
 
@@ -30,15 +30,8 @@ DEFAULT_ONTOLOGY = SRC_ROOT / "ontology" / "calgary-ontology.json"
 # Output path for generated class_file_map.json
 DEFAULT_OUTPUT = SRC_ROOT / "ontology" / "class_file_map.generated.json"
 
-def _resolve_latest_catalog() -> Path:
-    """Resolve latest generated catalog JSON from src/calgary_dashboard/catalog."""
-    catalog_dir = SRC_ROOT / "catalog"
-    candidates = sorted(catalog_dir.glob("processed_data_catalog_*.json"))
-    if candidates:
-        return candidates[-1]
-
 # Latest generated catalog JSON from src/calgary_dashboard/catalog
-DEFAULT_CATALOG = _resolve_latest_catalog()
+DEFAULT_CATALOG = resolve_latest_catalog()
 
 @dataclass(frozen=True)
 class FeatureFile:

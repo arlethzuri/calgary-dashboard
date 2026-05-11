@@ -20,7 +20,7 @@ from typing import Any
 
 import pyarrow.parquet as pq
 
-from calgary_dashboard.common.cleaning import is_snapshot_name
+from calgary_dashboard.common.io import is_snapshot_name
 from calgary_dashboard.common.definitions import GEOMETRY_BUCKET_NAMES
 from calgary_dashboard.common.dates import snapshot_date
 from calgary_dashboard.config.paths import PROCESSED_DATA_ROOT
@@ -219,6 +219,9 @@ def _pair_metadata_features(entries: list[FileEntry]) -> list[dict[str, Any]]:
 
 
 def _summarize(entries: list[FileEntry], snapshots: list[str]) -> dict[str, Any]:
+    """ 
+    Summarize the entries by source, role, extension, and snapshot.
+    """
     by_source: dict[str, int] = {}
     by_role: dict[str, int] = {}
     by_ext: dict[str, int] = {}
@@ -239,6 +242,9 @@ def _summarize(entries: list[FileEntry], snapshots: list[str]) -> dict[str, Any]
 
 
 def _parse_args() -> argparse.Namespace:
+    """
+    Parse command line arguments for the catalog builder.
+    """
     parser = argparse.ArgumentParser(description="Build processed data file catalog.")
     parser.add_argument(
         "--processed-root",
@@ -262,28 +268,36 @@ def _parse_args() -> argparse.Namespace:
 
 
 def main() -> None:
+    """
+    Build the catalog of processed data files.
+    """
     args = _parse_args()
     processed_root = args.processed_root.resolve()
 
+    # Check if the processed root is a directory
     if not processed_root.is_dir():
         raise SystemExit(f"Root is not a directory: {processed_root}")
 
+    # Check if the snapshot date is valid
     if args.snapshot_date:
         if not is_snapshot_name(args.snapshot_date):
             raise SystemExit("snapshot-date must be in YYYYMMDD format.")
         snapshots = [args.snapshot_date]
     else:
+        # Discover all snapshots under the processed root
         discovered = _discover_snapshots(processed_root)
         if not discovered:
             raise SystemExit(f"No YYYYMMDD snapshot folders found under {processed_root}")
         snapshots = discovered
 
+    # Walk through each snapshot and collect the entries
     entries: list[FileEntry] = []
     for snap in snapshots:
         entries.extend(_walk_snapshot(processed_root, snap))
 
     out_path = args.out_path.resolve()
 
+    # Generate metadata about this catalog
     payload = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "root": str(processed_root),
@@ -293,6 +307,7 @@ def main() -> None:
         "metadata_feature_pairings": _pair_metadata_features(entries),
     }
 
+    # Write the catalog to the output path
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
     snap_msg = ", ".join(snapshots)
