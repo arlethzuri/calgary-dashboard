@@ -55,13 +55,14 @@ def download_dataset(ds_id: str, download_dir: Path, app_token: str) -> None:
     record_count = get_record_count(ds_id)
     api_data_url = (
         f"https://data.calgary.ca/api/v3/views/{ds_id}/query.json"
-        f"?limit={record_count}&app_token={app_token}"
+        f"?limit={record_count}"
     )
     api_metadata_url = f"https://data.calgary.ca/api/views/{ds_id}"
+    headers = {"X-App-Token": app_token} if app_token else {}
 
     try:
         # Get data from Socrata API
-        data = get_json(api_data_url)
+        data = get_json(api_data_url, headers=headers)
         # Create directory named with ds_id to save data under
         dataset_dir = ensure_dir(download_dir / ds_id)
         write_json(dataset_dir / f"{ds_id}_data.json", data)

@@ -1,0 +1,2656 @@
+{
+  "generated_at": "2026-05-12T01:15:25.647121+00:00",
+  "root": "/Users/hamzakhurram/Desktop/calgary-dashboard/data/calgary/processed_data",
+  "snapshots": [
+    "20260511"
+  ],
+  "summary": {
+    "snapshots": [
+      "20260511"
+    ],
+    "file_count": 103,
+    "by_source": {
+      "enmax": 21,
+      "open_calgary": 79,
+      "statcan": 3
+    },
+    "by_role": {
+      "feature": 50,
+      "log": 3,
+      "metadata": 50
+    },
+    "by_extension": {
+      ".csv": 1,
+      ".json": 58,
+      ".log": 3,
+      ".parquet": 41
+    },
+    "by_snapshot": {
+      "20260511": 103
+    }
+  },
+  "files": [
+    {
+      "relative_path": "enmax/20260511/en_data_prep_20260511.log",
+      "source": "enmax",
+      "snapshot": "20260511",
+      "role": "log",
+      "geometry_bucket": null,
+      "extension": ".log",
+      "file_name": "en_data_prep_20260511",
+      "size_bytes": 2970,
+      "schema": null
+    },
+    {
+      "relative_path": "enmax/20260511/features/linestring/EnmaxServiceArea_features.parquet",
+      "source": "enmax",
+      "snapshot": "20260511",
+      "role": "feature",
+      "geometry_bucket": "linestring",
+      "extension": ".parquet",
+      "file_name": "EnmaxServiceArea_features",
+      "size_bytes": 19867,
+      "schema": {
+        "columns": [
+          "geometry",
+          "OBJECTID",
+          "Id",
+          "ORIG_FID",
+          "Shape__Length"
+        ],
+        "dtypes": [
+          "binary",
+          "int64",
+          "int64",
+          "int64",
+          "double"
+        ]
+      }
+    },
+    {
+      "relative_path": "enmax/20260511/features/linestring/ServiceArea_features.parquet",
+      "source": "enmax",
+      "snapshot": "20260511",
+      "role": "feature",
+      "geometry_bucket": "linestring",
+      "extension": ".parquet",
+      "file_name": "ServiceArea_features",
+      "size_bytes": 19867,
+      "schema": {
+        "columns": [
+          "geometry",
+          "OBJECTID",
+          "Id",
+          "ORIG_FID",
+          "Shape__Length"
+        ],
+        "dtypes": [
+          "binary",
+          "int64",
+          "int64",
+          "int64",
+          "double"
+        ]
+      }
+    },
+    {
+      "relative_path": "enmax/20260511/features/linestring/SinglePhaseEstimatedRemainingLoadCapacityJuly2024_features.parquet",
+      "source": "enmax",
+      "snapshot": "20260511",
+      "role": "feature",
+      "geometry_bucket": "linestring",
+      "extension": ".parquet",
+      "file_name": "SinglePhaseEstimatedRemainingLoadCapacityJuly2024_features",
+      "size_bytes": 32501912,
+      "schema": {
+        "columns": [
+          "geometry",
+          "OBJECTID_1",
+          "FEEDERID",
+          "Description",
+          "Phase_Designation",
+          "Capacity_Available",
+          "KVA_Number",
+          "Date_Last_Updated",
+          "Shape__Length"
+        ],
+        "dtypes": [
+          "binary",
+          "int64",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "int64",
+          "large_string",
+          "double"
+        ]
+      }
+    },
+    {
+      "relative_path": "enmax/20260511/features/linestring/ThreePhaseEstimatedRemainingHostingCapacityFebruary2025_features.parquet",
+      "source": "enmax",
+      "snapshot": "20260511",
+      "role": "feature",
+      "geometry_bucket": "linestring",
+      "extension": ".parquet",
+      "file_name": "ThreePhaseEstimatedRemainingHostingCapacityFebruary2025_features",
+      "size_bytes": 34538280,
+      "schema": {
+        "columns": [
+          "geometry",
+          "OBJECTID",
+          "FEEDERID",
+          "Description",
+          "Phase_Designation",
+          "Range",
+          "Date_Last_Updated",
+          "Shape__Length"
+        ],
+        "dtypes": [
+          "binary",
+          "int64",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "double"
+        ]
+      }
+    },
+    {
+      "relative_path": "enmax/20260511/features/linestring/TwoAndThreePhaseEstimatedRemainingLoadCapacityJuly2024_features.parquet",
+      "source": "enmax",
+      "snapshot": "20260511",
+      "role": "feature",
+      "geometry_bucket": "linestring",
+      "extension": ".parquet",
+      "file_name": "TwoAndThreePhaseEstimatedRemainingLoadCapacityJuly2024_features",
+      "size_bytes": 9451766,
+      "schema": {
+        "columns": [
+          "geometry",
+          "OBJECTID_1",
+          "FEEDERID",
+          "Description",
+          "Phase_Designation",
+          "Capacity_Available",
+          "KVA_Number",
+          "Date_Last_Updated",
+          "Shape__Length"
+        ],
+        "dtypes": [
+          "binary",
+          "int64",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "int64",
+          "large_string",
+          "double"
+        ]
+      }
+    },
+    {
+      "relative_path": "enmax/20260511/features/multipolygon/AreasWithNoDataPleaseContactEnmax_features.parquet",
+      "source": "enmax",
+      "snapshot": "20260511",
+      "role": "feature",
+      "geometry_bucket": "multipolygon",
+      "extension": ".parquet",
+      "file_name": "AreasWithNoDataPleaseContactEnmax_features",
+      "size_bytes": 229552,
+      "schema": {
+        "columns": [
+          "geometry",
+          "OBJECTID",
+          "Shape__Area",
+          "Shape__Length"
+        ],
+        "dtypes": [
+          "binary",
+          "int64",
+          "double",
+          "double"
+        ]
+      }
+    },
+    {
+      "relative_path": "enmax/20260511/features/point/EnmaxDowntownProjects20230324_features.parquet",
+      "source": "enmax",
+      "snapshot": "20260511",
+      "role": "feature",
+      "geometry_bucket": "point",
+      "extension": ".parquet",
+      "file_name": "EnmaxDowntownProjects20230324_features",
+      "size_bytes": 7217,
+      "schema": {
+        "columns": [
+          "geometry",
+          "OBJECTID",
+          "Title",
+          "Timeline",
+          "GlobalID",
+          "Project_Colour_Type",
+          "Project_Details"
+        ],
+        "dtypes": [
+          "binary",
+          "int64",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string"
+        ]
+      }
+    },
+    {
+      "relative_path": "enmax/20260511/features/polygon/CalgaryCityLimits_features.parquet",
+      "source": "enmax",
+      "snapshot": "20260511",
+      "role": "feature",
+      "geometry_bucket": "polygon",
+      "extension": ".parquet",
+      "file_name": "CalgaryCityLimits_features",
+      "size_bytes": 59789,
+      "schema": {
+        "columns": [
+          "geometry",
+          "FID",
+          "OBJECTID",
+          "SHAPE_AREA",
+          "SHAPE_LEN",
+          "GlobalID",
+          "CreationDate",
+          "Creator",
+          "EditDate",
+          "Editor"
+        ],
+        "dtypes": [
+          "binary",
+          "int64",
+          "int64",
+          "double",
+          "double",
+          "large_string",
+          "int64",
+          "large_string",
+          "int64",
+          "large_string"
+        ]
+      }
+    },
+    {
+      "relative_path": "enmax/20260511/features/polygon/EnmaxDistributionLimit_features.parquet",
+      "source": "enmax",
+      "snapshot": "20260511",
+      "role": "feature",
+      "geometry_bucket": "polygon",
+      "extension": ".parquet",
+      "file_name": "EnmaxDistributionLimit_features",
+      "size_bytes": 18708,
+      "schema": {
+        "columns": [
+          "geometry",
+          "OBJECTID",
+          "Id"
+        ],
+        "dtypes": [
+          "binary",
+          "int64",
+          "int64"
+        ]
+      }
+    },
+    {
+      "relative_path": "enmax/20260511/features/polygon/EnmaxServiceArea_features.parquet",
+      "source": "enmax",
+      "snapshot": "20260511",
+      "role": "feature",
+      "geometry_bucket": "polygon",
+      "extension": ".parquet",
+      "file_name": "EnmaxServiceArea_features",
+      "size_bytes": 356026,
+      "schema": {
+        "columns": [
+          "geometry",
+          "OBJECTID",
+          "Type",
+          "Link",
+          "Link_2",
+          "Shape__Area",
+          "Shape__Length"
+        ],
+        "dtypes": [
+          "binary",
+          "int64",
+          "large_string",
+          "large_string",
+          "large_string",
+          "double",
+          "double"
+        ]
+      }
+    },
+    {
+      "relative_path": "enmax/20260511/metadata/AreasWithNoDataPleaseContactEnmax_metadata.json",
+      "source": "enmax",
+      "snapshot": "20260511",
+      "role": "metadata",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "AreasWithNoDataPleaseContactEnmax_metadata",
+      "size_bytes": 11915,
+      "schema": null
+    },
+    {
+      "relative_path": "enmax/20260511/metadata/CalgaryCityLimits_metadata.json",
+      "source": "enmax",
+      "snapshot": "20260511",
+      "role": "metadata",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "CalgaryCityLimits_metadata",
+      "size_bytes": 12225,
+      "schema": null
+    },
+    {
+      "relative_path": "enmax/20260511/metadata/EnmaxDistributionLimit_metadata.json",
+      "source": "enmax",
+      "snapshot": "20260511",
+      "role": "metadata",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "EnmaxDistributionLimit_metadata",
+      "size_bytes": 9478,
+      "schema": null
+    },
+    {
+      "relative_path": "enmax/20260511/metadata/EnmaxDowntownProjects20230324_metadata.json",
+      "source": "enmax",
+      "snapshot": "20260511",
+      "role": "metadata",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "EnmaxDowntownProjects20230324_metadata",
+      "size_bytes": 15139,
+      "schema": null
+    },
+    {
+      "relative_path": "enmax/20260511/metadata/EnmaxServiceArea_metadata.json",
+      "source": "enmax",
+      "snapshot": "20260511",
+      "role": "metadata",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "EnmaxServiceArea_metadata",
+      "size_bytes": 11690,
+      "schema": null
+    },
+    {
+      "relative_path": "enmax/20260511/metadata/ServiceArea_metadata.json",
+      "source": "enmax",
+      "snapshot": "20260511",
+      "role": "metadata",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "ServiceArea_metadata",
+      "size_bytes": 10785,
+      "schema": null
+    },
+    {
+      "relative_path": "enmax/20260511/metadata/SinglePhaseEstimatedRemainingLoadCapacityJuly2024_metadata.json",
+      "source": "enmax",
+      "snapshot": "20260511",
+      "role": "metadata",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "SinglePhaseEstimatedRemainingLoadCapacityJuly2024_metadata",
+      "size_bytes": 19398,
+      "schema": null
+    },
+    {
+      "relative_path": "enmax/20260511/metadata/ThreePhaseEstimatedRemainingHostingCapacityFebruary2025_metadata.json",
+      "source": "enmax",
+      "snapshot": "20260511",
+      "role": "metadata",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "ThreePhaseEstimatedRemainingHostingCapacityFebruary2025_metadata",
+      "size_bytes": 18333,
+      "schema": null
+    },
+    {
+      "relative_path": "enmax/20260511/metadata/TwoAndThreePhaseEstimatedRemainingLoadCapacityDecember2025_metadata.json",
+      "source": "enmax",
+      "snapshot": "20260511",
+      "role": "metadata",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "TwoAndThreePhaseEstimatedRemainingLoadCapacityDecember2025_metadata",
+      "size_bytes": 19200,
+      "schema": null
+    },
+    {
+      "relative_path": "enmax/20260511/metadata/TwoAndThreePhaseEstimatedRemainingLoadCapacityJuly2024_metadata.json",
+      "source": "enmax",
+      "snapshot": "20260511",
+      "role": "metadata",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "TwoAndThreePhaseEstimatedRemainingLoadCapacityJuly2024_metadata",
+      "size_bytes": 19480,
+      "schema": null
+    },
+    {
+      "relative_path": "open_calgary/20260511/features/a3uu-975p_CalgaryNewBuildingsEnvironmentalPerformanceMetrics_features.json",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "feature",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "a3uu-975p_CalgaryNewBuildingsEnvironmentalPerformanceMetrics_features",
+      "size_bytes": 30338,
+      "schema": null
+    },
+    {
+      "relative_path": "open_calgary/20260511/features/aphy-m9us_PrimaryElectricityUsage_features.json",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "feature",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "aphy-m9us_PrimaryElectricityUsage_features",
+      "size_bytes": 263936460,
+      "schema": null
+    },
+    {
+      "relative_path": "open_calgary/20260511/features/bz9b-77jf_SolarPowerEnergyUtilization_features.json",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "feature",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "bz9b-77jf_SolarPowerEnergyUtilization_features",
+      "size_bytes": 263936460,
+      "schema": null
+    },
+    {
+      "relative_path": "open_calgary/20260511/features/crbp-innf_CorporateEnergyConsumption_features.json",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "feature",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "crbp-innf_CorporateEnergyConsumption_features",
+      "size_bytes": 228807077,
+      "schema": null
+    },
+    {
+      "relative_path": "open_calgary/20260511/features/iric-4rrc_MonthlySolarEnergyProductionKwh_features.json",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "feature",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "iric-4rrc_MonthlySolarEnergyProductionKwh_features",
+      "size_bytes": 814254,
+      "schema": null
+    },
+    {
+      "relative_path": "open_calgary/20260511/features/ixvd-v9b3_CalgaryExistingBuildingsEnvironmentalPerformanceMetrics_features.json",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "feature",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "ixvd-v9b3_CalgaryExistingBuildingsEnvironmentalPerformanceMetrics_features",
+      "size_bytes": 229446,
+      "schema": null
+    },
+    {
+      "relative_path": "open_calgary/20260511/features/k85e-i265_ResidentialSolarPhotovoltaicPvSystemPotential_features.json",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "feature",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "k85e-i265_ResidentialSolarPhotovoltaicPvSystemPotential_features",
+      "size_bytes": 462600774,
+      "schema": null
+    },
+    {
+      "relative_path": "open_calgary/20260511/features/msye-bzwu_AnnualCorporateEnergyUseByBusUnits_features.json",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "feature",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "msye-bzwu_AnnualCorporateEnergyUseByBusUnits_features",
+      "size_bytes": 263936460,
+      "schema": null
+    },
+    {
+      "relative_path": "open_calgary/20260511/features/multipolygon/299k-kwmq_AirportVicinityProtectionArea_features.parquet",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "feature",
+      "geometry_bucket": "multipolygon",
+      "extension": ".parquet",
+      "file_name": "299k-kwmq_AirportVicinityProtectionArea_features",
+      "size_bytes": 25555,
+      "schema": {
+        "columns": [
+          ":id",
+          ":version",
+          ":created_at",
+          ":updated_at",
+          "name",
+          "abbrev",
+          "geometry"
+        ],
+        "dtypes": [
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "binary"
+        ]
+      }
+    },
+    {
+      "relative_path": "open_calgary/20260511/features/multipolygon/7t9h-2z9s_CityBoundary_features.parquet",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "feature",
+      "geometry_bucket": "multipolygon",
+      "extension": ".parquet",
+      "file_name": "7t9h-2z9s_CityBoundary_features",
+      "size_bytes": 65708,
+      "schema": {
+        "columns": [
+          ":id",
+          ":version",
+          ":created_at",
+          ":updated_at",
+          "city",
+          "created_dt",
+          "geometry"
+        ],
+        "dtypes": [
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "binary"
+        ]
+      }
+    },
+    {
+      "relative_path": "open_calgary/20260511/features/multipolygon/8gpx-dyin_CalgaryEquityIndexPopulation_features.parquet",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "feature",
+      "geometry_bucket": "multipolygon",
+      "extension": ".parquet",
+      "file_name": "8gpx-dyin_CalgaryEquityIndexPopulation_features",
+      "size_bytes": 786885,
+      "schema": {
+        "columns": [
+          ":id",
+          ":version",
+          ":created_at",
+          ":updated_at",
+          "attribute",
+          "category",
+          "area_type",
+          "area_id",
+          "ranking",
+          "objectid",
+          "data_currency",
+          "geometry",
+          "value",
+          "value_label",
+          "shape__area",
+          "shape__length"
+        ],
+        "dtypes": [
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "binary",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string"
+        ]
+      }
+    },
+    {
+      "relative_path": "open_calgary/20260511/features/multipolygon/a2cn-dxht_Hydrology_features.parquet",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "feature",
+      "geometry_bucket": "multipolygon",
+      "extension": ".parquet",
+      "file_name": "a2cn-dxht_Hydrology_features",
+      "size_bytes": 14075210,
+      "schema": {
+        "columns": [
+          ":id",
+          ":version",
+          ":created_at",
+          ":updated_at",
+          "perimeter",
+          "feature_type",
+          "geometry",
+          "lake_name"
+        ],
+        "dtypes": [
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "binary",
+          "large_string"
+        ]
+      }
+    },
+    {
+      "relative_path": "open_calgary/20260511/features/multipolygon/ab7m-fwn6_CommunityBoundaries_features.parquet",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "feature",
+      "geometry_bucket": "multipolygon",
+      "extension": ".parquet",
+      "file_name": "ab7m-fwn6_CommunityBoundaries_features",
+      "size_bytes": 1204309,
+      "schema": {
+        "columns": [
+          ":id",
+          ":version",
+          ":created_at",
+          ":updated_at",
+          "class",
+          "class_code",
+          "comm_code",
+          "name",
+          "sector",
+          "srg",
+          "comm_structure",
+          "created_dt",
+          "modified_dt",
+          "geometry"
+        ],
+        "dtypes": [
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "binary"
+        ]
+      }
+    },
+    {
+      "relative_path": "open_calgary/20260511/features/multipolygon/cf5t-fjzu_ParksCemeteries_features.parquet",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "feature",
+      "geometry_bucket": "multipolygon",
+      "extension": ".parquet",
+      "file_name": "cf5t-fjzu_ParksCemeteries_features",
+      "size_bytes": 108450,
+      "schema": {
+        "columns": [
+          ":id",
+          ":version",
+          ":created_at",
+          ":updated_at",
+          "asset_cd",
+          "steward",
+          "maintained_by",
+          "life_cycle_status",
+          "mgmt_num",
+          "number_name",
+          "geometry",
+          "asset_class",
+          "comments"
+        ],
+        "dtypes": [
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "binary",
+          "large_string",
+          "large_string"
+        ]
+      }
+    },
+    {
+      "relative_path": "open_calgary/20260511/features/multipolygon/duxj-44dv_CityPlanningSectorsMap_features.parquet",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "feature",
+      "geometry_bucket": "multipolygon",
+      "extension": ".parquet",
+      "file_name": "duxj-44dv_CityPlanningSectorsMap_features",
+      "size_bytes": 406385,
+      "schema": {
+        "columns": [
+          ":id",
+          ":version",
+          ":created_at",
+          ":updated_at",
+          "modified_action",
+          "shape__area",
+          "sector",
+          "shape__length",
+          "objectid",
+          "globalid",
+          "modified_dt",
+          "globalid_guid",
+          "geometry",
+          "created_dt"
+        ],
+        "dtypes": [
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "binary",
+          "large_string"
+        ]
+      }
+    },
+    {
+      "relative_path": "open_calgary/20260511/features/multipolygon/g8ma-sywr_CityQuadrants_features.parquet",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "feature",
+      "geometry_bucket": "multipolygon",
+      "extension": ".parquet",
+      "file_name": "g8ma-sywr_CityQuadrants_features",
+      "size_bytes": 89621,
+      "schema": {
+        "columns": [
+          ":id",
+          ":version",
+          ":created_at",
+          ":updated_at",
+          "quadrant",
+          "quadrant_status",
+          "geometry"
+        ],
+        "dtypes": [
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "binary"
+        ]
+      }
+    },
+    {
+      "relative_path": "open_calgary/20260511/features/multipolygon/icxc-6yk3_NaturalAreas_features.parquet",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "feature",
+      "geometry_bucket": "multipolygon",
+      "extension": ".parquet",
+      "file_name": "icxc-6yk3_NaturalAreas_features",
+      "size_bytes": 3703790,
+      "schema": {
+        "columns": [
+          ":id",
+          ":version",
+          ":created_at",
+          ":updated_at",
+          "steward",
+          "maintained_by",
+          "life_cycle_status",
+          "asset_type",
+          "geometry",
+          "install_dt",
+          "natural_area_name",
+          "maint_info",
+          "ranking",
+          "mgmt_num",
+          "location_detail",
+          "code"
+        ],
+        "dtypes": [
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "binary",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string"
+        ]
+      }
+    },
+    {
+      "relative_path": "open_calgary/20260511/features/multipolygon/mw9j-jik5_LandUseDistricts_features.parquet",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "feature",
+      "geometry_bucket": "multipolygon",
+      "extension": ".parquet",
+      "file_name": "mw9j-jik5_LandUseDistricts_features",
+      "size_bytes": 10050355,
+      "schema": {
+        "columns": [
+          ":id",
+          ":version",
+          ":created_at",
+          ":updated_at",
+          "lu_bylaw",
+          "lu_code",
+          "label",
+          "description",
+          "major",
+          "generalize",
+          "geometry",
+          "height",
+          "far",
+          "dc_bylaw",
+          "dc_site_no",
+          "density"
+        ],
+        "dtypes": [
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "binary",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string"
+        ]
+      }
+    },
+    {
+      "relative_path": "open_calgary/20260511/features/multipolygon/n4vp-3exq_SuburbanResidentialGrowthSrgForecastMap_features.parquet",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "feature",
+      "geometry_bucket": "multipolygon",
+      "extension": ".parquet",
+      "file_name": "n4vp-3exq_SuburbanResidentialGrowthSrgForecastMap_features",
+      "size_bytes": 366617,
+      "schema": {
+        "columns": [
+          ":id",
+          ":version",
+          ":created_at",
+          ":updated_at",
+          "sector_key",
+          "year",
+          "sector",
+          "lowd_per",
+          "lowd_units",
+          "multi_per",
+          "multi_units",
+          "ttl_per",
+          "ttl_units",
+          "low_pop",
+          "multi_pop",
+          "ttl_pop",
+          "create_dt_local",
+          "mod_dt_local",
+          "globalid_guid",
+          "geometry"
+        ],
+        "dtypes": [
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "binary"
+        ]
+      }
+    },
+    {
+      "relative_path": "open_calgary/20260511/features/multipolygon/tp6q-x2v7_RegulatoryFloodMapBylawFloodHazard_features.parquet",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "feature",
+      "geometry_bucket": "multipolygon",
+      "extension": ".parquet",
+      "file_name": "tp6q-x2v7_RegulatoryFloodMapBylawFloodHazard_features",
+      "size_bytes": 13487982,
+      "schema": {
+        "columns": [
+          ":id",
+          ":version",
+          ":created_at",
+          ":updated_at",
+          "description",
+          "flood_cd",
+          "perimeter",
+          "geometry"
+        ],
+        "dtypes": [
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "binary"
+        ]
+      }
+    },
+    {
+      "relative_path": "open_calgary/20260511/features/point/g9s5-qhu5_AirQualityDataNearRealtime_features.parquet",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "feature",
+      "geometry_bucket": "point",
+      "extension": ".parquet",
+      "file_name": "g9s5-qhu5_AirQualityDataNearRealtime_features",
+      "size_bytes": 149008172,
+      "schema": {
+        "columns": [
+          ":id",
+          ":version",
+          ":created_at",
+          ":updated_at",
+          "readingdate",
+          "station_name",
+          "abbreviation",
+          "url",
+          "parameter",
+          "value",
+          "units",
+          "units_description",
+          "latitude",
+          "longitude",
+          "id",
+          ":@computed_region_4b54_tmc4",
+          ":@computed_region_4a3i_ccfj",
+          ":@computed_region_kxmf_bzkv",
+          ":@computed_region_p8tp_5dkv",
+          "geometry"
+        ],
+        "dtypes": [
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "struct<url: string>",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "binary"
+        ]
+      }
+    },
+    {
+      "relative_path": "open_calgary/20260511/features/point/uqkc-h9wi_SolarProductionSitesMap_features.parquet",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "feature",
+      "geometry_bucket": "point",
+      "extension": ".parquet",
+      "file_name": "uqkc-h9wi_SolarProductionSitesMap_features",
+      "size_bytes": 11021,
+      "schema": {
+        "columns": [
+          ":id",
+          ":version",
+          ":created_at",
+          ":updated_at",
+          ":@computed_region_4a3i_ccfj",
+          ":@computed_region_dspr_7vyd",
+          ":@computed_region_4b54_tmc4",
+          "facility_name",
+          "facility_address",
+          "rated_capacity",
+          "geometry"
+        ],
+        "dtypes": [
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "binary"
+        ]
+      }
+    },
+    {
+      "relative_path": "open_calgary/20260511/features/point/xmep-aasr_SchoolsInCommunities_features.parquet",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "feature",
+      "geometry_bucket": "point",
+      "extension": ".parquet",
+      "file_name": "xmep-aasr_SchoolsInCommunities_features",
+      "size_bytes": 97284,
+      "schema": {
+        "columns": [
+          ":id",
+          ":version",
+          ":created_at",
+          ":updated_at",
+          ":@computed_region_4b54_tmc4",
+          ":@computed_region_4a3i_ccfj",
+          ":@computed_region_kxmf_bzkv",
+          ":@computed_region_p8tp_5dkv",
+          ":@computed_region_hq2j_w7j9",
+          "board",
+          "name",
+          "address_ab",
+          "postal_cod",
+          "city",
+          "province",
+          "phone_no",
+          "email",
+          "grades",
+          "postsecond",
+          "data_source",
+          "elem",
+          "junior_h",
+          "senior_h",
+          "global_id",
+          "geometry"
+        ],
+        "dtypes": [
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "binary"
+        ]
+      }
+    },
+    {
+      "relative_path": "open_calgary/20260511/features/polygon/3wfx-q8xd_12FloodMap50ChanceOfOccurringInAnyYear_features.parquet",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "feature",
+      "geometry_bucket": "polygon",
+      "extension": ".parquet",
+      "file_name": "3wfx-q8xd_12FloodMap50ChanceOfOccurringInAnyYear_features",
+      "size_bytes": 7464386,
+      "schema": {
+        "columns": [
+          ":id",
+          ":version",
+          ":created_at",
+          ":updated_at",
+          "scenario",
+          "type",
+          "reach",
+          "flow_rate",
+          "geometry"
+        ],
+        "dtypes": [
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "binary"
+        ]
+      }
+    },
+    {
+      "relative_path": "open_calgary/20260511/features/polygon/7i7v-diin_1750FloodMap013ChanceOfOccurringInAnyYear_features.parquet",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "feature",
+      "geometry_bucket": "polygon",
+      "extension": ".parquet",
+      "file_name": "7i7v-diin_1750FloodMap013ChanceOfOccurringInAnyYear_features",
+      "size_bytes": 7763454,
+      "schema": {
+        "columns": [
+          ":id",
+          ":version",
+          ":created_at",
+          ":updated_at",
+          "scenario",
+          "type",
+          "reach",
+          "flow_rate",
+          "geometry"
+        ],
+        "dtypes": [
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "binary"
+        ]
+      }
+    },
+    {
+      "relative_path": "open_calgary/20260511/features/polygon/7mc8-zqjc_RiparianAreasVariableWidth_features.parquet",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "feature",
+      "geometry_bucket": "polygon",
+      "extension": ".parquet",
+      "file_name": "7mc8-zqjc_RiparianAreasVariableWidth_features",
+      "size_bytes": 39425075,
+      "schema": {
+        "columns": [
+          ":id",
+          ":version",
+          ":created_at",
+          ":updated_at",
+          "zone_name",
+          "gridcode",
+          "geometry"
+        ],
+        "dtypes": [
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "binary"
+        ]
+      }
+    },
+    {
+      "relative_path": "open_calgary/20260511/features/polygon/8rfi-nymv_150FloodMap2ChanceOfOccurringInAnyYear_features.parquet",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "feature",
+      "geometry_bucket": "polygon",
+      "extension": ".parquet",
+      "file_name": "8rfi-nymv_150FloodMap2ChanceOfOccurringInAnyYear_features",
+      "size_bytes": 16453150,
+      "schema": {
+        "columns": [
+          ":id",
+          ":version",
+          ":created_at",
+          ":updated_at",
+          "scenario",
+          "type",
+          "reach",
+          "flow_rate",
+          "geometry"
+        ],
+        "dtypes": [
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "binary"
+        ]
+      }
+    },
+    {
+      "relative_path": "open_calgary/20260511/features/polygon/fyid-twcw_RiparianManagementZones_features.parquet",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "feature",
+      "geometry_bucket": "polygon",
+      "extension": ".parquet",
+      "file_name": "fyid-twcw_RiparianManagementZones_features",
+      "size_bytes": 13459283,
+      "schema": {
+        "columns": [
+          ":id",
+          ":version",
+          ":created_at",
+          ":updated_at",
+          "first_river",
+          "mgt_zone_name",
+          "zone_num",
+          "geometry"
+        ],
+        "dtypes": [
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "binary"
+        ]
+      }
+    },
+    {
+      "relative_path": "open_calgary/20260511/features/polygon/gc28-8znr_11000FloodMap01ChanceOfOccurringInAnyYear_features.parquet",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "feature",
+      "geometry_bucket": "polygon",
+      "extension": ".parquet",
+      "file_name": "gc28-8znr_11000FloodMap01ChanceOfOccurringInAnyYear_features",
+      "size_bytes": 7097914,
+      "schema": {
+        "columns": [
+          ":id",
+          ":version",
+          ":created_at",
+          ":updated_at",
+          "scenario",
+          "type",
+          "reach",
+          "flow_rate",
+          "geometry"
+        ],
+        "dtypes": [
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "binary"
+        ]
+      }
+    },
+    {
+      "relative_path": "open_calgary/20260511/features/polygon/hktr-86wa_120FloodMap5ChanceOfOccurringInAnyYear_features.parquet",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "feature",
+      "geometry_bucket": "polygon",
+      "extension": ".parquet",
+      "file_name": "hktr-86wa_120FloodMap5ChanceOfOccurringInAnyYear_features",
+      "size_bytes": 19542300,
+      "schema": {
+        "columns": [
+          ":id",
+          ":version",
+          ":created_at",
+          ":updated_at",
+          "scenario",
+          "type",
+          "reach",
+          "flow_rate",
+          "geometry"
+        ],
+        "dtypes": [
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "binary"
+        ]
+      }
+    },
+    {
+      "relative_path": "open_calgary/20260511/features/polygon/iq6w-y3i7_175FloodMap13ChanceOfOccurringInAnyYear_features.parquet",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "feature",
+      "geometry_bucket": "polygon",
+      "extension": ".parquet",
+      "file_name": "iq6w-y3i7_175FloodMap13ChanceOfOccurringInAnyYear_features",
+      "size_bytes": 15039824,
+      "schema": {
+        "columns": [
+          ":id",
+          ":version",
+          ":created_at",
+          ":updated_at",
+          "scenario",
+          "type",
+          "reach",
+          "flow_rate",
+          "geometry"
+        ],
+        "dtypes": [
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "binary"
+        ]
+      }
+    },
+    {
+      "relative_path": "open_calgary/20260511/features/polygon/ispg-b7uq_ParksWaterFeatures_features.parquet",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "feature",
+      "geometry_bucket": "polygon",
+      "extension": ".parquet",
+      "file_name": "ispg-b7uq_ParksWaterFeatures_features",
+      "size_bytes": 437977,
+      "schema": {
+        "columns": [
+          ":id",
+          ":version",
+          ":created_at",
+          ":updated_at",
+          "asset_cd",
+          "steward",
+          "maintained_by",
+          "maint_info",
+          "life_cycle_status",
+          "asset_type",
+          "name",
+          "geometry",
+          "location_detail",
+          "water_delivery_system_id",
+          "asset_class",
+          "mgmt_num"
+        ],
+        "dtypes": [
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "binary",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string"
+        ]
+      }
+    },
+    {
+      "relative_path": "open_calgary/20260511/features/polygon/ivif-w2jr_1500FloodMap02ChanceOfOccurringInAnyYear_features.parquet",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "feature",
+      "geometry_bucket": "polygon",
+      "extension": ".parquet",
+      "file_name": "ivif-w2jr_1500FloodMap02ChanceOfOccurringInAnyYear_features",
+      "size_bytes": 8276455,
+      "schema": {
+        "columns": [
+          ":id",
+          ":version",
+          ":created_at",
+          ":updated_at",
+          "scenario",
+          "type",
+          "reach",
+          "flow_rate",
+          "geometry"
+        ],
+        "dtypes": [
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "binary"
+        ]
+      }
+    },
+    {
+      "relative_path": "open_calgary/20260511/features/polygon/ntse-tznh_110FloodMap10ChanceOfOccurringInAnyYear_features.parquet",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "feature",
+      "geometry_bucket": "polygon",
+      "extension": ".parquet",
+      "file_name": "ntse-tznh_110FloodMap10ChanceOfOccurringInAnyYear_features",
+      "size_bytes": 20066963,
+      "schema": {
+        "columns": [
+          ":id",
+          ":version",
+          ":created_at",
+          ":updated_at",
+          "scenario",
+          "type",
+          "reach",
+          "flow_rate",
+          "geometry"
+        ],
+        "dtypes": [
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "binary"
+        ]
+      }
+    },
+    {
+      "relative_path": "open_calgary/20260511/features/polygon/w8wn-kuii_1100FloodMap1ChanceOfOccurringInAnyYear_features.parquet",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "feature",
+      "geometry_bucket": "polygon",
+      "extension": ".parquet",
+      "file_name": "w8wn-kuii_1100FloodMap1ChanceOfOccurringInAnyYear_features",
+      "size_bytes": 13870217,
+      "schema": {
+        "columns": [
+          ":id",
+          ":version",
+          ":created_at",
+          ":updated_at",
+          "scenario",
+          "type",
+          "reach",
+          "flow_rate",
+          "geometry"
+        ],
+        "dtypes": [
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "binary"
+        ]
+      }
+    },
+    {
+      "relative_path": "open_calgary/20260511/features/polygon/xsq7-ipnp_1350FloodMap03ChanceOfOccurringInAnyYear_features.parquet",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "feature",
+      "geometry_bucket": "polygon",
+      "extension": ".parquet",
+      "file_name": "xsq7-ipnp_1350FloodMap03ChanceOfOccurringInAnyYear_features",
+      "size_bytes": 8548006,
+      "schema": {
+        "columns": [
+          ":id",
+          ":version",
+          ":created_at",
+          ":updated_at",
+          "scenario",
+          "type",
+          "reach",
+          "flow_rate",
+          "geometry"
+        ],
+        "dtypes": [
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "binary"
+        ]
+      }
+    },
+    {
+      "relative_path": "open_calgary/20260511/features/polygon/yara-8zfv_135FloodMap29ChanceOfOccurringInAnyYear_features.parquet",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "feature",
+      "geometry_bucket": "polygon",
+      "extension": ".parquet",
+      "file_name": "yara-8zfv_135FloodMap29ChanceOfOccurringInAnyYear_features",
+      "size_bytes": 17886764,
+      "schema": {
+        "columns": [
+          ":id",
+          ":version",
+          ":created_at",
+          ":updated_at",
+          "scenario",
+          "type",
+          "reach",
+          "flow_rate",
+          "geometry"
+        ],
+        "dtypes": [
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "binary"
+        ]
+      }
+    },
+    {
+      "relative_path": "open_calgary/20260511/features/polygon/ywjd-32pn_1200FloodMap05ChanceOfOccurringInAnyYear_features.parquet",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "feature",
+      "geometry_bucket": "polygon",
+      "extension": ".parquet",
+      "file_name": "ywjd-32pn_1200FloodMap05ChanceOfOccurringInAnyYear_features",
+      "size_bytes": 10039168,
+      "schema": {
+        "columns": [
+          ":id",
+          ":version",
+          ":created_at",
+          ":updated_at",
+          "scenario",
+          "type",
+          "reach",
+          "flow_rate",
+          "geometry"
+        ],
+        "dtypes": [
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "large_string",
+          "binary"
+        ]
+      }
+    },
+    {
+      "relative_path": "open_calgary/20260511/features/syit-k9nu_ClimateAndEnvironmentDashboardDataTable_features.json",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "feature",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "syit-k9nu_ClimateAndEnvironmentDashboardDataTable_features",
+      "size_bytes": 13419,
+      "schema": null
+    },
+    {
+      "relative_path": "open_calgary/20260511/metadata/299k-kwmq_AirportVicinityProtectionArea_metadata.json",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "metadata",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "299k-kwmq_AirportVicinityProtectionArea_metadata",
+      "size_bytes": 8110,
+      "schema": null
+    },
+    {
+      "relative_path": "open_calgary/20260511/metadata/3wfx-q8xd_12FloodMap50ChanceOfOccurringInAnyYear_metadata.json",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "metadata",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "3wfx-q8xd_12FloodMap50ChanceOfOccurringInAnyYear_metadata",
+      "size_bytes": 8571,
+      "schema": null
+    },
+    {
+      "relative_path": "open_calgary/20260511/metadata/7i7v-diin_1750FloodMap013ChanceOfOccurringInAnyYear_metadata.json",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "metadata",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "7i7v-diin_1750FloodMap013ChanceOfOccurringInAnyYear_metadata",
+      "size_bytes": 8510,
+      "schema": null
+    },
+    {
+      "relative_path": "open_calgary/20260511/metadata/7mc8-zqjc_RiparianAreasVariableWidth_metadata.json",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "metadata",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "7mc8-zqjc_RiparianAreasVariableWidth_metadata",
+      "size_bytes": 6049,
+      "schema": null
+    },
+    {
+      "relative_path": "open_calgary/20260511/metadata/7t9h-2z9s_CityBoundary_metadata.json",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "metadata",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "7t9h-2z9s_CityBoundary_metadata",
+      "size_bytes": 6126,
+      "schema": null
+    },
+    {
+      "relative_path": "open_calgary/20260511/metadata/8gpx-dyin_CalgaryEquityIndexPopulation_metadata.json",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "metadata",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "8gpx-dyin_CalgaryEquityIndexPopulation_metadata",
+      "size_bytes": 9870,
+      "schema": null
+    },
+    {
+      "relative_path": "open_calgary/20260511/metadata/8rfi-nymv_150FloodMap2ChanceOfOccurringInAnyYear_metadata.json",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "metadata",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "8rfi-nymv_150FloodMap2ChanceOfOccurringInAnyYear_metadata",
+      "size_bytes": 8948,
+      "schema": null
+    },
+    {
+      "relative_path": "open_calgary/20260511/metadata/a2cn-dxht_Hydrology_metadata.json",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "metadata",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "a2cn-dxht_Hydrology_metadata",
+      "size_bytes": 6338,
+      "schema": null
+    },
+    {
+      "relative_path": "open_calgary/20260511/metadata/a3uu-975p_CalgaryNewBuildingsEnvironmentalPerformanceMetrics_metadata.json",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "metadata",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "a3uu-975p_CalgaryNewBuildingsEnvironmentalPerformanceMetrics_metadata",
+      "size_bytes": 92520,
+      "schema": null
+    },
+    {
+      "relative_path": "open_calgary/20260511/metadata/ab7m-fwn6_CommunityBoundaries_metadata.json",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "metadata",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "ab7m-fwn6_CommunityBoundaries_metadata",
+      "size_bytes": 8748,
+      "schema": null
+    },
+    {
+      "relative_path": "open_calgary/20260511/metadata/aphy-m9us_PrimaryElectricityUsage_metadata.json",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "metadata",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "aphy-m9us_PrimaryElectricityUsage_metadata",
+      "size_bytes": 6031,
+      "schema": null
+    },
+    {
+      "relative_path": "open_calgary/20260511/metadata/bz9b-77jf_SolarPowerEnergyUtilization_metadata.json",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "metadata",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "bz9b-77jf_SolarPowerEnergyUtilization_metadata",
+      "size_bytes": 5747,
+      "schema": null
+    },
+    {
+      "relative_path": "open_calgary/20260511/metadata/cf5t-fjzu_ParksCemeteries_metadata.json",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "metadata",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "cf5t-fjzu_ParksCemeteries_metadata",
+      "size_bytes": 6289,
+      "schema": null
+    },
+    {
+      "relative_path": "open_calgary/20260511/metadata/crbp-innf_CorporateEnergyConsumption_metadata.json",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "metadata",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "crbp-innf_CorporateEnergyConsumption_metadata",
+      "size_bytes": 20241,
+      "schema": null
+    },
+    {
+      "relative_path": "open_calgary/20260511/metadata/duxj-44dv_CityPlanningSectorsMap_metadata.json",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "metadata",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "duxj-44dv_CityPlanningSectorsMap_metadata",
+      "size_bytes": 5888,
+      "schema": null
+    },
+    {
+      "relative_path": "open_calgary/20260511/metadata/fyid-twcw_RiparianManagementZones_metadata.json",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "metadata",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "fyid-twcw_RiparianManagementZones_metadata",
+      "size_bytes": 6872,
+      "schema": null
+    },
+    {
+      "relative_path": "open_calgary/20260511/metadata/g8ma-sywr_CityQuadrants_metadata.json",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "metadata",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "g8ma-sywr_CityQuadrants_metadata",
+      "size_bytes": 5859,
+      "schema": null
+    },
+    {
+      "relative_path": "open_calgary/20260511/metadata/g9s5-qhu5_AirQualityDataNearRealtime_metadata.json",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "metadata",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "g9s5-qhu5_AirQualityDataNearRealtime_metadata",
+      "size_bytes": 23991,
+      "schema": null
+    },
+    {
+      "relative_path": "open_calgary/20260511/metadata/gc28-8znr_11000FloodMap01ChanceOfOccurringInAnyYear_metadata.json",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "metadata",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "gc28-8znr_11000FloodMap01ChanceOfOccurringInAnyYear_metadata",
+      "size_bytes": 9110,
+      "schema": null
+    },
+    {
+      "relative_path": "open_calgary/20260511/metadata/hktr-86wa_120FloodMap5ChanceOfOccurringInAnyYear_metadata.json",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "metadata",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "hktr-86wa_120FloodMap5ChanceOfOccurringInAnyYear_metadata",
+      "size_bytes": 9008,
+      "schema": null
+    },
+    {
+      "relative_path": "open_calgary/20260511/metadata/icxc-6yk3_NaturalAreas_metadata.json",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "metadata",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "icxc-6yk3_NaturalAreas_metadata",
+      "size_bytes": 6343,
+      "schema": null
+    },
+    {
+      "relative_path": "open_calgary/20260511/metadata/iq6w-y3i7_175FloodMap13ChanceOfOccurringInAnyYear_metadata.json",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "metadata",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "iq6w-y3i7_175FloodMap13ChanceOfOccurringInAnyYear_metadata",
+      "size_bytes": 8710,
+      "schema": null
+    },
+    {
+      "relative_path": "open_calgary/20260511/metadata/iric-4rrc_MonthlySolarEnergyProductionKwh_metadata.json",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "metadata",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "iric-4rrc_MonthlySolarEnergyProductionKwh_metadata",
+      "size_bytes": 14189,
+      "schema": null
+    },
+    {
+      "relative_path": "open_calgary/20260511/metadata/ispg-b7uq_ParksWaterFeatures_metadata.json",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "metadata",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "ispg-b7uq_ParksWaterFeatures_metadata",
+      "size_bytes": 6418,
+      "schema": null
+    },
+    {
+      "relative_path": "open_calgary/20260511/metadata/ivif-w2jr_1500FloodMap02ChanceOfOccurringInAnyYear_metadata.json",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "metadata",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "ivif-w2jr_1500FloodMap02ChanceOfOccurringInAnyYear_metadata",
+      "size_bytes": 8765,
+      "schema": null
+    },
+    {
+      "relative_path": "open_calgary/20260511/metadata/ixvd-v9b3_CalgaryExistingBuildingsEnvironmentalPerformanceMetrics_metadata.json",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "metadata",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "ixvd-v9b3_CalgaryExistingBuildingsEnvironmentalPerformanceMetrics_metadata",
+      "size_bytes": 64817,
+      "schema": null
+    },
+    {
+      "relative_path": "open_calgary/20260511/metadata/k85e-i265_ResidentialSolarPhotovoltaicPvSystemPotential_metadata.json",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "metadata",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "k85e-i265_ResidentialSolarPhotovoltaicPvSystemPotential_metadata",
+      "size_bytes": 12883,
+      "schema": null
+    },
+    {
+      "relative_path": "open_calgary/20260511/metadata/msye-bzwu_AnnualCorporateEnergyUseByBusUnits_metadata.json",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "metadata",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "msye-bzwu_AnnualCorporateEnergyUseByBusUnits_metadata",
+      "size_bytes": 6051,
+      "schema": null
+    },
+    {
+      "relative_path": "open_calgary/20260511/metadata/mw9j-jik5_LandUseDistricts_metadata.json",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "metadata",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "mw9j-jik5_LandUseDistricts_metadata",
+      "size_bytes": 12186,
+      "schema": null
+    },
+    {
+      "relative_path": "open_calgary/20260511/metadata/n4vp-3exq_SuburbanResidentialGrowthSrgForecastMap_metadata.json",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "metadata",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "n4vp-3exq_SuburbanResidentialGrowthSrgForecastMap_metadata",
+      "size_bytes": 6193,
+      "schema": null
+    },
+    {
+      "relative_path": "open_calgary/20260511/metadata/ntse-tznh_110FloodMap10ChanceOfOccurringInAnyYear_metadata.json",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "metadata",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "ntse-tznh_110FloodMap10ChanceOfOccurringInAnyYear_metadata",
+      "size_bytes": 9006,
+      "schema": null
+    },
+    {
+      "relative_path": "open_calgary/20260511/metadata/syit-k9nu_ClimateAndEnvironmentDashboardDataTable_metadata.json",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "metadata",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "syit-k9nu_ClimateAndEnvironmentDashboardDataTable_metadata",
+      "size_bytes": 23308,
+      "schema": null
+    },
+    {
+      "relative_path": "open_calgary/20260511/metadata/tp6q-x2v7_RegulatoryFloodMapBylawFloodHazard_metadata.json",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "metadata",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "tp6q-x2v7_RegulatoryFloodMapBylawFloodHazard_metadata",
+      "size_bytes": 9809,
+      "schema": null
+    },
+    {
+      "relative_path": "open_calgary/20260511/metadata/uqkc-h9wi_SolarProductionSitesMap_metadata.json",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "metadata",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "uqkc-h9wi_SolarProductionSitesMap_metadata",
+      "size_bytes": 5393,
+      "schema": null
+    },
+    {
+      "relative_path": "open_calgary/20260511/metadata/w8wn-kuii_1100FloodMap1ChanceOfOccurringInAnyYear_metadata.json",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "metadata",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "w8wn-kuii_1100FloodMap1ChanceOfOccurringInAnyYear_metadata",
+      "size_bytes": 8954,
+      "schema": null
+    },
+    {
+      "relative_path": "open_calgary/20260511/metadata/xmep-aasr_SchoolsInCommunities_metadata.json",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "metadata",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "xmep-aasr_SchoolsInCommunities_metadata",
+      "size_bytes": 8271,
+      "schema": null
+    },
+    {
+      "relative_path": "open_calgary/20260511/metadata/xsq7-ipnp_1350FloodMap03ChanceOfOccurringInAnyYear_metadata.json",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "metadata",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "xsq7-ipnp_1350FloodMap03ChanceOfOccurringInAnyYear_metadata",
+      "size_bytes": 8591,
+      "schema": null
+    },
+    {
+      "relative_path": "open_calgary/20260511/metadata/yara-8zfv_135FloodMap29ChanceOfOccurringInAnyYear_metadata.json",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "metadata",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "yara-8zfv_135FloodMap29ChanceOfOccurringInAnyYear_metadata",
+      "size_bytes": 8707,
+      "schema": null
+    },
+    {
+      "relative_path": "open_calgary/20260511/metadata/ywjd-32pn_1200FloodMap05ChanceOfOccurringInAnyYear_metadata.json",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "metadata",
+      "geometry_bucket": null,
+      "extension": ".json",
+      "file_name": "ywjd-32pn_1200FloodMap05ChanceOfOccurringInAnyYear_metadata",
+      "size_bytes": 8850,
+      "schema": null
+    },
+    {
+      "relative_path": "open_calgary/20260511/oc_data_prep_20260511.log",
+      "source": "open_calgary",
+      "snapshot": "20260511",
+      "role": "log",
+      "geometry_bucket": null,
+      "extension": ".log",
+      "file_name": "oc_data_prep_20260511",
+      "size_bytes": 8996,
+      "schema": null
+    },
+    {
+      "relative_path": "statcan/20260511/features/98100015_PopulationAndDwellingCountsCanada_features.parquet",
+      "source": "statcan",
+      "snapshot": "20260511",
+      "role": "feature",
+      "geometry_bucket": null,
+      "extension": ".parquet",
+      "file_name": "98100015_PopulationAndDwellingCountsCanada_features",
+      "size_bytes": 1729676,
+      "schema": {
+        "columns": [
+          "DAUID",
+          "DGUID",
+          "LANDAREA",
+          "PRUID",
+          "geometry",
+          "REF_DATE",
+          "GEO",
+          "Coordinate",
+          "Population and dwelling counts (5): Population, 2021 [1]",
+          "Population and dwelling counts (5): Total private dwellings, 2021 [2]",
+          "Population and dwelling counts (5): Private dwellings occupied by usual residents, 2021 [3]",
+          "Population and dwelling counts (5): Land area in square kilometres, 2021 [4]",
+          "Population and dwelling counts (5): Population density per square kilometre, 2021 [5]"
+        ],
+        "dtypes": [
+          "large_string",
+          "large_string",
+          "double",
+          "large_string",
+          "binary",
+          "int64",
+          "large_string",
+          "int64",
+          "double",
+          "double",
+          "double",
+          "double",
+          "double"
+        ]
+      }
+    },
+    {
+      "relative_path": "statcan/20260511/metadata/98100015_PopulationAndDwellingCountsCanada_metadata.csv",
+      "source": "statcan",
+      "snapshot": "20260511",
+      "role": "metadata",
+      "geometry_bucket": null,
+      "extension": ".csv",
+      "file_name": "98100015_PopulationAndDwellingCountsCanada_metadata",
+      "size_bytes": 528,
+      "schema": null
+    },
+    {
+      "relative_path": "statcan/20260511/sc_data_prep_20260511.log",
+      "source": "statcan",
+      "snapshot": "20260511",
+      "role": "log",
+      "geometry_bucket": null,
+      "extension": ".log",
+      "file_name": "sc_data_prep_20260511",
+      "size_bytes": 315,
+      "schema": null
+    }
+  ],
+  "metadata_feature_pairings": [
+    {
+      "snapshot": "20260511",
+      "source": "enmax",
+      "asset_key": "AreasWithNoDataPleaseContactEnmax",
+      "metadata_relative_path": "enmax/20260511/metadata/AreasWithNoDataPleaseContactEnmax_metadata.json",
+      "feature_relative_paths": [
+        "enmax/20260511/features/multipolygon/AreasWithNoDataPleaseContactEnmax_features.parquet"
+      ]
+    },
+    {
+      "snapshot": "20260511",
+      "source": "enmax",
+      "asset_key": "CalgaryCityLimits",
+      "metadata_relative_path": "enmax/20260511/metadata/CalgaryCityLimits_metadata.json",
+      "feature_relative_paths": [
+        "enmax/20260511/features/polygon/CalgaryCityLimits_features.parquet"
+      ]
+    },
+    {
+      "snapshot": "20260511",
+      "source": "enmax",
+      "asset_key": "EnmaxDistributionLimit",
+      "metadata_relative_path": "enmax/20260511/metadata/EnmaxDistributionLimit_metadata.json",
+      "feature_relative_paths": [
+        "enmax/20260511/features/polygon/EnmaxDistributionLimit_features.parquet"
+      ]
+    },
+    {
+      "snapshot": "20260511",
+      "source": "enmax",
+      "asset_key": "EnmaxDowntownProjects20230324",
+      "metadata_relative_path": "enmax/20260511/metadata/EnmaxDowntownProjects20230324_metadata.json",
+      "feature_relative_paths": [
+        "enmax/20260511/features/point/EnmaxDowntownProjects20230324_features.parquet"
+      ]
+    },
+    {
+      "snapshot": "20260511",
+      "source": "enmax",
+      "asset_key": "EnmaxServiceArea",
+      "metadata_relative_path": "enmax/20260511/metadata/EnmaxServiceArea_metadata.json",
+      "feature_relative_paths": [
+        "enmax/20260511/features/linestring/EnmaxServiceArea_features.parquet",
+        "enmax/20260511/features/polygon/EnmaxServiceArea_features.parquet"
+      ]
+    },
+    {
+      "snapshot": "20260511",
+      "source": "enmax",
+      "asset_key": "ServiceArea",
+      "metadata_relative_path": "enmax/20260511/metadata/ServiceArea_metadata.json",
+      "feature_relative_paths": [
+        "enmax/20260511/features/linestring/ServiceArea_features.parquet"
+      ]
+    },
+    {
+      "snapshot": "20260511",
+      "source": "enmax",
+      "asset_key": "SinglePhaseEstimatedRemainingLoadCapacityJuly2024",
+      "metadata_relative_path": "enmax/20260511/metadata/SinglePhaseEstimatedRemainingLoadCapacityJuly2024_metadata.json",
+      "feature_relative_paths": [
+        "enmax/20260511/features/linestring/SinglePhaseEstimatedRemainingLoadCapacityJuly2024_features.parquet"
+      ]
+    },
+    {
+      "snapshot": "20260511",
+      "source": "enmax",
+      "asset_key": "ThreePhaseEstimatedRemainingHostingCapacityFebruary2025",
+      "metadata_relative_path": "enmax/20260511/metadata/ThreePhaseEstimatedRemainingHostingCapacityFebruary2025_metadata.json",
+      "feature_relative_paths": [
+        "enmax/20260511/features/linestring/ThreePhaseEstimatedRemainingHostingCapacityFebruary2025_features.parquet"
+      ]
+    },
+    {
+      "snapshot": "20260511",
+      "source": "enmax",
+      "asset_key": "TwoAndThreePhaseEstimatedRemainingLoadCapacityDecember2025",
+      "metadata_relative_path": "enmax/20260511/metadata/TwoAndThreePhaseEstimatedRemainingLoadCapacityDecember2025_metadata.json",
+      "feature_relative_paths": []
+    },
+    {
+      "snapshot": "20260511",
+      "source": "enmax",
+      "asset_key": "TwoAndThreePhaseEstimatedRemainingLoadCapacityJuly2024",
+      "metadata_relative_path": "enmax/20260511/metadata/TwoAndThreePhaseEstimatedRemainingLoadCapacityJuly2024_metadata.json",
+      "feature_relative_paths": [
+        "enmax/20260511/features/linestring/TwoAndThreePhaseEstimatedRemainingLoadCapacityJuly2024_features.parquet"
+      ]
+    },
+    {
+      "snapshot": "20260511",
+      "source": "open_calgary",
+      "asset_key": "299k-kwmq_AirportVicinityProtectionArea",
+      "metadata_relative_path": "open_calgary/20260511/metadata/299k-kwmq_AirportVicinityProtectionArea_metadata.json",
+      "feature_relative_paths": [
+        "open_calgary/20260511/features/multipolygon/299k-kwmq_AirportVicinityProtectionArea_features.parquet"
+      ]
+    },
+    {
+      "snapshot": "20260511",
+      "source": "open_calgary",
+      "asset_key": "3wfx-q8xd_12FloodMap50ChanceOfOccurringInAnyYear",
+      "metadata_relative_path": "open_calgary/20260511/metadata/3wfx-q8xd_12FloodMap50ChanceOfOccurringInAnyYear_metadata.json",
+      "feature_relative_paths": [
+        "open_calgary/20260511/features/polygon/3wfx-q8xd_12FloodMap50ChanceOfOccurringInAnyYear_features.parquet"
+      ]
+    },
+    {
+      "snapshot": "20260511",
+      "source": "open_calgary",
+      "asset_key": "7i7v-diin_1750FloodMap013ChanceOfOccurringInAnyYear",
+      "metadata_relative_path": "open_calgary/20260511/metadata/7i7v-diin_1750FloodMap013ChanceOfOccurringInAnyYear_metadata.json",
+      "feature_relative_paths": [
+        "open_calgary/20260511/features/polygon/7i7v-diin_1750FloodMap013ChanceOfOccurringInAnyYear_features.parquet"
+      ]
+    },
+    {
+      "snapshot": "20260511",
+      "source": "open_calgary",
+      "asset_key": "7mc8-zqjc_RiparianAreasVariableWidth",
+      "metadata_relative_path": "open_calgary/20260511/metadata/7mc8-zqjc_RiparianAreasVariableWidth_metadata.json",
+      "feature_relative_paths": [
+        "open_calgary/20260511/features/polygon/7mc8-zqjc_RiparianAreasVariableWidth_features.parquet"
+      ]
+    },
+    {
+      "snapshot": "20260511",
+      "source": "open_calgary",
+      "asset_key": "7t9h-2z9s_CityBoundary",
+      "metadata_relative_path": "open_calgary/20260511/metadata/7t9h-2z9s_CityBoundary_metadata.json",
+      "feature_relative_paths": [
+        "open_calgary/20260511/features/multipolygon/7t9h-2z9s_CityBoundary_features.parquet"
+      ]
+    },
+    {
+      "snapshot": "20260511",
+      "source": "open_calgary",
+      "asset_key": "8gpx-dyin_CalgaryEquityIndexPopulation",
+      "metadata_relative_path": "open_calgary/20260511/metadata/8gpx-dyin_CalgaryEquityIndexPopulation_metadata.json",
+      "feature_relative_paths": [
+        "open_calgary/20260511/features/multipolygon/8gpx-dyin_CalgaryEquityIndexPopulation_features.parquet"
+      ]
+    },
+    {
+      "snapshot": "20260511",
+      "source": "open_calgary",
+      "asset_key": "8rfi-nymv_150FloodMap2ChanceOfOccurringInAnyYear",
+      "metadata_relative_path": "open_calgary/20260511/metadata/8rfi-nymv_150FloodMap2ChanceOfOccurringInAnyYear_metadata.json",
+      "feature_relative_paths": [
+        "open_calgary/20260511/features/polygon/8rfi-nymv_150FloodMap2ChanceOfOccurringInAnyYear_features.parquet"
+      ]
+    },
+    {
+      "snapshot": "20260511",
+      "source": "open_calgary",
+      "asset_key": "a2cn-dxht_Hydrology",
+      "metadata_relative_path": "open_calgary/20260511/metadata/a2cn-dxht_Hydrology_metadata.json",
+      "feature_relative_paths": [
+        "open_calgary/20260511/features/multipolygon/a2cn-dxht_Hydrology_features.parquet"
+      ]
+    },
+    {
+      "snapshot": "20260511",
+      "source": "open_calgary",
+      "asset_key": "a3uu-975p_CalgaryNewBuildingsEnvironmentalPerformanceMetrics",
+      "metadata_relative_path": "open_calgary/20260511/metadata/a3uu-975p_CalgaryNewBuildingsEnvironmentalPerformanceMetrics_metadata.json",
+      "feature_relative_paths": [
+        "open_calgary/20260511/features/a3uu-975p_CalgaryNewBuildingsEnvironmentalPerformanceMetrics_features.json"
+      ]
+    },
+    {
+      "snapshot": "20260511",
+      "source": "open_calgary",
+      "asset_key": "ab7m-fwn6_CommunityBoundaries",
+      "metadata_relative_path": "open_calgary/20260511/metadata/ab7m-fwn6_CommunityBoundaries_metadata.json",
+      "feature_relative_paths": [
+        "open_calgary/20260511/features/multipolygon/ab7m-fwn6_CommunityBoundaries_features.parquet"
+      ]
+    },
+    {
+      "snapshot": "20260511",
+      "source": "open_calgary",
+      "asset_key": "aphy-m9us_PrimaryElectricityUsage",
+      "metadata_relative_path": "open_calgary/20260511/metadata/aphy-m9us_PrimaryElectricityUsage_metadata.json",
+      "feature_relative_paths": [
+        "open_calgary/20260511/features/aphy-m9us_PrimaryElectricityUsage_features.json"
+      ]
+    },
+    {
+      "snapshot": "20260511",
+      "source": "open_calgary",
+      "asset_key": "bz9b-77jf_SolarPowerEnergyUtilization",
+      "metadata_relative_path": "open_calgary/20260511/metadata/bz9b-77jf_SolarPowerEnergyUtilization_metadata.json",
+      "feature_relative_paths": [
+        "open_calgary/20260511/features/bz9b-77jf_SolarPowerEnergyUtilization_features.json"
+      ]
+    },
+    {
+      "snapshot": "20260511",
+      "source": "open_calgary",
+      "asset_key": "cf5t-fjzu_ParksCemeteries",
+      "metadata_relative_path": "open_calgary/20260511/metadata/cf5t-fjzu_ParksCemeteries_metadata.json",
+      "feature_relative_paths": [
+        "open_calgary/20260511/features/multipolygon/cf5t-fjzu_ParksCemeteries_features.parquet"
+      ]
+    },
+    {
+      "snapshot": "20260511",
+      "source": "open_calgary",
+      "asset_key": "crbp-innf_CorporateEnergyConsumption",
+      "metadata_relative_path": "open_calgary/20260511/metadata/crbp-innf_CorporateEnergyConsumption_metadata.json",
+      "feature_relative_paths": [
+        "open_calgary/20260511/features/crbp-innf_CorporateEnergyConsumption_features.json"
+      ]
+    },
+    {
+      "snapshot": "20260511",
+      "source": "open_calgary",
+      "asset_key": "duxj-44dv_CityPlanningSectorsMap",
+      "metadata_relative_path": "open_calgary/20260511/metadata/duxj-44dv_CityPlanningSectorsMap_metadata.json",
+      "feature_relative_paths": [
+        "open_calgary/20260511/features/multipolygon/duxj-44dv_CityPlanningSectorsMap_features.parquet"
+      ]
+    },
+    {
+      "snapshot": "20260511",
+      "source": "open_calgary",
+      "asset_key": "fyid-twcw_RiparianManagementZones",
+      "metadata_relative_path": "open_calgary/20260511/metadata/fyid-twcw_RiparianManagementZones_metadata.json",
+      "feature_relative_paths": [
+        "open_calgary/20260511/features/polygon/fyid-twcw_RiparianManagementZones_features.parquet"
+      ]
+    },
+    {
+      "snapshot": "20260511",
+      "source": "open_calgary",
+      "asset_key": "g8ma-sywr_CityQuadrants",
+      "metadata_relative_path": "open_calgary/20260511/metadata/g8ma-sywr_CityQuadrants_metadata.json",
+      "feature_relative_paths": [
+        "open_calgary/20260511/features/multipolygon/g8ma-sywr_CityQuadrants_features.parquet"
+      ]
+    },
+    {
+      "snapshot": "20260511",
+      "source": "open_calgary",
+      "asset_key": "g9s5-qhu5_AirQualityDataNearRealtime",
+      "metadata_relative_path": "open_calgary/20260511/metadata/g9s5-qhu5_AirQualityDataNearRealtime_metadata.json",
+      "feature_relative_paths": [
+        "open_calgary/20260511/features/point/g9s5-qhu5_AirQualityDataNearRealtime_features.parquet"
+      ]
+    },
+    {
+      "snapshot": "20260511",
+      "source": "open_calgary",
+      "asset_key": "gc28-8znr_11000FloodMap01ChanceOfOccurringInAnyYear",
+      "metadata_relative_path": "open_calgary/20260511/metadata/gc28-8znr_11000FloodMap01ChanceOfOccurringInAnyYear_metadata.json",
+      "feature_relative_paths": [
+        "open_calgary/20260511/features/polygon/gc28-8znr_11000FloodMap01ChanceOfOccurringInAnyYear_features.parquet"
+      ]
+    },
+    {
+      "snapshot": "20260511",
+      "source": "open_calgary",
+      "asset_key": "hktr-86wa_120FloodMap5ChanceOfOccurringInAnyYear",
+      "metadata_relative_path": "open_calgary/20260511/metadata/hktr-86wa_120FloodMap5ChanceOfOccurringInAnyYear_metadata.json",
+      "feature_relative_paths": [
+        "open_calgary/20260511/features/polygon/hktr-86wa_120FloodMap5ChanceOfOccurringInAnyYear_features.parquet"
+      ]
+    },
+    {
+      "snapshot": "20260511",
+      "source": "open_calgary",
+      "asset_key": "icxc-6yk3_NaturalAreas",
+      "metadata_relative_path": "open_calgary/20260511/metadata/icxc-6yk3_NaturalAreas_metadata.json",
+      "feature_relative_paths": [
+        "open_calgary/20260511/features/multipolygon/icxc-6yk3_NaturalAreas_features.parquet"
+      ]
+    },
+    {
+      "snapshot": "20260511",
+      "source": "open_calgary",
+      "asset_key": "iq6w-y3i7_175FloodMap13ChanceOfOccurringInAnyYear",
+      "metadata_relative_path": "open_calgary/20260511/metadata/iq6w-y3i7_175FloodMap13ChanceOfOccurringInAnyYear_metadata.json",
+      "feature_relative_paths": [
+        "open_calgary/20260511/features/polygon/iq6w-y3i7_175FloodMap13ChanceOfOccurringInAnyYear_features.parquet"
+      ]
+    },
+    {
+      "snapshot": "20260511",
+      "source": "open_calgary",
+      "asset_key": "iric-4rrc_MonthlySolarEnergyProductionKwh",
+      "metadata_relative_path": "open_calgary/20260511/metadata/iric-4rrc_MonthlySolarEnergyProductionKwh_metadata.json",
+      "feature_relative_paths": [
+        "open_calgary/20260511/features/iric-4rrc_MonthlySolarEnergyProductionKwh_features.json"
+      ]
+    },
+    {
+      "snapshot": "20260511",
+      "source": "open_calgary",
+      "asset_key": "ispg-b7uq_ParksWaterFeatures",
+      "metadata_relative_path": "open_calgary/20260511/metadata/ispg-b7uq_ParksWaterFeatures_metadata.json",
+      "feature_relative_paths": [
+        "open_calgary/20260511/features/polygon/ispg-b7uq_ParksWaterFeatures_features.parquet"
+      ]
+    },
+    {
+      "snapshot": "20260511",
+      "source": "open_calgary",
+      "asset_key": "ivif-w2jr_1500FloodMap02ChanceOfOccurringInAnyYear",
+      "metadata_relative_path": "open_calgary/20260511/metadata/ivif-w2jr_1500FloodMap02ChanceOfOccurringInAnyYear_metadata.json",
+      "feature_relative_paths": [
+        "open_calgary/20260511/features/polygon/ivif-w2jr_1500FloodMap02ChanceOfOccurringInAnyYear_features.parquet"
+      ]
+    },
+    {
+      "snapshot": "20260511",
+      "source": "open_calgary",
+      "asset_key": "ixvd-v9b3_CalgaryExistingBuildingsEnvironmentalPerformanceMetrics",
+      "metadata_relative_path": "open_calgary/20260511/metadata/ixvd-v9b3_CalgaryExistingBuildingsEnvironmentalPerformanceMetrics_metadata.json",
+      "feature_relative_paths": [
+        "open_calgary/20260511/features/ixvd-v9b3_CalgaryExistingBuildingsEnvironmentalPerformanceMetrics_features.json"
+      ]
+    },
+    {
+      "snapshot": "20260511",
+      "source": "open_calgary",
+      "asset_key": "k85e-i265_ResidentialSolarPhotovoltaicPvSystemPotential",
+      "metadata_relative_path": "open_calgary/20260511/metadata/k85e-i265_ResidentialSolarPhotovoltaicPvSystemPotential_metadata.json",
+      "feature_relative_paths": [
+        "open_calgary/20260511/features/k85e-i265_ResidentialSolarPhotovoltaicPvSystemPotential_features.json"
+      ]
+    },
+    {
+      "snapshot": "20260511",
+      "source": "open_calgary",
+      "asset_key": "msye-bzwu_AnnualCorporateEnergyUseByBusUnits",
+      "metadata_relative_path": "open_calgary/20260511/metadata/msye-bzwu_AnnualCorporateEnergyUseByBusUnits_metadata.json",
+      "feature_relative_paths": [
+        "open_calgary/20260511/features/msye-bzwu_AnnualCorporateEnergyUseByBusUnits_features.json"
+      ]
+    },
+    {
+      "snapshot": "20260511",
+      "source": "open_calgary",
+      "asset_key": "mw9j-jik5_LandUseDistricts",
+      "metadata_relative_path": "open_calgary/20260511/metadata/mw9j-jik5_LandUseDistricts_metadata.json",
+      "feature_relative_paths": [
+        "open_calgary/20260511/features/multipolygon/mw9j-jik5_LandUseDistricts_features.parquet"
+      ]
+    },
+    {
+      "snapshot": "20260511",
+      "source": "open_calgary",
+      "asset_key": "n4vp-3exq_SuburbanResidentialGrowthSrgForecastMap",
+      "metadata_relative_path": "open_calgary/20260511/metadata/n4vp-3exq_SuburbanResidentialGrowthSrgForecastMap_metadata.json",
+      "feature_relative_paths": [
+        "open_calgary/20260511/features/multipolygon/n4vp-3exq_SuburbanResidentialGrowthSrgForecastMap_features.parquet"
+      ]
+    },
+    {
+      "snapshot": "20260511",
+      "source": "open_calgary",
+      "asset_key": "ntse-tznh_110FloodMap10ChanceOfOccurringInAnyYear",
+      "metadata_relative_path": "open_calgary/20260511/metadata/ntse-tznh_110FloodMap10ChanceOfOccurringInAnyYear_metadata.json",
+      "feature_relative_paths": [
+        "open_calgary/20260511/features/polygon/ntse-tznh_110FloodMap10ChanceOfOccurringInAnyYear_features.parquet"
+      ]
+    },
+    {
+      "snapshot": "20260511",
+      "source": "open_calgary",
+      "asset_key": "syit-k9nu_ClimateAndEnvironmentDashboardDataTable",
+      "metadata_relative_path": "open_calgary/20260511/metadata/syit-k9nu_ClimateAndEnvironmentDashboardDataTable_metadata.json",
+      "feature_relative_paths": [
+        "open_calgary/20260511/features/syit-k9nu_ClimateAndEnvironmentDashboardDataTable_features.json"
+      ]
+    },
+    {
+      "snapshot": "20260511",
+      "source": "open_calgary",
+      "asset_key": "tp6q-x2v7_RegulatoryFloodMapBylawFloodHazard",
+      "metadata_relative_path": "open_calgary/20260511/metadata/tp6q-x2v7_RegulatoryFloodMapBylawFloodHazard_metadata.json",
+      "feature_relative_paths": [
+        "open_calgary/20260511/features/multipolygon/tp6q-x2v7_RegulatoryFloodMapBylawFloodHazard_features.parquet"
+      ]
+    },
+    {
+      "snapshot": "20260511",
+      "source": "open_calgary",
+      "asset_key": "uqkc-h9wi_SolarProductionSitesMap",
+      "metadata_relative_path": "open_calgary/20260511/metadata/uqkc-h9wi_SolarProductionSitesMap_metadata.json",
+      "feature_relative_paths": [
+        "open_calgary/20260511/features/point/uqkc-h9wi_SolarProductionSitesMap_features.parquet"
+      ]
+    },
+    {
+      "snapshot": "20260511",
+      "source": "open_calgary",
+      "asset_key": "w8wn-kuii_1100FloodMap1ChanceOfOccurringInAnyYear",
+      "metadata_relative_path": "open_calgary/20260511/metadata/w8wn-kuii_1100FloodMap1ChanceOfOccurringInAnyYear_metadata.json",
+      "feature_relative_paths": [
+        "open_calgary/20260511/features/polygon/w8wn-kuii_1100FloodMap1ChanceOfOccurringInAnyYear_features.parquet"
+      ]
+    },
+    {
+      "snapshot": "20260511",
+      "source": "open_calgary",
+      "asset_key": "xmep-aasr_SchoolsInCommunities",
+      "metadata_relative_path": "open_calgary/20260511/metadata/xmep-aasr_SchoolsInCommunities_metadata.json",
+      "feature_relative_paths": [
+        "open_calgary/20260511/features/point/xmep-aasr_SchoolsInCommunities_features.parquet"
+      ]
+    },
+    {
+      "snapshot": "20260511",
+      "source": "open_calgary",
+      "asset_key": "xsq7-ipnp_1350FloodMap03ChanceOfOccurringInAnyYear",
+      "metadata_relative_path": "open_calgary/20260511/metadata/xsq7-ipnp_1350FloodMap03ChanceOfOccurringInAnyYear_metadata.json",
+      "feature_relative_paths": [
+        "open_calgary/20260511/features/polygon/xsq7-ipnp_1350FloodMap03ChanceOfOccurringInAnyYear_features.parquet"
+      ]
+    },
+    {
+      "snapshot": "20260511",
+      "source": "open_calgary",
+      "asset_key": "yara-8zfv_135FloodMap29ChanceOfOccurringInAnyYear",
+      "metadata_relative_path": "open_calgary/20260511/metadata/yara-8zfv_135FloodMap29ChanceOfOccurringInAnyYear_metadata.json",
+      "feature_relative_paths": [
+        "open_calgary/20260511/features/polygon/yara-8zfv_135FloodMap29ChanceOfOccurringInAnyYear_features.parquet"
+      ]
+    },
+    {
+      "snapshot": "20260511",
+      "source": "open_calgary",
+      "asset_key": "ywjd-32pn_1200FloodMap05ChanceOfOccurringInAnyYear",
+      "metadata_relative_path": "open_calgary/20260511/metadata/ywjd-32pn_1200FloodMap05ChanceOfOccurringInAnyYear_metadata.json",
+      "feature_relative_paths": [
+        "open_calgary/20260511/features/polygon/ywjd-32pn_1200FloodMap05ChanceOfOccurringInAnyYear_features.parquet"
+      ]
+    }
+  ]
+}

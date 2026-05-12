@@ -36,13 +36,6 @@
       "mode": "measurement"
     },
     {
-      "class_name": "AirportVicinity",
-      "file_name": "SinglePhaseEstimatedRemainingLoadCapacityJuly2024_features",
-      "source": "enmax",
-      "geometry_bucket": "linestring",
-      "mode": "node"
-    },
-    {
       "class_name": "FeederMeasurement",
       "file_name": "ThreePhaseEstimatedRemainingHostingCapacityFebruary2025_features",
       "source": "enmax",
@@ -50,66 +43,17 @@
       "mode": "measurement"
     },
     {
-      "class_name": "AirportVicinity",
-      "file_name": "ThreePhaseEstimatedRemainingHostingCapacityFebruary2025_features",
-      "source": "enmax",
-      "geometry_bucket": "linestring",
-      "mode": "node"
-    },
-    {
-      "class_name": "FeederMeasurement",
-      "file_name": "TwoAndThreePhaseEstimatedRemainingLoadCapacityDecember2025_features",
-      "source": "enmax",
-      "geometry_bucket": "linestring",
-      "mode": "measurement"
-    },
-    {
-      "class_name": "AirportVicinity",
-      "file_name": "TwoAndThreePhaseEstimatedRemainingLoadCapacityDecember2025_features",
-      "source": "enmax",
-      "geometry_bucket": "linestring",
-      "mode": "node"
-    },
-    {
       "class_name": "FeederMeasurement",
       "file_name": "TwoAndThreePhaseEstimatedRemainingLoadCapacityJuly2024_features",
       "source": "enmax",
       "geometry_bucket": "linestring",
       "mode": "measurement"
-    },
-    {
-      "class_name": "AirportVicinity",
-      "file_name": "TwoAndThreePhaseEstimatedRemainingLoadCapacityJuly2024_features",
-      "source": "enmax",
-      "geometry_bucket": "linestring",
-      "mode": "node"
     },
     {
       "class_name": "CityLimits",
       "file_name": "AreasWithNoDataPleaseContactEnmax_features",
       "source": "enmax",
       "geometry_bucket": "multipolygon",
-      "mode": "node"
-    },
-    {
-      "class_name": "AirportVicinity",
-      "file_name": "AreasWithNoDataPleaseContactEnmax_features",
-      "source": "enmax",
-      "geometry_bucket": "multipolygon",
-      "mode": "node"
-    },
-    {
-      "class_name": "ENMAXServiceArea",
-      "file_name": "EnmaxDowntownProjects20230324_features",
-      "source": "enmax",
-      "geometry_bucket": "point",
-      "mode": "node"
-    },
-    {
-      "class_name": "AirportVicinity",
-      "file_name": "EnmaxDowntownProjects20230324_features",
-      "source": "enmax",
-      "geometry_bucket": "point",
       "mode": "node"
     },
     {
@@ -183,21 +127,7 @@
       "mode": "node"
     },
     {
-      "class_name": "AirportVicinity",
-      "file_name": "8gpx-dyin_CalgaryEquityIndexPopulation_features",
-      "source": "open_calgary",
-      "geometry_bucket": "multipolygon",
-      "mode": "node"
-    },
-    {
       "class_name": "CityLimits",
-      "file_name": "a2cn-dxht_Hydrology_features",
-      "source": "open_calgary",
-      "geometry_bucket": "multipolygon",
-      "mode": "node"
-    },
-    {
-      "class_name": "AirportVicinity",
       "file_name": "a2cn-dxht_Hydrology_features",
       "source": "open_calgary",
       "geometry_bucket": "multipolygon",
@@ -233,13 +163,6 @@
     },
     {
       "class_name": "CityLimits",
-      "file_name": "duxj-44dv_CityPlanningSectorsMap_features",
-      "source": "open_calgary",
-      "geometry_bucket": "multipolygon",
-      "mode": "node"
-    },
-    {
-      "class_name": "AirportVicinity",
       "file_name": "duxj-44dv_CityPlanningSectorsMap_features",
       "source": "open_calgary",
       "geometry_bucket": "multipolygon",
@@ -283,27 +206,6 @@
     {
       "class_name": "AirportVicinity",
       "file_name": "mw9j-jik5_LandUseDistricts_features",
-      "source": "open_calgary",
-      "geometry_bucket": "multipolygon",
-      "mode": "node"
-    },
-    {
-      "class_name": "AirportVicinity",
-      "file_name": "n4vp-3exq_SuburbanResidentialGrowthSrgForecastMap_features",
-      "source": "open_calgary",
-      "geometry_bucket": "multipolygon",
-      "mode": "node"
-    },
-    {
-      "class_name": "CityLimits",
-      "file_name": "n4vp-3exq_SuburbanResidentialGrowthSrgForecastMap_features",
-      "source": "open_calgary",
-      "geometry_bucket": "multipolygon",
-      "mode": "node"
-    },
-    {
-      "class_name": "CityLimits",
-      "file_name": "tp6q-x2v7_RegulatoryFloodMapBylawFloodHazard_features",
       "source": "open_calgary",
       "geometry_bucket": "multipolygon",
       "mode": "node"
@@ -379,20 +281,6 @@
       "mode": "node"
     },
     {
-      "class_name": "AirportVicinity",
-      "file_name": "7mc8-zqjc_RiparianAreasVariableWidth_features",
-      "source": "open_calgary",
-      "geometry_bucket": "polygon",
-      "mode": "node"
-    },
-    {
-      "class_name": "CityLimits",
-      "file_name": "7mc8-zqjc_RiparianAreasVariableWidth_features",
-      "source": "open_calgary",
-      "geometry_bucket": "polygon",
-      "mode": "node"
-    },
-    {
       "class_name": "FloodScenario",
       "file_name": "8rfi-nymv_150FloodMap2ChanceOfOccurringInAnyYear_features",
       "source": "open_calgary",
@@ -402,13 +290,6 @@
     {
       "class_name": "ENMAXServiceArea",
       "file_name": "8rfi-nymv_150FloodMap2ChanceOfOccurringInAnyYear_features",
-      "source": "open_calgary",
-      "geometry_bucket": "polygon",
-      "mode": "node"
-    },
-    {
-      "class_name": "CityLimits",
-      "file_name": "fyid-twcw_RiparianManagementZones_features",
       "source": "open_calgary",
       "geometry_bucket": "polygon",
       "mode": "node"
@@ -555,13 +436,6 @@
     },
     {
       "class_name": "PopulationAndDwellingCounts",
-      "file_name": "98100015_PopulationAndDwellingCountsCanada_features",
-      "source": "statcan",
-      "geometry_bucket": null,
-      "mode": "node"
-    },
-    {
-      "class_name": "AirportVicinity",
       "file_name": "98100015_PopulationAndDwellingCountsCanada_features",
       "source": "statcan",
       "geometry_bucket": null,
