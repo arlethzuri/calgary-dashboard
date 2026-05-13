@@ -1,0 +1,6 @@
+Upon checking ENMAX Website:
+https://www.enmax.com/system-resources/load-capacity-map
+https://www.enmax.com/system-resources/hosting-capacity-map
+
+We're missing latest load and host capacity of December 2025 and February 2025 respectively.
+Need to check if running collectors gets those datasets or if we need to update these collector scripts.

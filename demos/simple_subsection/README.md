@@ -1,0 +1,1 @@
+In this file we isolate a subsection of downtown Calgary, visualizing the available data.
