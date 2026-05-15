@@ -14,6 +14,7 @@ from pathlib import Path
 import geopandas as gpd
 from shapely.geometry import shape
 
+from calgary_dashboard.common.crs_from_metadata import infer_crs_from_open_calgary_metadata
 from calgary_dashboard.common.definitions import GEOMETRY_FIELD_NAMES
 from calgary_dashboard.common.io import (
     ensure_dir,
@@ -131,6 +132,17 @@ def clean_snapshot(snapshot_date: str | None = None) -> Path:
 
         # If the GeoDataFrame has valid geometry, save as parquet
         if has_valid_geometry:
+            # CRS from CKAN metadata (Map Projection); avoids anonymous geometries in Parquet.
+            crs_hint = infer_crs_from_open_calgary_metadata(metadata_obj)
+            if crs_hint:
+                gdf = gdf.set_crs(crs_hint, allow_override=True)
+            else:
+                logger.warning(
+                    "No CRS from metadata for dataset id=%s name=%s; Parquet may omit crs",
+                    dataset_id,
+                    dataset_name,
+                )
+
             # Use actual geometry values from the parsed GeoDataFrame rather than
             # raw schema keys like "the_geom" or "geometry".
             geometry_type = gdf.geom_type.dropna().iloc[-1].lower()

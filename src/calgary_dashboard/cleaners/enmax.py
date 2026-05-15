@@ -12,6 +12,7 @@ from pathlib import Path
 
 import geopandas as gpd
 
+from calgary_dashboard.common.crs_from_metadata import infer_crs_from_enmax_metadata
 from calgary_dashboard.common.io import (
     ensure_dir,
     list_subdirectories,
@@ -84,6 +85,23 @@ def clean_snapshot(snapshot_date: str | None = None) -> Path:
                 write_json(features_root / f"{file_name}.json", feature_obj)
                 logger.info("Saved fallback JSON %s.json", file_name)
                 continue
+
+            # Attach CRS from sibling ArcGIS *_metadata.json (spatialReference) before Parquet.
+            metadata_json = server_dir / f"{feature_path.stem.replace('_features', '_metadata')}.json"
+            crs_hint = None
+            if metadata_json.is_file():
+                try:
+                    crs_hint = infer_crs_from_enmax_metadata(read_json(metadata_json))
+                except Exception:
+                    logger.exception("Failed to infer CRS from %s", metadata_json)
+            if crs_hint:
+                gdf = gdf.set_crs(crs_hint, allow_override=True)
+            else:
+                logger.warning(
+                    "No CRS from metadata for %s (expected %s); Parquet may omit crs",
+                    feature_path.name,
+                    metadata_json.name,
+                )
 
             # Save as parquet under directory corresponding to the file's
             # geometry type
